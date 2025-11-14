@@ -1,0 +1,262 @@
+# HỆ THỐNG QUẢN LÝ ĐƯA ĐÓN HỌC SINH
+
+## I. KIẾN TRÚC TỔNG THỂ
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    FRONTEND (ReactJS)                        │
+├──────────────┬──────────────┬──────────────┬────────────────┤
+│  Admin UI    │  Driver UI   │  Parent UI   │  Public Pages  │
+│  - Dashboard │  - Routes    │  - Tracking  │  - Login       │
+│  - Users Mgmt│  - Students  │  - Schedule  │  - Register    │
+│  - Routes    │  - Attendance│  - History   │                │
+│  - Reports   │  - Navigation│  - Alerts    │                │
+└──────────────┴──────────────┴──────────────┴────────────────┘
+                            ↕ REST API / WebSocket
+┌─────────────────────────────────────────────────────────────┐
+│                   BACKEND (Django)                           │
+├─────────────────────────────────────────────────────────────┤
+│  Authentication & Authorization (JWT)                        │
+│  - Custom User Model                                         │
+│  - Role-based Access Control (Admin/Driver/Parent)          │
+├─────────────────────────────────────────────────────────────┤
+│  Core Modules:                                               │
+│  ┌──────────────┬──────────────┬──────────────────────┐    │
+│  │ Users        │ Students     │ Routes               │    │
+│  │ - Admin      │ - Profile    │ - Route Management   │    │
+│  │ - Driver     │ - Class      │ - Stop Points        │    │
+│  │ - Parent     │ - Area       │ - Schedule           │    │
+│  └──────────────┴──────────────┴──────────────────────┘    │
+│  ┌──────────────┬──────────────┬──────────────────────┐    │
+│  │ Attendance   │ Tracking     │ Notifications        │    │
+│  │ - Check-in   │ - Real-time  │ - SMS/Push           │    │
+│  │ - Check-out  │ - GPS        │ - Email              │    │
+│  │ - Absent     │ - ETA        │ - In-app             │    │
+│  └──────────────┴──────────────┴──────────────────────┘    │
+│  ┌──────────────┬──────────────┬──────────────────────┐    │
+│  │ Reports      │ Backup       │ Settings             │    │
+│  │ - Statistics │ - Auto       │ - System Config      │    │
+│  │ - Analytics  │ - Manual     │ - School Info        │    │
+│  │ - Export     │ - Restore    │ - Notifications      │    │
+│  └──────────────┴──────────────┴──────────────────────┘    │
+├─────────────────────────────────────────────────────────────┤
+│  Services:                                                   │
+│  - Route Optimization (Nearest Path Algorithm)               │
+│  - ETA Prediction (ML-based or Rule-based)                   │
+│  - Real-time Location Service (WebSocket/Pusher)             │
+│  - Notification Service (Firebase/SNS)                       │
+└─────────────────────────────────────────────────────────────┘
+                            ↕
+┌─────────────────────────────────────────────────────────────┐
+│                   DATABASE (PostgreSQL)                      │
+│  - Users, Roles, Permissions                                 │
+│  - Students, Classes, Areas                                  │
+│  - Routes, Stops, Schedules                                  │
+│  - Attendance Records                                        │
+│  - GPS Tracking Logs                                         │
+│  - Notifications, Reports                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## II. CẤU TRÚC THƯ MỤC
+
+### Backend (Django)
+```
+school_bus_system/
+├── config/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+├── apps/
+│   ├── authentication/
+│   │   ├── models.py (CustomUser, Role)
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   └── urls.py
+│   ├── students/
+│   │   ├── models.py (Student, Class, Area)
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   └── urls.py
+│   ├── routes/
+│   │   ├── models.py (Route, Stop, Schedule)
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   ├── services.py (route optimization)
+│   │   └── urls.py
+│   ├── attendance/
+│   │   ├── models.py (Attendance, AttendanceLog)
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   └── urls.py
+│   ├── tracking/
+│   │   ├── models.py (LocationLog, Trip)
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   ├── consumers.py (WebSocket)
+│   │   └── urls.py
+│   ├── notifications/
+│   │   ├── models.py (Notification, Alert)
+│   │   ├── serializers.py
+│   │   ├── services.py
+│   │   └── tasks.py (Celery tasks)
+│   ├── reports/
+│   │   ├── views.py
+│   │   ├── services.py
+│   │   └── urls.py
+│   └── backup/
+│       ├── views.py
+│       ├── services.py
+│       └── urls.py
+├── utils/
+│   ├── permissions.py
+│   ├── pagination.py
+│   └── helpers.py
+├── manage.py
+└── requirements.txt
+```
+
+### Frontend (ReactJS)
+```
+school-bus-frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── Loading.jsx
+│   │   ├── auth/
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   └── ChangePassword.jsx
+│   │   ├── admin/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── UserManagement.jsx
+│   │   │   ├── StudentManagement.jsx
+│   │   │   ├── RouteManagement.jsx
+│   │   │   ├── Reports.jsx
+│   │   │   └── Backup.jsx
+│   │   ├── driver/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── RouteView.jsx
+│   │   │   ├── StudentList.jsx
+│   │   │   ├── Attendance.jsx
+│   │   │   └── Navigation.jsx
+│   │   └── parent/
+│   │       ├── Dashboard.jsx
+│   │       ├── LiveTracking.jsx
+│   │       ├── Schedule.jsx
+│   │       ├── History.jsx
+│   │       └── RouteSelection.jsx
+│   ├── services/
+│   │   ├── api.js
+│   │   ├── auth.service.js
+│   │   ├── student.service.js
+│   │   ├── route.service.js
+│   │   ├── attendance.service.js
+│   │   ├── tracking.service.js
+│   │   └── websocket.service.js
+│   ├── store/
+│   │   ├── index.js
+│   │   ├── slices/
+│   │   │   ├── authSlice.js
+│   │   │   ├── studentSlice.js
+│   │   │   ├── routeSlice.js
+│   │   │   └── trackingSlice.js
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   ├── useWebSocket.js
+│   │   └── useGeolocation.js
+│   ├── utils/
+│   │   ├── constants.js
+│   │   ├── helpers.js
+│   │   └── validators.js
+│   ├── App.jsx
+│   ├── index.js
+│   └── routes.js
+├── package.json
+└── .env
+```
+
+## III. CÔNG NGHỆ SỬ DỤNG
+
+### Backend
+- **Django 4.2+**: Framework chính
+- **Django REST Framework**: API REST
+- **Django Channels**: WebSocket cho real-time tracking
+- **PostgreSQL**: Database
+- **Redis**: Cache & Channel layer
+- **Celery**: Background tasks
+- **JWT**: Authentication
+- **GeoDjango**: Xử lý dữ liệu địa lý
+- **Pandas**: Xử lý báo cáo
+
+### Frontend
+- **React 18+**: UI Framework
+- **Redux Toolkit**: State management
+- **React Router v6**: Routing
+- **Axios**: HTTP client
+- **Socket.io-client**: WebSocket
+- **Leaflet/Google Maps**: Map integration
+- **Chart.js**: Biểu đồ thống kê
+- **Material-UI/Ant Design**: UI components
+- **React Query**: Data fetching
+
+### DevOps
+- **Docker**: Containerization
+- **Nginx**: Reverse proxy
+- **Gunicorn**: WSGI server
+- **Supervisor**: Process management
+
+## IV. LUỒNG DỮ LIỆU CHÍNH
+
+### 1. Attendance Flow
+```
+Driver (Mobile) → Check-in Student → API → Database
+                                    ↓
+                              WebSocket → Parent (Real-time)
+                                    ↓
+                              Notification Service
+```
+
+### 2. Real-time Tracking Flow
+```
+Driver App (GPS) → WebSocket → Django Channels → Redis
+                                                    ↓
+                                              Parent App (Map)
+                                                    ↓
+                                              ETA Calculation
+```
+
+### 3. Route Assignment Flow
+```
+Admin → Create Route → Algorithm → Optimize Stops
+                                         ↓
+                                   Assign to Driver
+                                         ↓
+                                   Notify Parent
+```
+
+## V. BẢO MẬT
+
+1. **Authentication**: JWT với refresh token
+2. **Authorization**: Role-based (Admin/Driver/Parent)
+3. **Data Encryption**: HTTPS, encrypted passwords
+4. **Input Validation**: Serializers, validators
+5. **Rate Limiting**: Throttling trên API
+6. **CORS**: Cấu hình cho frontend domain
+
+## VI. TÍNH NĂNG NỔI BẬT
+
+1. **Route Optimization**: Thuật toán tìm đường ngắn nhất
+2. **ETA Prediction**: Dự đoán thời gian đến
+3. **Real-time Tracking**: Theo dõi xe real-time
+4. **Push Notifications**: Thông báo tức thì
+5. **Offline Support**: Driver app hoạt động offline
+6. **Auto Backup**: Sao lưu tự động hàng ngày
+7. **Multi-language**: Hỗ trợ đa ngôn ngữ
+8. **Responsive Design**: Tương thích mọi thiết bị
