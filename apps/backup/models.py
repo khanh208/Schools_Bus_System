@@ -1,3 +1,6 @@
+from django.db import models
+from django.utils import timezone
+
 class BackupLog(models.Model):
     """Log of backup operations"""
     backup_type = models.CharField(
