@@ -3,6 +3,17 @@ import environ
 from pathlib import Path
 from datetime import timedelta
 
+if os.path.exists(OSGEO4W):
+    os.environ['OSGEO4W_ROOT'] = OSGEO4W
+    os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
+    os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
+    os.environ['PATH'] = OSGEO4W + r"\bin;" + os.environ['PATH']
+    
+    # Set GDAL library path - YOUR PATH
+    GDAL_LIBRARY_PATH = OSGEO4W + r"\bin\gdal311.dll"
+    GEOS_LIBRARY_PATH = OSGEO4W + r"\bin\geos_c.dll"
+    
+    print(f"✓ GDAL configured at: {GDAL_LIBRARY_PATH}")
 if os.name == 'nt':  # Windows
     OSGEO4W = r"C:\OSGeo4W"
     if os.path.exists(OSGEO4W):
