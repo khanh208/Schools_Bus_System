@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "School Bus API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Login Admin",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+        },
+        "url": "http://localhost:8000/api/auth/login/"
+      }
+    },
+    {
+      "name": "2. Get Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {"key": "Authorization", "value": "Bearer {{access_token}}"}
+        ],
+        "url": "http://localhost:8000/api/auth/profile/"
+      }
+    },
+    {
+      "name": "3. Get Students",
+      "request": {
+        "method": "GET",
+        "header": [
+          {"key": "Authorization", "value": "Bearer {{access_token}}"}
+        ],
+        "url": "http://localhost:8000/api/students/students/"
+      }
+    }
+  ]
+}

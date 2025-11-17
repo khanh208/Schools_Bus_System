@@ -7,17 +7,17 @@ from django.dispatch import receiver
 
 
 class UserRole(models.TextChoices):
-    ADMIN = 'admin', 'Administrator'
-    DRIVER = 'driver', 'Driver'
-    PARENT = 'parent', 'Parent'
+    ADMIN = 'admin', 'Quản trị viên'
+    DRIVER = 'driver', 'Tài xế'
+    PARENT = 'parent', 'Phụ huynh'
 
 
 class UserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
         if not email:
-            raise ValueError('Email address is required')
+            raise ValueError('Địa chỉ email là bắt buộc')
         if not username:
-            raise ValueError('Username is required')
+            raise ValueError('Tên đăng nhập là bắt buộc')
         
         email = self.normalize_email(email)
         user = self.model(username=username, email=email, **extra_fields)
@@ -36,32 +36,30 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(max_length=150, unique=True, db_index=True)
-    email = models.EmailField(max_length=255, unique=True, db_index=True)
-    full_name = models.CharField(max_length=255)
+    username = models.CharField('Tên đăng nhập', max_length=150, unique=True, db_index=True)
+    email = models.EmailField('Email', max_length=255, unique=True, db_index=True)
+    full_name = models.CharField('Họ và tên', max_length=255)
     phone_regex = RegexValidator(
         regex=r'^\+?1?\d{9,15}$',
-        message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."
+        message="Số điện thoại phải có định dạng: '+999999999'. Tối đa 15 chữ số."
     )
-    phone = models.CharField(validators=[phone_regex], max_length=20, blank=True, null=True)
-    role = models.CharField(max_length=20, choices=UserRole.choices)
-    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
-    
-    # ⚠️ QUAN TRỌNG: Thêm dòng này
-    password = models.CharField(max_length=128)  # Django expects 'password', not 'password_hash'
+    phone = models.CharField('Số điện thoại', validators=[phone_regex], max_length=20, blank=True, null=True)
+    role = models.CharField('Vai trò', max_length=20, choices=UserRole.choices)
+    avatar = models.ImageField('Ảnh đại diện', upload_to='avatars/', blank=True, null=True)
+    password = models.CharField('Mật khẩu', max_length=128)
     
     # Status fields
-    is_active = models.BooleanField(default=True)
-    is_verified = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField('Đang hoạt động', default=True)
+    is_verified = models.BooleanField('Đã xác thực', default=False)
+    is_staff = models.BooleanField('Là nhân viên', default=False)
     
     # Timestamps
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    last_login = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField('Ngày tạo', auto_now_add=True)
+    updated_at = models.DateTimeField('Ngày cập nhật', auto_now=True)
+    last_login = models.DateTimeField('Đăng nhập lần cuối', null=True, blank=True)
     
     # FCM token for push notifications
-    fcm_token = models.CharField(max_length=255, blank=True, null=True)
+    fcm_token = models.CharField('FCM Token', max_length=255, blank=True, null=True)
     
     objects = UserManager()
     
@@ -70,77 +68,52 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     class Meta:
         db_table = 'users'
-        verbose_name = 'User'
-        verbose_name_plural = 'Users'
+        verbose_name = 'Người dùng'
+        verbose_name_plural = 'Người dùng'
         ordering = ['-created_at']
     
     def __str__(self):
         return f"{self.full_name} ({self.username})"
-    
-    @property
-    def is_admin(self):
-        return self.role == UserRole.ADMIN
-    
-    @property
-    def is_driver(self):
-        return self.role == UserRole.DRIVER
-    
-    @property
-    def is_parent(self):
-        return self.role == UserRole.PARENT
-    
-    def get_full_name(self):
-        return self.full_name
-    
-    def get_short_name(self):
-        return self.username
 
 
 class DriverStatus(models.TextChoices):
-    AVAILABLE = 'available', 'Available'
-    ON_TRIP = 'on_trip', 'On Trip'
-    OFF_DUTY = 'off_duty', 'Off Duty'
+    AVAILABLE = 'available', 'Sẵn sàng'
+    ON_TRIP = 'on_trip', 'Đang chạy'
+    OFF_DUTY = 'off_duty', 'Nghỉ việc'
 
 
 class Driver(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='driver_profile')
-    license_number = models.CharField(max_length=50, unique=True)
-    license_expiry = models.DateField()
-    vehicle = models.ForeignKey('routes.Vehicle', on_delete=models.SET_NULL, null=True, blank=True, related_name='drivers')
-    experience_years = models.IntegerField(default=0)
-    rating = models.DecimalField(max_digits=3, decimal_places=2, default=5.00)
-    status = models.CharField(max_length=20, choices=DriverStatus.choices, default=DriverStatus.AVAILABLE)
-    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='driver_profile', verbose_name='Người dùng')
+    license_number = models.CharField('Số giấy phép lái xe', max_length=50, unique=True)
+    license_expiry = models.DateField('Ngày hết hạn GPLX')
+    vehicle = models.ForeignKey('routes.Vehicle', on_delete=models.SET_NULL, null=True, blank=True, related_name='drivers', verbose_name='Xe được gán')
+    experience_years = models.IntegerField('Số năm kinh nghiệm', default=0)
+    rating = models.DecimalField('Đánh giá', max_digits=3, decimal_places=2, default=5.00)
+    status = models.CharField('Trạng thái', max_length=20, choices=DriverStatus.choices, default=DriverStatus.AVAILABLE)
+    created_at = models.DateTimeField('Ngày tạo', auto_now_add=True)
     
     class Meta:
         db_table = 'drivers'
-        verbose_name = 'Driver'
-        verbose_name_plural = 'Drivers'
+        verbose_name = 'Tài xế'
+        verbose_name_plural = 'Tài xế'
     
     def __str__(self):
-        return f"Driver: {self.user.full_name}"
-    
-    @property
-    def is_license_valid(self):
-        return self.license_expiry > timezone.now().date()
-    
-    def can_drive(self):
-        return self.is_license_valid and self.status == DriverStatus.AVAILABLE
+        return f"Tài xế: {self.user.full_name}"
 
 
 class Parent(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='parent_profile')
-    address = models.TextField()
-    emergency_contact = models.CharField(max_length=20)
-    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='parent_profile', verbose_name='Người dùng')
+    address = models.TextField('Địa chỉ')
+    emergency_contact = models.CharField('Liên hệ khẩn cấp', max_length=20)
+    created_at = models.DateTimeField('Ngày tạo', auto_now_add=True)
     
     class Meta:
         db_table = 'parents'
-        verbose_name = 'Parent'
-        verbose_name_plural = 'Parents'
+        verbose_name = 'Phụ huynh'
+        verbose_name_plural = 'Phụ huynh'
     
     def __str__(self):
-        return f"Parent: {self.user.full_name}"
+        return f"Phụ huynh: {self.user.full_name}"
     
     @property
     def children_count(self):

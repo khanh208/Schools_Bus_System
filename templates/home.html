@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-body text-center">
+                <h1 class="card-title">🚌 Hệ thống quản lý xe đưa đón học sinh</h1>
+                <p class="card-text mt-4">Chào mừng đến với hệ thống quản lý xe bus trường học</p>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5>👥 Admin</h5>
+                                <p>Quản lý toàn hệ thống</p>
+                                <a href="/admin/" class="btn btn-primary">Đăng nhập</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5>🚗 Driver</h5>
+                                <p>Quản lý chuyến đi</p>
+                                <a href="/swagger/" class="btn btn-success">API</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5>👪 Parent</h5>
+                                <p>Theo dõi con em</p>
+                                <a href="/swagger/" class="btn btn-info">API</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-5">
+                    <h5>📚 Tài liệu API</h5>
+                    <a href="/swagger/" class="btn btn-outline-primary me-2">Swagger UI</a>
+                    <a href="/redoc/" class="btn btn-outline-secondary">ReDoc</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

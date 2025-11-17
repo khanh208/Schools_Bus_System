@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from django.views.generic import TemplateView
 
 # API Documentation
 schema_view = get_schema_view(
@@ -37,6 +38,7 @@ urlpatterns = [
     path('api/notifications/', include('apps.notifications.urls')),
     path('api/reports/', include('apps.reports.urls')),
     path('api/backup/', include('apps.backup.urls')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
 ]
 
 # Serve media files in development
