@@ -16,29 +16,31 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # GDAL CONFIGURATION - ƯU TIÊN ĐỌC TỪ .env
 # ============================================
 if os.name == 'nt':  # Windows
-    # Đọc từ .env trước
     osgeo_root = env('OSGEO4W_ROOT', default=None)
     gdal_lib = env('GDAL_LIBRARY_PATH', default=None)
     geos_lib = env('GEOS_LIBRARY_PATH', default=None)
     
     if osgeo_root and os.path.exists(osgeo_root):
-        # Setup environment
         os.environ['OSGEO4W_ROOT'] = osgeo_root
         os.environ['GDAL_DATA'] = os.path.join(osgeo_root, 'share', 'gdal')
         os.environ['PROJ_LIB'] = os.path.join(osgeo_root, 'share', 'proj')
         bin_path = os.path.join(osgeo_root, 'bin')
         os.environ['PATH'] = bin_path + ';' + os.environ.get('PATH', '')
         
-        # Set library paths
         if gdal_lib and os.path.exists(gdal_lib):
             GDAL_LIBRARY_PATH = gdal_lib
             print(f"✓ GDAL configured: {GDAL_LIBRARY_PATH}")
+        else:
+            print(f"⚠ Warning: GDAL library not found at: {gdal_lib}")
         
         if geos_lib and os.path.exists(geos_lib):
             GEOS_LIBRARY_PATH = geos_lib
             print(f"✓ GEOS configured: {GEOS_LIBRARY_PATH}")
+        else:
+            print(f"⚠ Warning: GEOS library not found at: {geos_lib}")
     else:
-        print("⚠ Warning: OSGeo4W path not found in .env")
+        print("⚠ Warning: OSGeo4W path not found or invalid")
+        print("Please check OSGEO4W_ROOT in .env file")
 
 # Security
 SECRET_KEY = env('SECRET_KEY', default='django-insecure-change-this-123456')

@@ -404,3 +404,67 @@ Traceback (most recent call last):
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: object HttpResponse can't be used in 'await' expression
 ERROR 2025-11-16 23:35:19,949 runserver [35;1mHTTP POST /api/auth/login/ 500 [0.68, 127.0.0.1:53536][0m
+INFO 2025-11-17 14:05:53,241 autoreload Watching for file changes with StatReloader
+INFO 2025-11-17 14:05:53,832 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-11-17 14:05:53,832 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-11-17 14:05:53,835 server Listening on TCP address 127.0.0.1:8000
+ERROR 2025-11-17 14:06:04,961 log Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\middleware\security.py", line 47, in process_response
+    response.headers.setdefault("X-Content-Type-Options", "nosniff")
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute 'headers'
+ERROR 2025-11-17 14:06:04,964 server Exception inside application: object HttpResponse can't be used in 'await' expression
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\channels\routing.py", line 62, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\asgi.py", line 160, in __call__
+    await self.handle(scope, receive, send)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\asgi.py", line 183, in handle
+    response = await self.get_response_async(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\base.py", line 162, in get_response_async
+    response = await self._middleware_chain(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object HttpResponse can't be used in 'await' expression
+ERROR 2025-11-17 14:06:04,968 runserver [35;1mHTTP GET /admin/ 500 [0.50, 127.0.0.1:51128][0m
+ERROR 2025-11-17 14:06:05,702 log Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\middleware\security.py", line 47, in process_response
+    response.headers.setdefault("X-Content-Type-Options", "nosniff")
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute 'headers'
+ERROR 2025-11-17 14:06:05,977 server Exception inside application: object HttpResponse can't be used in 'await' expression
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\channels\routing.py", line 62, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\asgi.py", line 160, in __call__
+    await self.handle(scope, receive, send)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\asgi.py", line 183, in handle
+    response = await self.get_response_async(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\base.py", line 162, in get_response_async
+    response = await self._middleware_chain(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object HttpResponse can't be used in 'await' expression
+ERROR 2025-11-17 14:06:05,978 runserver [35;1mHTTP GET /favicon.ico 500 [0.31, 127.0.0.1:51128][0m

@@ -47,6 +47,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     role = models.CharField(max_length=20, choices=UserRole.choices)
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
     
+    # ⚠️ QUAN TRỌNG: Thêm dòng này
+    password = models.CharField(max_length=128)  # Django expects 'password', not 'password_hash'
+    
     # Status fields
     is_active = models.BooleanField(default=True)
     is_verified = models.BooleanField(default=False)
