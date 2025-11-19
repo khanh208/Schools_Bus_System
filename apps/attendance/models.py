@@ -105,25 +105,25 @@ class Attendance(models.Model):
     
     def send_notification_to_parent(self):
         """Send notification to parent about attendance"""
-    from apps.notifications.realtime_service import RealtimeNotificationService
-    
-    if not self.parent_notified:
-        # Gửi real-time notification
-        RealtimeNotificationService.send_attendance_notification(self)
+        from apps.notifications.realtime_service import RealtimeNotificationService
         
-        # Gửi in-app notification
-        from apps.notifications.models import Notification
-        Notification.objects.create(
-            user=self.student.parent.user,
-            title=f"Điểm danh: {self.student.full_name}",
-            message=f"Con em {self.get_status_display()} lúc {self.check_time.strftime('%H:%M %d/%m/%Y') if self.check_time else 'N/A'}",
-            notification_type='info',
-            sent_via='in_app'
-        )
-        
-        self.parent_notified = True
-        self.notification_sent_at = timezone.now()
-        self.save(update_fields=['parent_notified', 'notification_sent_at'])
+        if not self.parent_notified:
+            # Gửi real-time notification
+            RealtimeNotificationService.send_attendance_notification(self)
+            
+            # Gửi in-app notification
+            from apps.notifications.models import Notification
+            Notification.objects.create(
+                user=self.student.parent.user,
+                title=f"Điểm danh: {self.student.full_name}",
+                message=f"Con em {self.get_status_display()} lúc {self.check_time.strftime('%H:%M %d/%m/%Y') if self.check_time else 'N/A'}",
+                notification_type='info',
+                sent_via='in_app'
+            )
+            
+            self.parent_notified = True
+            self.notification_sent_at = timezone.now()
+            self.save(update_fields=['parent_notified', 'notification_sent_at'])
 
 
 class AttendanceException(models.Model):
