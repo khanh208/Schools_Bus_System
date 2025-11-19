@@ -2,6 +2,62 @@ from django.contrib import admin
 from django.utils.html import format_html
 from .models import Vehicle, Route, RouteStop, StudentRoute, RouteSchedule, VehicleMaintenance
 
+# Register Vehicle first
+@admin.register(Vehicle)
+class VehicleAdmin(admin.ModelAdmin):
+    list_display = ['plate_number', 'vehicle_type', 'capacity', 'get_status', 'insurance_expiry']
+    list_filter = ['status', 'vehicle_type']
+    search_fields = ['plate_number', 'model', 'gps_device_id']
+    ordering = ['plate_number']
+    
+    fieldsets = (
+        ('Thông tin xe', {
+            'fields': ('plate_number', 'vehicle_type', 'capacity', 'model', 'year', 'color')
+        }),
+        ('Giấy tờ', {
+            'fields': ('insurance_expiry', 'registration_expiry', 'last_maintenance', 'next_maintenance')
+        }),
+        ('GPS', {
+            'fields': ('gps_device_id',)
+        }),
+        ('Trạng thái', {
+            'fields': ('status', 'is_active')
+        }),
+    )
+    
+    def get_status(self, obj):
+        colors = {
+            'active': 'green',
+            'maintenance': 'orange',
+            'inactive': 'red'
+        }
+        return format_html(
+            '<span style="color: {};">●</span> {}',
+            colors.get(obj.status, 'gray'),
+            obj.get_status_display()
+        )
+    get_status.short_description = 'Trạng thái'
+
+# Register RouteStop
+@admin.register(RouteStop)
+class RouteStopAdmin(admin.ModelAdmin):
+    list_display = ['route', 'stop_order', 'stop_name', 'estimated_arrival', 'is_active']
+    list_filter = ['route', 'is_active']
+    search_fields = ['stop_name', 'address', 'route__route_code']
+    ordering = ['route', 'stop_order']
+    
+    fieldsets = (
+        ('Thông tin điểm dừng', {
+            'fields': ('route', 'stop_order', 'stop_name', 'address', 'location')
+        }),
+        ('Thời gian', {
+            'fields': ('estimated_arrival', 'estimated_departure', 'stop_duration')
+        }),
+        ('Trạng thái', {
+            'fields': ('is_active',)
+        }),
+    )
+
 class RouteStopInline(admin.TabularInline):
     model = RouteStop
     extra = 1
@@ -9,12 +65,6 @@ class RouteStopInline(admin.TabularInline):
     ordering = ['stop_order']
     verbose_name = 'Điểm dừng'
     verbose_name_plural = 'Danh sách điểm dừng'
-    
-    # Thêm CSS cho inline
-    class Media:
-        css = {
-            'all': ['admin/css/custom_inline.css']
-        }
 
 class RouteScheduleInline(admin.TabularInline):
     model = RouteSchedule
@@ -27,7 +77,7 @@ class StudentRouteInline(admin.TabularInline):
     model = StudentRoute
     extra = 0
     fields = ['student', 'stop', 'assignment_type', 'start_date', 'end_date', 'is_active']
-    autocomplete_fields = ['student', 'stop']
+    raw_id_fields = ['student', 'stop']
     verbose_name = 'Học sinh'
     verbose_name_plural = 'Danh sách học sinh trên tuyến'
     
@@ -42,7 +92,6 @@ class RouteAdmin(admin.ModelAdmin):
     search_fields = ['route_code', 'route_name']
     ordering = ['route_code']
     
-    # Thêm inlines
     inlines = [RouteStopInline, RouteScheduleInline, StudentRouteInline]
     
     fieldsets = (
@@ -62,13 +111,9 @@ class RouteAdmin(admin.ModelAdmin):
         }),
     )
     
-    # Autocomplete
-    autocomplete_fields = ['vehicle', 'driver', 'area']
-    
-    # Read only
+    raw_id_fields = ['vehicle', 'driver', 'area']
     readonly_fields = ['created_at', 'updated_at']
     
-    # Định nghĩa lại các methods get_... như trước
     def get_route_type(self, obj):
         colors = {
             'pickup': '#007bff',
@@ -104,3 +149,62 @@ class RouteAdmin(admin.ModelAdmin):
             return format_html('<span style="color: green;">✓ Hoạt động</span>')
         return format_html('<span style="color: red;">✗ Ngừng</span>')
     get_status.short_description = 'Trạng thái'
+
+@admin.register(VehicleMaintenance)
+class VehicleMaintenanceAdmin(admin.ModelAdmin):
+    list_display = ['vehicle', 'maintenance_type', 'performed_at', 'cost', 'next_maintenance_date']
+    list_filter = ['maintenance_type', 'performed_at']
+    search_fields = ['vehicle__plate_number', 'maintenance_type', 'description']
+    ordering = ['-performed_at']
+    
+    fieldsets = (
+        ('Thông tin bảo trì', {
+            'fields': ('vehicle', 'maintenance_type', 'description', 'cost')
+        }),
+        ('Thực hiện', {
+            'fields': ('performed_by', 'performed_at', 'next_maintenance_date')
+        }),
+        ('Ghi chú', {
+            'fields': ('notes',),
+            'classes': ('collapse',)
+        }),
+    )
+    
+    readonly_fields = ['created_at', 'created_by']
+    
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.created_by = request.user
+        super().save_model(request, obj, form, change)
+
+@admin.register(RouteSchedule)
+class RouteScheduleAdmin(admin.ModelAdmin):
+    list_display = ['route', 'get_day_name', 'start_time', 'end_time', 'is_active']
+    list_filter = ['day_of_week', 'is_active']
+    search_fields = ['route__route_code', 'route__route_name']
+    ordering = ['route', 'day_of_week', 'start_time']
+    
+    def get_day_name(self, obj):
+        days = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật']
+        return days[obj.day_of_week] if 0 <= obj.day_of_week < 7 else ''
+    get_day_name.short_description = 'Ngày'
+
+@admin.register(StudentRoute)
+class StudentRouteAdmin(admin.ModelAdmin):
+    list_display = ['student', 'route', 'stop', 'assignment_type', 'start_date', 'is_active']
+    list_filter = ['assignment_type', 'is_active', 'route']
+    search_fields = ['student__full_name', 'student__student_code', 'route__route_code']
+    ordering = ['-created_at']
+    raw_id_fields = ['student', 'route', 'stop']
+    
+    fieldsets = (
+        ('Phân công', {
+            'fields': ('student', 'route', 'stop', 'assignment_type')
+        }),
+        ('Thời gian', {
+            'fields': ('start_date', 'end_date')
+        }),
+        ('Trạng thái', {
+            'fields': ('is_active',)
+        }),
+    )
