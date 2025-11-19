@@ -3,6 +3,7 @@ import environ
 from pathlib import Path
 from datetime import timedelta
 
+
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -49,7 +50,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1', '*'
 
 # Application definition
 INSTALLED_APPS = [
-    #'daphne',
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,7 +66,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'drf_yasg',
-    #'channels',
+    'channels',
     
     # Local apps
     'apps.authentication',
@@ -143,7 +144,9 @@ USE_TZ = True
 # Static files
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 LANGUAGES = [
     ('vi', 'Tiếng Việt'),
@@ -189,16 +192,35 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-# CORS
-CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=['http://localhost:3000'])
-CORS_ALLOW_CREDENTIALS = True
+
 
 # Channels (WebSocket)
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [(env('REDIS_HOST', default='127.0.0.1'), env.int('REDIS_PORT', default=6379))],
+        },
     },
 }
+# CORS - Thêm WebSocket
+CORS_ALLOW_ALL_ORIGINS = DEBUG  # Chỉ cho dev
+CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=['http://localhost:3000'])
+CORS_ALLOW_CREDENTIALS = True
+
+# Thêm WebSocket support
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'sec-websocket-protocol',
+]
 
 # Logging
 LOGGING = {
@@ -244,3 +266,4 @@ SWAGGER_SETTINGS = {
 os.makedirs(BASE_DIR / 'logs', exist_ok=True)
 os.makedirs(BASE_DIR / 'media', exist_ok=True)
 os.makedirs(BASE_DIR / 'staticfiles', exist_ok=True)
+os.makedirs(BASE_DIR / 'static' / 'admin' / 'css', exist_ok=True)

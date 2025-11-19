@@ -92,9 +92,16 @@ class Trip(models.Model):
             self.driver.status = 'on_trip'
             self.driver.save(update_fields=['status'])
             
+            # Gửi thông báo real-time
+            from apps.notifications.realtime_service import RealtimeNotificationService
+            RealtimeNotificationService.send_trip_update(
+                self,
+                f'Xe {self.vehicle.plate_number} đã bắt đầu chuyến đi lúc {self.actual_start_time.strftime("%H:%M")}'
+            )
+            
             return True
         return False
-    
+
     def complete_trip(self):
         """Complete the trip"""
         if self.status == TripStatus.IN_PROGRESS:
@@ -108,6 +115,13 @@ class Trip(models.Model):
             
             # Generate performance record
             self.calculate_performance()
+            
+            # Gửi thông báo real-time
+            from apps.notifications.realtime_service import RealtimeNotificationService
+            RealtimeNotificationService.send_trip_update(
+                self,
+                f'Chuyến đi đã hoàn thành lúc {self.actual_end_time.strftime("%H:%M")}'
+            )
             
             return True
         return False

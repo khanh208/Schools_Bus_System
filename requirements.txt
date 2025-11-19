@@ -72,3 +72,9 @@ sentry-sdk==1.38.0
 # Development
 django-debug-toolbar==4.2.0
 ipython==8.18.1
+
+# Thêm vào cuối file
+channels==4.0.0
+channels-redis==4.1.0
+daphne==4.0.0
+redis==5.0.1

@@ -84,6 +84,7 @@ class StudentAdmin(admin.ModelAdmin):
         age = obj.age
         return f"{age} tuổi"
     get_age.short_description = 'Tuổi'
+    
     def get_status(self, obj):
         if obj.is_active:
             return format_html('<span style="color: green;">✓ Đang học</span>')

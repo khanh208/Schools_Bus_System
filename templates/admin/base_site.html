@@ -1,0 +1,85 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'admin/css/custom_admin.css' %}">
+    <style>
+        /* Quick Stats Bar */
+        .quick-stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            margin: -20px -20px 20px -20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .quick-stat-item {
+            text-align: center;
+            padding: 10px 20px;
+        }
+        
+        .quick-stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .quick-stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Enhanced Header */
+        #header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        #branding h1 {
+            color: white;
+        }
+        
+        #user-tools a {
+            color: white;
+        }
+        
+        /* Navigation Menu */
+        .module h2, .module caption {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        🚌 {{ site_header|default:_('Django administration') }}
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}
+<div style="background: rgba(255,255,255,0.1); padding: 10px 20px; margin-top: -10px;">
+    <a href="{% url 'admin:dashboard' %}" style="color: white; margin-right: 20px; text-decoration: none; font-weight: bold;">
+        📊 Dashboard
+    </a>
+    <a href="{% url 'admin:students_student_changelist' %}" style="color: white; margin-right: 20px; text-decoration: none;">
+        👦 Học sinh
+    </a>
+    <a href="{% url 'admin:routes_route_changelist' %}" style="color: white; margin-right: 20px; text-decoration: none;">
+        🗺️ Tuyến đường
+    </a>
+    <a href="{% url 'admin:tracking_trip_changelist' %}" style="color: white; margin-right: 20px; text-decoration: none;">
+        🚌 Chuyến đi
+    </a>
+    <a href="{% url 'admin:attendance_attendance_changelist' %}" style="color: white; text-decoration: none;">
+        ✅ Điểm danh
+    </a>
+</div>
+{% endblock %}
