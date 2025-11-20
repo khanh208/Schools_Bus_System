@@ -6,6 +6,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.views.generic import TemplateView
+from apps.reports.admin_views import admin_dashboard
 
 # API Documentation
 schema_view = get_schema_view(
@@ -39,6 +40,7 @@ urlpatterns = [
     path('api/reports/', include('apps.reports.urls')),
     path('api/backup/', include('apps.backup.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('admin/dashboard/', admin_dashboard, name='admin-dashboard'),
 ]
 
 # Serve media files in development

@@ -13,13 +13,13 @@ psycopg2-binary==2.9.9
 django-environ==0.11.2
 
 # GeoDjango & GIS
-#GDAL==3.4.3
 geos==0.2.3
 
-# Real-time & WebSocket
+# Real-time & WebSocket - THAY ĐỔI
 channels==4.0.0
 channels-redis==4.1.0
-daphne==4.0.0
+uvicorn[standard]==0.24.0  # Thay thế Daphne
+websockets==12.0
 
 # Celery & Background Tasks
 celery==5.3.4

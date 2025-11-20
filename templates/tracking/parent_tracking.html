@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo dõi xe đưa đón - Phụ huynh</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+
+        .sidebar {
+            width: 350px;
+            background: white;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+        }
+
+        #map {
+            flex: 1;
+            height: 100%;
+        }
+
+        .info-section {
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .info-section h3 {
+            font-size: 16px;
+            color: #1f2937;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .student-card {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .student-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .student-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-on-trip {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-checked-in {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-not-started {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .trip-info {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .trip-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .trip-detail:last-child {
+            border-bottom: none;
+        }
+
+        .trip-label {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .trip-value {
+            font-weight: 600;
+            color: #1f2937;
+            font-size: 14px;
+        }
+
+        .eta-card {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .eta-title {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .eta-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .eta-subtitle {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 5px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            max-width: 350px;
+            animation: slideIn 0.3s ease;
+            z-index: 1000;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .notification.success {
+            border-left: 4px solid #10b981;
+        }
+
+        .notification.info {
+            border-left: 4px solid #3b82f6;
+        }
+
+        .notification.warning {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .connection-status {
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .connection-status.connected {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .connection-status.disconnected {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .refresh-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .refresh-btn:hover {
+            background: #5568d3;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: 40%;
+            }
+
+            #map {
+                height: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            🚌 Theo dõi xe đưa đón
+            <div class="status-indicator" id="wsStatus"></div>
+        </h1>
+        <div id="currentTime"></div>
+    </div>
+
+    <div class="connection-status" id="connectionStatus">
+        Đang kết nối...
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="info-section">
+                <h3>👦 Học sinh của bạn</h3>
+                <div id="studentsList"></div>
+            </div>
+
+            <div class="info-section">
+                <h3>🚌 Thông tin chuyến đi</h3>
+                <div id="tripInfo"></div>
+            </div>
+
+            <div class="info-section">
+                <h3>⏱️ Thời gian dự kiến</h3>
+                <div id="etaInfo"></div>
+                <button class="refresh-btn" onclick="refreshData()">
+                    🔄 Cập nhật
+                </button>
+            </div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Configuration
+        const API_BASE = 'http://localhost:8000/api';
+        const WS_BASE = 'ws://localhost:8000/ws';
+        
+        // Get token from localStorage or URL
+        const token = localStorage.getItem('access_token') || new URLSearchParams(window.location.search).get('token');
+        
+        if (token) {
+            localStorage.setItem('access_token', token);
+        }
+
+        // State
+        let map, busMarker, routePolyline, stopMarkers = [];
+        let ws, reconnectAttempts = 0;
+        let currentTripId = null;
+
+        // Initialize map
+        function initMap() {
+            map = L.map('map').setView([10.8231, 106.6297], 13);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Custom bus icon
+            const busIcon = L.icon({
+                iconUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjNjY3ZWVhIj48cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptMCAxOGMtNC40MSAwLTgtMy41OS04LThzMy41OS04IDgtOCA4IDMuNTkgOCA4LTMuNTkgOC04IDh6Ii8+PC9zdmc+',
+                iconSize: [40, 40],
+                iconAnchor: [20, 20]
+            });
+        }
+
+        // WebSocket connection
+        function connectWebSocket() {
+            if (!token) {
+                showNotification('Vui lòng đăng nhập', 'warning');
+                return;
+            }
+
+            ws = new WebSocket(`${WS_BASE}/notifications/`);
+
+            ws.onopen = () => {
+                console.log('WebSocket connected');
+                reconnectAttempts = 0;
+                updateConnectionStatus(true);
+            };
+
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                handleWebSocketMessage(data);
+            };
+
+            ws.onerror = (error) => {
+                console.error('WebSocket error:', error);
+                updateConnectionStatus(false);
+            };
+
+            ws.onclose = () => {
+                console.log('WebSocket closed');
+                updateConnectionStatus(false);
+                
+                // Reconnect
+                if (reconnectAttempts < 5) {
+                    setTimeout(() => {
+                        reconnectAttempts++;
+                        connectWebSocket();
+                    }, 3000);
+                }
+            };
+        }
+
+        function handleWebSocketMessage(data) {
+            console.log('Received:', data);
+
+            switch(data.type) {
+                case 'connected':
+                    showNotification(data.message, 'success');
+                    loadChildrenStatus();
+                    break;
+
+                case 'location_update':
+                    updateBusLocation(data.data);
+                    break;
+
+                case 'attendance':
+                    handleAttendanceUpdate(data.data);
+                    break;
+
+                case 'trip_update':
+                    handleTripUpdate(data.data);
+                    break;
+
+                case 'notification':
+                    showNotification(data.data.message, 'info');
+                    break;
+
+                case 'eta_update':
+                    updateETA(data.data);
+                    break;
+
+                case 'children_status':
+                    displayChildrenStatus(data.data);
+                    break;
+            }
+        }
+
+        function updateConnectionStatus(connected) {
+            const statusEl = document.getElementById('connectionStatus');
+            const wsStatusEl = document.getElementById('wsStatus');
+            
+            if (connected) {
+                statusEl.textContent = '✓ Đã kết nối';
+                statusEl.className = 'connection-status connected';
+                wsStatusEl.style.background = '#4ade80';
+            } else {
+                statusEl.textContent = '✗ Mất kết nối - Đang thử kết nối lại...';
+                statusEl.className = 'connection-status disconnected';
+                wsStatusEl.style.background = '#ef4444';
+            }
+        }
+
+        function loadChildrenStatus() {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'get_children_status'
+                }));
+            }
+        }
+
+        function displayChildrenStatus(children) {
+            const container = document.getElementById('studentsList');
+            
+            if (!children || children.length === 0) {
+                container.innerHTML = '<p style="color: #9ca3af;">Không có dữ liệu học sinh</p>';
+                return;
+            }
+
+            container.innerHTML = children.map(child => `
+                <div class="student-card">
+                    <div class="student-name">${child.name}</div>
+                    <div class="student-info">
+                        <span>Lớp: ${child.class || 'N/A'}</span>
+                        ${child.attendance_today ? 
+                            `<span class="status-badge status-checked-in">
+                                ${child.attendance_today.status}
+                            </span>` : 
+                            `<span class="status-badge status-not-started">
+                                Chưa điểm danh
+                            </span>`
+                        }
+                    </div>
+                    ${child.current_trip ? 
+                        `<div class="student-info" style="margin-top: 8px;">
+                            <span>🚌 ${child.current_trip.status}</span>
+                        </div>` : ''
+                    }
+                </div>
+            `).join('');
+
+            // Load trip info nếu có
+            const firstChild = children[0];
+            if (firstChild.current_trip) {
+                currentTripId = firstChild.current_trip.id;
+                loadTripInfo(currentTripId);
+            }
+        }
+
+        async function loadTripInfo(tripId) {
+            try {
+                const response = await fetch(`${API_BASE}/tracking/trips/${tripId}/tracking/`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) throw new Error('Failed to load trip');
+
+                const data = await response.json();
+                displayTripInfo(data);
+                
+                // Update map
+                if (data.current_location) {
+                    updateBusLocation(data.current_location);
+                }
+
+                if (data.trip.route) {
+                    displayRoute(data);
+                }
+            } catch (error) {
+                console.error('Error loading trip:', error);
+            }
+        }
+
+        function displayTripInfo(data) {
+            const container = document.getElementById('tripInfo');
+            const trip = data.trip;
+
+            container.innerHTML = `
+                <div class="trip-info">
+                    <div class="trip-detail">
+                        <span class="trip-label">Tuyến:</span>
+                        <span class="trip-value">${trip.route_info.name}</span>
+                    </div>
+                    <div class="trip-detail">
+                        <span class="trip-label">Tài xế:</span>
+                        <span class="trip-value">${trip.driver_info.name}</span>
+                    </div>
+                    <div class="trip-detail">
+                        <span class="trip-label">Biển số:</span>
+                        <span class="trip-value">${trip.vehicle_info.plate_number}</span>
+                    </div>
+                    <div class="trip-detail">
+                        <span class="trip-label">Trạng thái:</span>
+                        <span class="trip-value">
+                            <span class="status-badge status-on-trip">
+                                ${trip.status}
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            `;
+
+            // Update ETA
+            if (data.next_stop && data.eta_minutes !== null) {
+                const etaContainer = document.getElementById('etaInfo');
+                etaContainer.innerHTML = `
+                    <div class="eta-card">
+                        <div class="eta-title">Điểm dừng tiếp theo</div>
+                        <div class="eta-value">${Math.round(data.eta_minutes)} phút</div>
+                        <div class="eta-subtitle">
+                            📍 ${data.next_stop.name}<br>
+                            🛣️ Còn ${data.distance_to_next_stop?.toFixed(1) || 'N/A'} km
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function updateBusLocation(location) {
+            if (!location || !location.lat || !location.lng) return;
+
+            const pos = [location.lat, location.lng];
+
+            if (busMarker) {
+                busMarker.setLatLng(pos);
+            } else {
+                busMarker = L.marker(pos, {
+                    icon: L.divIcon({
+                        html: '🚌',
+                        className: 'bus-marker',
+                        iconSize: [30, 30]
+                    })
+                }).addTo(map);
+            }
+
+            map.setView(pos, 15);
+        }
+
+        function displayRoute(data) {
+            // Clear existing
+            if (routePolyline) {
+                map.removeLayer(routePolyline);
+            }
+            stopMarkers.forEach(m => map.removeLayer(m));
+            stopMarkers = [];
+
+            // Draw route from recent locations
+            if (data.recent_locations && data.recent_locations.length > 0) {
+                const coords = data.recent_locations.map(l => [l.lat, l.lng]).reverse();
+                routePolyline = L.polyline(coords, {
+                    color: '#667eea',
+                    weight: 4,
+                    opacity: 0.7
+                }).addTo(map);
+            }
+        }
+
+        function handleAttendanceUpdate(data) {
+            showNotification(
+                `${data.title}: ${data.message}`,
+                'success'
+            );
+            loadChildrenStatus();
+        }
+
+        function handleTripUpdate(data) {
+            showNotification(data.message, 'info');
+            if (currentTripId) {
+                loadTripInfo(currentTripId);
+            }
+        }
+
+        function updateETA(data) {
+            const etaContainer = document.getElementById('etaInfo');
+            etaContainer.innerHTML = `
+                <div class="eta-card">
+                    <div class="eta-title">Điểm: ${data.stop_name}</div>
+                    <div class="eta-value">${Math.round(data.minutes_remaining)} phút</div>
+                    <div class="eta-subtitle">
+                        ⏰ Dự kiến: ${new Date(data.eta).toLocaleTimeString('vi-VN')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => notification.remove(), 300);
+            }, 5000);
+        }
+
+        function refreshData() {
+            if (currentTripId) {
+                loadTripInfo(currentTripId);
+            }
+            loadChildrenStatus();
+            showNotification('Đã cập nhật', 'success');
+        }
+
+        function updateTime() {
+            document.getElementById('currentTime').textContent = 
+                new Date().toLocaleTimeString('vi-VN');
+        }
+
+        // Initialize
+        initMap();
+        connectWebSocket();
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // Auto refresh every 30 seconds
+        setInterval(() => {
+            if (currentTripId) {
+                loadTripInfo(currentTripId);
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
