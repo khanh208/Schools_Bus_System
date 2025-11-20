@@ -14,7 +14,7 @@ django-environ==0.11.2
 # GIS
 geos==0.2.3
 
-# Real-time (WebSocket only)
+# Real-time (WebSocket)
 channels==4.0.0
 channels-redis==4.1.0
 uvicorn[standard]==0.24.0

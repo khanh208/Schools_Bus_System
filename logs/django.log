@@ -13609,3 +13609,15 @@ WARNING 2025-11-20 14:41:01,501 log Unauthorized: /api/tracking/trips/
 WARNING 2025-11-20 14:41:14,036 log Unauthorized: /api/tracking/trips/
 INFO 2025-11-20 15:32:26,066 autoreload E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\models.py changed, reloading.
 INFO 2025-11-20 15:32:30,925 autoreload Watching for file changes with StatReloader
+ERROR 2025-11-20 22:32:28,759 log Internal Server Error: /admin/routes/vehiclemaintenance/
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\middleware\security.py", line 47, in process_response
+    response.headers.setdefault("X-Content-Type-Options", "nosniff")
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute 'headers'

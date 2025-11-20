@@ -1,24 +1,21 @@
-# apps/reports/models.py - SIMPLIFIED
-# ============================================
-
+# apps/reports/models.py - ĐƠN GIẢN
 from django.db import models
 from django.utils import timezone
 
-
 class DailyReport(models.Model):
-    """Simple daily summary report"""
+    """Báo cáo tổng hợp hàng ngày"""
     report_date = models.DateField(unique=True, db_index=True)
     
-    # Trip Statistics
+    # Thống kê chuyến đi
     total_trips = models.IntegerField(default=0)
     completed_trips = models.IntegerField(default=0)
     
-    # Attendance Statistics
+    # Thống kê điểm danh
     total_students = models.IntegerField(default=0)
     total_present = models.IntegerField(default=0)
     total_absent = models.IntegerField(default=0)
     
-    # Performance
+    # Thống kê đúng giờ
     on_time_trips = models.IntegerField(default=0)
     delayed_trips = models.IntegerField(default=0)
     
@@ -45,23 +42,23 @@ class DailyReport(models.Model):
 
 
 class TripPerformance(models.Model):
-    """Basic performance metrics for trips"""
+    """Đánh giá hiệu suất chuyến đi"""
     trip = models.OneToOneField(
         'tracking.Trip', 
         on_delete=models.CASCADE, 
         related_name='performance'
     )
     
-    # Duration
-    scheduled_duration = models.IntegerField(null=True, blank=True)  # minutes
-    actual_duration = models.IntegerField(null=True, blank=True)  # minutes
+    # Thời gian
+    scheduled_duration = models.IntegerField(null=True, blank=True)  # phút
+    actual_duration = models.IntegerField(null=True, blank=True)  # phút
     delay_minutes = models.IntegerField(default=0)
     is_on_time = models.BooleanField(default=True)
     
-    # Attendance
+    # Điểm danh
     attendance_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     
-    # Distance
+    # Quãng đường
     distance_km = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     
     created_at = models.DateTimeField(auto_now_add=True)

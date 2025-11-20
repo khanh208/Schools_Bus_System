@@ -1,6 +1,4 @@
-# apps/notifications/models.py - SIMPLIFIED
-# ============================================
-
+# apps/notifications/models.py - ĐƠN GIẢN
 from django.db import models
 from django.utils import timezone
 
@@ -11,7 +9,7 @@ class NotificationType(models.TextChoices):
     SUCCESS = 'success', 'Success'
 
 class Notification(models.Model):
-    """Simple notification for parents - In-app only"""
+    """Thông báo in-app cho phụ huynh"""
     user = models.ForeignKey(
         'authentication.User', 
         on_delete=models.CASCADE, 
@@ -25,7 +23,6 @@ class Notification(models.Model):
         choices=NotificationType.choices
     )
     
-    # Status
     is_read = models.BooleanField(default=False)
     read_at = models.DateTimeField(null=True, blank=True)
     
@@ -46,14 +43,13 @@ class Notification(models.Model):
 
 
 class NotificationPreference(models.Model):
-    """User notification preferences"""
+    """Cài đặt thông báo của user"""
     user = models.OneToOneField(
         'authentication.User', 
         on_delete=models.CASCADE, 
         related_name='notification_preferences'
     )
     
-    # Core preferences only
     enable_notifications = models.BooleanField(default=True)
     attendance_notifications = models.BooleanField(default=True)
     trip_notifications = models.BooleanField(default=True)
