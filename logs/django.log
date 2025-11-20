@@ -12425,3 +12425,1187 @@ Traceback (most recent call last):
     response.headers.setdefault("X-Content-Type-Options", "nosniff")
     ^^^^^^^^^^^^^^^^
 AttributeError: 'coroutine' object has no attribute 'headers'
+WARNING 2025-11-20 14:37:28,154 base view's SessionViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\authentication\views.py", line 404, in get_queryset
+    return UserSession.objects.filter(user=self.request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,154 base view's StudentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 152, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's StudentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 152, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's StudentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 152, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's StudentNoteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 317, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's StudentDocumentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 344, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's EmergencyContactViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 369, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's RouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 104, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's RouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 104, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's RouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 104, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,164 base view's RouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 104, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,173 base view's StudentRouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 271, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,173 base view's AttendanceViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 39, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,173 base view's AttendanceExceptionViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 177, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,173 base view's AttendanceReportViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 224, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,173 base view's AttendanceAlertViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 277, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,173 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,181 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,181 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,184 base view's NotificationViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 32, in get_queryset
+    return Notification.objects.filter(user=self.request.user).order_by('-created_at')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,188 base view's NotificationPreferenceViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 79, in get_queryset
+    return NotificationPreference.objects.filter(user=self.request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,188 base view's SessionViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\authentication\views.py", line 404, in get_queryset
+    return UserSession.objects.filter(user=self.request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,188 base view's StudentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 152, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,188 base view's StudentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 152, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,198 base view's RouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 104, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,199 base view's StudentRouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 271, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,200 base view's AttendanceExceptionViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 177, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,201 base view's AttendanceExceptionViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 177, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,201 base view's AttendanceAlertViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 277, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,204 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,204 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,204 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,204 base view's NotificationViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 32, in get_queryset
+    return Notification.objects.filter(user=self.request.user).order_by('-created_at')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,204 base view's StudentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 152, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,204 base view's StudentNoteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 317, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,213 base view's StudentDocumentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 344, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,215 base view's EmergencyContactViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 369, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,216 base view's RouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 104, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,216 base view's StudentRouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 271, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,216 base view's AttendanceViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 39, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,216 base view's AttendanceExceptionViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 177, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,216 base view's AttendanceAlertViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 277, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,216 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,216 base view's NotificationViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 32, in get_queryset
+    return Notification.objects.filter(user=self.request.user).order_by('-created_at')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,216 base view's NotificationPreferenceViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 79, in get_queryset
+    return NotificationPreference.objects.filter(user=self.request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,232 base view's StudentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 152, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,233 base view's StudentNoteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 317, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,235 base view's StudentDocumentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 344, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,235 base view's EmergencyContactViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 369, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,235 base view's RouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 104, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,235 base view's StudentRouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 271, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,235 base view's AttendanceViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 39, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,235 base view's AttendanceExceptionViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 177, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,235 base view's AttendanceAlertViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 277, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,247 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,250 base view's NotificationViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 32, in get_queryset
+    return Notification.objects.filter(user=self.request.user).order_by('-created_at')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,250 base view's NotificationPreferenceViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 79, in get_queryset
+    return NotificationPreference.objects.filter(user=self.request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,255 base view's StudentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 152, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,255 base view's StudentNoteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 317, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,255 base view's StudentDocumentViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 344, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,255 base view's EmergencyContactViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\students\views.py", line 369, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,255 base view's RouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 104, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,255 base view's StudentRouteViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\routes\views.py", line 271, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,255 base view's AttendanceViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 39, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,264 base view's AttendanceExceptionViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 177, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,266 base view's AttendanceAlertViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\attendance\views.py", line 277, in get_queryset
+    if user.role == 'parent' and hasattr(user, 'parent_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,268 base view's TripViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\views.py", line 53, in get_queryset
+    if user.role == 'driver' and hasattr(user, 'driver_profile'):
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+WARNING 2025-11-20 14:37:28,269 base view's NotificationViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 32, in get_queryset
+    return Notification.objects.filter(user=self.request.user).order_by('-created_at')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+WARNING 2025-11-20 14:37:28,272 base view's NotificationPreferenceViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\auth\models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\notifications\views.py", line 79, in get_queryset
+    return NotificationPreference.objects.filter(user=self.request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\related_lookups.py", line 166, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x00000177C64A2990>.
+ERROR 2025-11-20 14:38:46,711 log Internal Server Error: /admin/tracking/trip/
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'get_attendance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\admin\utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\admin\utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Trip has no field named 'get_attendance'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\contrib\admin\utils.py", line 281, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\admin.py", line 73, in get_attendance
+    return format_html(
+           ^^^^^^^^^^^^
+  File "E:\NguyenQuocKhanh\DAMH\school_bus_system\venv\Lib\site-packages\django\utils\html.py", line 105, in format_html
+    return mark_safe(format_string.format(*args_safe, **kwargs_safe))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'SafeString'
+WARNING 2025-11-20 14:41:01,501 log Unauthorized: /api/tracking/trips/
+WARNING 2025-11-20 14:41:14,036 log Unauthorized: /api/tracking/trips/
+INFO 2025-11-20 15:32:26,066 autoreload E:\NguyenQuocKhanh\DAMH\school_bus_system\apps\tracking\models.py changed, reloading.
+INFO 2025-11-20 15:32:30,925 autoreload Watching for file changes with StatReloader
