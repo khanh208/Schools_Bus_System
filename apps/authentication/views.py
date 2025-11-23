@@ -287,8 +287,8 @@ class UserViewSet(viewsets.ModelViewSet):
         return Response({'message': 'Password reset successfully.'})
 
 
-class DriverViewSet(viewsets.ReadOnlyModelViewSet):
-    """ViewSet for viewing drivers"""
+class DriverViewSet(viewsets.ModelViewSet):  # <--- Đổi từ ReadOnlyModelViewSet sang ModelViewSet
+    """ViewSet for viewing and editing drivers"""
     queryset = Driver.objects.all()
     serializer_class = DriverSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -296,13 +296,17 @@ class DriverViewSet(viewsets.ReadOnlyModelViewSet):
     search_fields = ['user__full_name', 'license_number']
     ordering_fields = ['rating', 'experience_years']
     
+    def get_permissions(self):
+        # Chỉ Admin mới được quyền Thêm/Sửa/Xóa tài xế
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            return [permissions.IsAuthenticated(), IsAdmin()]
+        return [permissions.IsAuthenticated()]
+
     def get_queryset(self):
         queryset = super().get_queryset()
-        
         # Filter available drivers
         if self.request.query_params.get('available') == 'true':
             queryset = queryset.filter(status='available')
-        
         return queryset
     
     @action(detail=True, methods=['get'])
@@ -330,10 +334,17 @@ class ParentViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     search_fields = ['user__full_name', 'user__email', 'user__phone']
     
-    @action(detail=True, methods=['get'])
+    # --- SỬA ĐOẠN NÀY ---
+    # Đổi detail=True thành detail=False để URL là /parents/children/ thay vì /parents/{pk}/children/
+    @action(detail=False, methods=['get']) 
     def children(self, request, pk=None):
         """Get parent's children"""
-        parent = self.get_object()
+        # Lấy profile phụ huynh từ user đang đăng nhập
+        try:
+            parent = request.user.parent_profile
+        except Parent.DoesNotExist:
+            return Response({"error": "User is not a parent"}, status=400)
+            
         children = parent.students.filter(is_active=True)
         
         from apps.students.serializers import StudentListSerializer

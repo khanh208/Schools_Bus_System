@@ -50,7 +50,8 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1', '*'
 
 # Application definition
 INSTALLED_APPS = [
-    #'daphne',
+    'daphne',          # <--- Phải ở đầu tiên
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,7 +67,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'drf_yasg',
-    'channels',
     
     # Local apps
     'apps.authentication',
@@ -199,15 +199,20 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [(env('REDIS_HOST', default='127.0.0.1'), env.int('REDIS_PORT', default=6379))],
+            "hosts": [("127.0.0.1", 6379)],
         },
     },
 }
 # CORS - Thêm WebSocket
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # Chỉ cho dev
-CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=['http://localhost:3000'])
+CORS_ALLOW_ALL_ORIGINS = True  # Chỉ cho dev
+CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=['http://localhost:3000', "http://localhost:5173", "http://127.0.0.1:5173",])
 CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
 
+CORS_ALLOW_CREDENTIALS = True
 # Thêm WebSocket support
 CORS_ALLOW_HEADERS = [
     'accept',

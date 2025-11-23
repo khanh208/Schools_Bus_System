@@ -82,7 +82,8 @@ class RouteViewSet(viewsets.ModelViewSet):
     queryset = Route.objects.select_related(
         'area', 'vehicle', 'driver'
     ).all()
-    permission_classes = [IsAuthenticated, CanManageRoute]
+    # We rely on get_permissions for finer control, so base permission is IsAuthenticated
+    permission_classes = [IsAuthenticated] 
     pagination_class = StandardResultsSetPagination
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['route_type', 'area', 'is_active']
@@ -96,6 +97,13 @@ class RouteViewSet(viewsets.ModelViewSet):
             return RouteCreateUpdateSerializer
         return RouteDetailSerializer
     
+    def get_permissions(self):
+        # Admin can create, update, delete, and optimize
+        if self.action in ['create', 'update', 'partial_update', 'destroy', 'optimize']:
+            return [IsAuthenticated(), IsAdmin()]
+        # Others (Driver, Parent) can view
+        return [IsAuthenticated()]
+
     def get_queryset(self):
         queryset = super().get_queryset()
         user = self.request.user
@@ -104,13 +112,19 @@ class RouteViewSet(viewsets.ModelViewSet):
         if user.role == 'driver' and hasattr(user, 'driver_profile'):
             queryset = queryset.filter(driver=user.driver_profile)
         
-        # Parents can see routes they're interested in
+        # Parents can see routes they're interested in (related to their children)
         elif user.role == 'parent' and hasattr(user, 'parent_profile'):
             student_ids = user.parent_profile.students.values_list('id', flat=True)
             assigned_route_ids = StudentRoute.objects.filter(
                 student_id__in=student_ids,
                 is_active=True
             ).values_list('route_id', flat=True)
+            
+            # Allow seeing assigned routes OR active routes they might want to find
+            # Ideally, for "finding", we use a separate endpoint, but list view could be broad.
+            # For security, let's keep it broad for parents to see available routes? 
+            # Or stick to assigned. The requirement usually implies seeing assigned.
+            # The 'find_suitable' endpoint handles searching for new ones.
             queryset = queryset.filter(
                 Q(id__in=assigned_route_ids) | Q(is_active=True)
             ).distinct()
@@ -171,7 +185,7 @@ class RouteViewSet(viewsets.ModelViewSet):
                 'error': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['post'], permission_classes=[IsAuthenticated])
     def find_suitable(self, request):
         """Find suitable routes for parent based on location"""
         lat = request.data.get('lat')
@@ -183,7 +197,10 @@ class RouteViewSet(viewsets.ModelViewSet):
                 'error': 'lat and lng are required'
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        point = Point(float(lng), float(lat))
+        try:
+            point = Point(float(lng), float(lat))
+        except ValueError:
+            return Response({'error': 'Invalid coordinates'}, status=status.HTTP_400_BAD_REQUEST)
         
         # Find routes with stops near the location
         from django.contrib.gis.db.models.functions import Distance
@@ -206,6 +223,7 @@ class RouteViewSet(viewsets.ModelViewSet):
             'routes': serializer.data,
             'nearby_stops': [
                 {
+                    'stop_id': stop.id,
                     'route_id': stop.route_id,
                     'route_code': stop.route.route_code,
                     'stop_name': stop.stop_name,
@@ -259,8 +277,14 @@ class StudentRouteViewSet(viewsets.ModelViewSet):
     ordering_fields = ['start_date', 'created_at']
     
     def get_permissions(self):
-        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+        # Allow authenticated users (Parents) to create new assignments
+        if self.action == 'create':
+            return [IsAuthenticated()]
+        
+        # Only Admins can update/delete assignments to prevent unauthorized changes
+        if self.action in ['update', 'partial_update', 'destroy']:
             return [IsAuthenticated(), IsAdmin()]
+            
         return [IsAuthenticated()]
     
     def get_queryset(self):
@@ -280,6 +304,22 @@ class StudentRouteViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(route_id__in=route_ids)
         
         return queryset
+
+    def perform_create(self, serializer):
+        """
+        Automatically deactivate existing active assignments for this student 
+        before creating a new one to ensure only one active route exists.
+        """
+        student = serializer.validated_data['student']
+        
+        # Deactivate all currently active assignments for this student
+        StudentRoute.objects.filter(
+            student=student, 
+            is_active=True
+        ).update(is_active=False)
+        
+        # Save the new assignment
+        serializer.save()
     
     @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated, IsAdmin])
     def deactivate(self, request, pk=None):

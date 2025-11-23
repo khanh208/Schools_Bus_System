@@ -1,0 +1,3950 @@
+[
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 1,
+  "fields": {
+    "user": null,
+    "jti": "e635c13d4fec4ff3bf66b1e718374aef",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MjE4MSwiaWF0IjoxNzYzNjU3MzgxLCJqdGkiOiJlNjM1YzEzZDRmZWM0ZmYzYmY2NmIxZTcxODM3NGFlZiIsInVzZXJfaWQiOjF9.CtvtJyqA10uim_Tc170vmnrNvYMnvlibjjOfih9J-Ds",
+    "created_at": "2025-11-20T16:49:41.256Z",
+    "expires_at": "2025-11-27T16:49:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 2,
+  "fields": {
+    "user": null,
+    "jti": "7ed13ed7091f4643a821d36595706ff0",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MjE4MSwiaWF0IjoxNzYzNjU3MzgxLCJqdGkiOiI3ZWQxM2VkNzA5MWY0NjQzYTgyMWQzNjU5NTcwNmZmMCIsInVzZXJfaWQiOjF9.gRCkHLTMp1UvdVxruFo7aXeFBYQPDrUeYPtLYQ6eztE",
+    "created_at": "2025-11-20T16:49:41.826Z",
+    "expires_at": "2025-11-27T16:49:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 3,
+  "fields": {
+    "user": null,
+    "jti": "6fbad0a2e66a4e0ba133f9bda4616207",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MjIwNSwiaWF0IjoxNzYzNjU3NDA1LCJqdGkiOiI2ZmJhZDBhMmU2NmE0ZTBiYTEzM2Y5YmRhNDYxNjIwNyIsInVzZXJfaWQiOjF9.CMICrHZO2AfZ3VONunmtQojrFQbNTM0RTgfl5gsUkac",
+    "created_at": "2025-11-20T16:50:05.120Z",
+    "expires_at": "2025-11-27T16:50:05Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 4,
+  "fields": {
+    "user": null,
+    "jti": "66056965fabd4fd8b24d2c0b195a1c79",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MjM4NSwiaWF0IjoxNzYzNjU3NTg1LCJqdGkiOiI2NjA1Njk2NWZhYmQ0ZmQ4YjI0ZDJjMGIxOTVhMWM3OSIsInVzZXJfaWQiOjF9.Epy9d1l7M0xV6FxmVgnowdXeFPg8QaVue6d4pMVn58I",
+    "created_at": "2025-11-20T16:53:05.224Z",
+    "expires_at": "2025-11-27T16:53:05Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 5,
+  "fields": {
+    "user": null,
+    "jti": "c9fe2b2d62cd4d1a98dacdb6585e4c82",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MjQyNSwiaWF0IjoxNzYzNjU3NjI1LCJqdGkiOiJjOWZlMmIyZDYyY2Q0ZDFhOThkYWNkYjY1ODVlNGM4MiIsInVzZXJfaWQiOjJ9.LhE_A0_-hj_18cpbB_yfehEMVDx6qcni8G3QVd9cZdc",
+    "created_at": "2025-11-20T16:53:45.385Z",
+    "expires_at": "2025-11-27T16:53:45Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 6,
+  "fields": {
+    "user": null,
+    "jti": "2993a613a32946e49e692266cc9abdff",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2Mjg5OSwiaWF0IjoxNzYzNjU4MDk5LCJqdGkiOiIyOTkzYTYxM2EzMjk0NmU0OWU2OTIyNjZjYzlhYmRmZiIsInVzZXJfaWQiOjF9.PDMJ-22rW43b_iuZmttEUJE5Y3oSgLmF4o-Cesz6Fzs",
+    "created_at": "2025-11-20T17:01:39.142Z",
+    "expires_at": "2025-11-27T17:01:39Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 7,
+  "fields": {
+    "user": null,
+    "jti": "3e9db50dbd534cd08afa5f73bd47d9de",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MjkxNywiaWF0IjoxNzYzNjU4MTE3LCJqdGkiOiIzZTlkYjUwZGJkNTM0Y2QwOGFmYTVmNzNiZDQ3ZDlkZSIsInVzZXJfaWQiOjF9.2wmTJFknjsqU5ulT8nmw3bi4l5WVsPXpqg5E_Dfn_H0",
+    "created_at": "2025-11-20T17:01:57.109Z",
+    "expires_at": "2025-11-27T17:01:57Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 8,
+  "fields": {
+    "user": null,
+    "jti": "94bed1c45d68484f846b2970c8edb875",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2Mjk1MCwiaWF0IjoxNzYzNjU4MTUwLCJqdGkiOiI5NGJlZDFjNDVkNjg0ODRmODQ2YjI5NzBjOGVkYjg3NSIsInVzZXJfaWQiOjJ9.bdSWnr-eas9FUMHjzQUejamaMa-JVD2Bnr7vNgmywGU",
+    "created_at": "2025-11-20T17:02:30.854Z",
+    "expires_at": "2025-11-27T17:02:30Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 9,
+  "fields": {
+    "user": null,
+    "jti": "82b67a936ff14193a851e2f13bdd8efd",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MzEwMywiaWF0IjoxNzYzNjU4MzAzLCJqdGkiOiI4MmI2N2E5MzZmZjE0MTkzYTg1MWUyZjEzYmRkOGVmZCIsInVzZXJfaWQiOjF9.lsezIzBfOzeoOivPdi3LvCXr4b0JnbvZXpHzsBD9eVE",
+    "created_at": "2025-11-20T17:05:03.559Z",
+    "expires_at": "2025-11-27T17:05:03Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 10,
+  "fields": {
+    "user": null,
+    "jti": "43fe461bec4e4fb2b4eda29ce70da471",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MzMyNywiaWF0IjoxNzYzNjU4NTI3LCJqdGkiOiI0M2ZlNDYxYmVjNGU0ZmIyYjRlZGEyOWNlNzBkYTQ3MSIsInVzZXJfaWQiOjF9.mkcrO6EjbfNSH8xfgHShZ5VBLK46wTTsVioUo8TsJxg",
+    "created_at": "2025-11-20T17:08:47.490Z",
+    "expires_at": "2025-11-27T17:08:47Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 11,
+  "fields": {
+    "user": null,
+    "jti": "24a33e130ef14630a4cc48b00e11b93a",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2MzQxNCwiaWF0IjoxNzYzNjU4NjE0LCJqdGkiOiIyNGEzM2UxMzBlZjE0NjMwYTRjYzQ4YjAwZTExYjkzYSIsInVzZXJfaWQiOjJ9.vcf_NNRw4hm0smVM8oRS_RxCZu8FY2sJpbIT2do0UXs",
+    "created_at": "2025-11-20T17:10:14.840Z",
+    "expires_at": "2025-11-27T17:10:14Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 12,
+  "fields": {
+    "user": null,
+    "jti": "13fae5bbcf6d4f6a91aabf3b280d4de6",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2NDE3MSwiaWF0IjoxNzYzNjU5MzcxLCJqdGkiOiIxM2ZhZTViYmNmNmQ0ZjZhOTFhYWJmM2IyODBkNGRlNiIsInVzZXJfaWQiOjF9.lJJoOVHpk1KWr7iuK-fkuJJIvZW-o94-CJkEd9RI96o",
+    "created_at": "2025-11-20T17:22:51.282Z",
+    "expires_at": "2025-11-27T17:22:51Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 13,
+  "fields": {
+    "user": null,
+    "jti": "ff4b88233f544ceaa6d3a090530803e9",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2NjU1OCwiaWF0IjoxNzYzNjYxNzU4LCJqdGkiOiJmZjRiODgyMzNmNTQ0Y2VhYTZkM2EwOTA1MzA4MDNlOSIsInVzZXJfaWQiOjR9.Blys1zHyfx5-f-5QW-pALFOuKt6wleoNTDm8-hBzIeQ",
+    "created_at": "2025-11-20T18:02:38.958Z",
+    "expires_at": "2025-11-27T18:02:38Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 14,
+  "fields": {
+    "user": null,
+    "jti": "02364bc220964f8684dd53e4c61f5c4e",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2NzUzNCwiaWF0IjoxNzYzNjYyNzM0LCJqdGkiOiIwMjM2NGJjMjIwOTY0Zjg2ODRkZDUzZTRjNjFmNWM0ZSIsInVzZXJfaWQiOjR9.SxxZlKsvv1CL7uUbVpCaKTXEQxYCqgLHjRwHXyVcjfY",
+    "created_at": "2025-11-20T18:18:54.890Z",
+    "expires_at": "2025-11-27T18:18:54Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 15,
+  "fields": {
+    "user": null,
+    "jti": "683ef76c74ec4113a99e1bf46b293c31",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2NzU1NywiaWF0IjoxNzYzNjYyNzU3LCJqdGkiOiI2ODNlZjc2Yzc0ZWM0MTEzYTk5ZTFiZjQ2YjI5M2MzMSIsInVzZXJfaWQiOjJ9.mGpeBWCxKCJfeKheLgCf5YNjTh3uQc5WhL311IcrJa4",
+    "created_at": "2025-11-20T18:19:17.484Z",
+    "expires_at": "2025-11-27T18:19:17Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 16,
+  "fields": {
+    "user": null,
+    "jti": "0ecf16a2c1d94cf7a811038febaba551",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2NzkxNCwiaWF0IjoxNzYzNjYzMTE0LCJqdGkiOiIwZWNmMTZhMmMxZDk0Y2Y3YTgxMTAzOGZlYmFiYTU1MSIsInVzZXJfaWQiOjJ9.o3-3mhuY2uh11mf2-PgCG3NWHUZVF2cJuWhvH5MWurM",
+    "created_at": "2025-11-20T18:25:14.155Z",
+    "expires_at": "2025-11-27T18:25:14Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 17,
+  "fields": {
+    "user": null,
+    "jti": "2622c8bf1af04fe5a73b769ce0a613ba",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODExMCwiaWF0IjoxNzYzNjYzMzEwLCJqdGkiOiIyNjIyYzhiZjFhZjA0ZmU1YTczYjc2OWNlMGE2MTNiYSIsInVzZXJfaWQiOjJ9.0hKM7UaBgUEBpLZw9GNF9Dc8eu8qBitqiaItn272dgY",
+    "created_at": "2025-11-20T18:28:30.852Z",
+    "expires_at": "2025-11-27T18:28:30Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 18,
+  "fields": {
+    "user": null,
+    "jti": "5a3a67a6ae284e388e48f18908b272b3",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODE3NSwiaWF0IjoxNzYzNjYzMzc1LCJqdGkiOiI1YTNhNjdhNmFlMjg0ZTM4OGU0OGYxODkwOGIyNzJiMyIsInVzZXJfaWQiOjJ9.6SDWYv30n2OHuoGt8e9k_DifbajkWyc95W2QTfB6zEk",
+    "created_at": "2025-11-20T18:29:35.091Z",
+    "expires_at": "2025-11-27T18:29:35Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 19,
+  "fields": {
+    "user": null,
+    "jti": "acd4f10000fd44c49fb6bd0af2e446c8",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODE5NiwiaWF0IjoxNzYzNjYzMzk2LCJqdGkiOiJhY2Q0ZjEwMDAwZmQ0NGM0OWZiNmJkMGFmMmU0NDZjOCIsInVzZXJfaWQiOjJ9.EaMCQO-KvlxwKNPY2V9YE4YerbmmwCVlXiRIGDrldGU",
+    "created_at": "2025-11-20T18:29:56.180Z",
+    "expires_at": "2025-11-27T18:29:56Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 20,
+  "fields": {
+    "user": null,
+    "jti": "ff73b0310b444740a6167291b2ca2664",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODMzNiwiaWF0IjoxNzYzNjYzNTM2LCJqdGkiOiJmZjczYjAzMTBiNDQ0NzQwYTYxNjcyOTFiMmNhMjY2NCIsInVzZXJfaWQiOjJ9.97_6_9FaGAmbd4bPmGDM20glqH3X9FNTvEJd2kVjTCQ",
+    "created_at": "2025-11-20T18:32:16.757Z",
+    "expires_at": "2025-11-27T18:32:16Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 21,
+  "fields": {
+    "user": null,
+    "jti": "e21244302d23462b841a012910e86cf3",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODM2NSwiaWF0IjoxNzYzNjYzNTY1LCJqdGkiOiJlMjEyNDQzMDJkMjM0NjJiODQxYTAxMjkxMGU4NmNmMyIsInVzZXJfaWQiOjJ9.varnocaVb564Eun_n42MiK0BD8pALcbnmjkFECowW1A",
+    "created_at": "2025-11-20T18:32:45.404Z",
+    "expires_at": "2025-11-27T18:32:45Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 22,
+  "fields": {
+    "user": null,
+    "jti": "8167493acfb944eab3e865f1f381b88b",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODQyMSwiaWF0IjoxNzYzNjYzNjIxLCJqdGkiOiI4MTY3NDkzYWNmYjk0NGVhYjNlODY1ZjFmMzgxYjg4YiIsInVzZXJfaWQiOjJ9.qj9zKuuzxpL100fBL9vC0YMiqszmnFFI9lcGExxG6nI",
+    "created_at": "2025-11-20T18:33:41.103Z",
+    "expires_at": "2025-11-27T18:33:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 23,
+  "fields": {
+    "user": null,
+    "jti": "68851b06f4304d909f3f4138c498eb2a",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODQzNSwiaWF0IjoxNzYzNjYzNjM1LCJqdGkiOiI2ODg1MWIwNmY0MzA0ZDkwOWYzZjQxMzhjNDk4ZWIyYSIsInVzZXJfaWQiOjJ9.bWDWl7PDa0bg2dH5gvNjKl9dWciE2HQuJb71FTPpK2Y",
+    "created_at": "2025-11-20T18:33:55.408Z",
+    "expires_at": "2025-11-27T18:33:55Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 24,
+  "fields": {
+    "user": null,
+    "jti": "9dbe45fdf51a4b42a8ec27c960771b21",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODU3OCwiaWF0IjoxNzYzNjYzNzc4LCJqdGkiOiI5ZGJlNDVmZGY1MWE0YjQyYThlYzI3Yzk2MDc3MWIyMSIsInVzZXJfaWQiOjJ9.y53A8lSkTa6UPH8uFGPjuArFJTtyoPTr7qgurPbvrBg",
+    "created_at": "2025-11-20T18:36:18.738Z",
+    "expires_at": "2025-11-27T18:36:18Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 25,
+  "fields": {
+    "user": null,
+    "jti": "3fdb6cb83ccf4091857136f299cd860a",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2ODY5MSwiaWF0IjoxNzYzNjYzODkxLCJqdGkiOiIzZmRiNmNiODNjY2Y0MDkxODU3MTM2ZjI5OWNkODYwYSIsInVzZXJfaWQiOjJ9.YbMwWX_Ulm81HMb5xYV-Aa7JoSKMLO03FEpXJGOYR5o",
+    "created_at": "2025-11-20T18:38:11.191Z",
+    "expires_at": "2025-11-27T18:38:11Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 26,
+  "fields": {
+    "user": null,
+    "jti": "b8b03642932448139bacb842e514bde0",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2OTE2OSwiaWF0IjoxNzYzNjY0MzY5LCJqdGkiOiJiOGIwMzY0MjkzMjQ0ODEzOWJhY2I4NDJlNTE0YmRlMCIsInVzZXJfaWQiOjJ9.BFf7G9SRPrC8c1eQfDcARFKo9f3_6P1LntJR7voycEk",
+    "created_at": "2025-11-20T18:46:09.503Z",
+    "expires_at": "2025-11-27T18:46:09Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 27,
+  "fields": {
+    "user": null,
+    "jti": "e7ce579d67f942229e2622e274501175",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2OTI4MywiaWF0IjoxNzYzNjY0NDgzLCJqdGkiOiJlN2NlNTc5ZDY3Zjk0MjIyOWUyNjIyZTI3NDUwMTE3NSIsInVzZXJfaWQiOjJ9.KQex2L7PHJQQ83XFeBCEs6A4piKREjUZIyfed6F_Se0",
+    "created_at": "2025-11-20T18:48:03.505Z",
+    "expires_at": "2025-11-27T18:48:03Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 28,
+  "fields": {
+    "user": null,
+    "jti": "6547e3adb0f148fea5317731941553be",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDI2OTcxOCwiaWF0IjoxNzYzNjY0OTE4LCJqdGkiOiI2NTQ3ZTNhZGIwZjE0OGZlYTUzMTc3MzE5NDE1NTNiZSIsInVzZXJfaWQiOjJ9.aFCE-T0vKJC4qQWT2HjV-orm98smIqxwzbn45UZcQ8s",
+    "created_at": "2025-11-20T18:55:18.631Z",
+    "expires_at": "2025-11-27T18:55:18Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 29,
+  "fields": {
+    "user": null,
+    "jti": "2b90042265044c17907f4630822b46ca",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDMwODA2NywiaWF0IjoxNzYzNzAzMjY3LCJqdGkiOiIyYjkwMDQyMjY1MDQ0YzE3OTA3ZjQ2MzA4MjJiNDZjYSIsInVzZXJfaWQiOjJ9.7on1WJ-cayFVI-gN4UDDoU-nZcry5swrlz54nnmxeeY",
+    "created_at": "2025-11-21T05:34:27.464Z",
+    "expires_at": "2025-11-28T05:34:27Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 30,
+  "fields": {
+    "user": null,
+    "jti": "b4db5f63845d4b188b5d4a17e128aa43",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDMwODk4NiwiaWF0IjoxNzYzNzA0MTg2LCJqdGkiOiJiNGRiNWY2Mzg0NWQ0YjE4OGI1ZDRhMTdlMTI4YWE0MyIsInVzZXJfaWQiOjJ9.xXc6D-tL-l0Xebkxm9_I2aVuVJ-lrkTWPqBSEZPjQQI",
+    "created_at": "2025-11-21T05:49:46.169Z",
+    "expires_at": "2025-11-28T05:49:46Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 31,
+  "fields": {
+    "user": null,
+    "jti": "55450df13be349abbd34c37b8d16c6bd",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDMwOTEzMywiaWF0IjoxNzYzNzA0MzMzLCJqdGkiOiI1NTQ1MGRmMTNiZTM0OWFiYmQzNGMzN2I4ZDE2YzZiZCIsInVzZXJfaWQiOjF9.KZZsbuBE_wj1IYki_H9lJ2ooA5R4L-ktUVTSWvFrTI4",
+    "created_at": "2025-11-21T05:52:13.488Z",
+    "expires_at": "2025-11-28T05:52:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 32,
+  "fields": {
+    "user": 9,
+    "jti": "318207444d09415f9cb25ae2279a11a2",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDMwOTY0NSwiaWF0IjoxNzYzNzA0ODQ1LCJqdGkiOiIzMTgyMDc0NDRkMDk0MTVmOWNiMjVhZTIyNzlhMTFhMiIsInVzZXJfaWQiOjl9.YnfQhwEW10q2etZmp80wiEDzpRJ3Y6c7Ql_1F738HFk",
+    "created_at": "2025-11-21T06:00:45.000Z",
+    "expires_at": "2025-11-28T06:00:45Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 33,
+  "fields": {
+    "user": 9,
+    "jti": "9574da957492468286d1e2802afdb28a",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDMxMDE5NiwiaWF0IjoxNzYzNzA1Mzk2LCJqdGkiOiI5NTc0ZGE5NTc0OTI0NjgyODZkMWUyODAyYWZkYjI4YSIsInVzZXJfaWQiOjl9.ZBId_OIB8e_-jweEF9usUiE8cucvPzfpRM7ElxtrL9A",
+    "created_at": "2025-11-21T06:09:56.996Z",
+    "expires_at": "2025-11-28T06:09:56Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 34,
+  "fields": {
+    "user": 6,
+    "jti": "d598e8cf3d89437cad3a1bbbaa6ab845",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDMxMjk0NCwiaWF0IjoxNzYzNzA4MTQ0LCJqdGkiOiJkNTk4ZThjZjNkODk0MzdjYWQzYTFiYmJhYTZhYjg0NSIsInVzZXJfaWQiOjZ9.MZPxLPtcghaZFiv_FYhTtKbDuenrsO9tSK9ZhwIIiGQ",
+    "created_at": "2025-11-21T06:55:44.848Z",
+    "expires_at": "2025-11-28T06:55:44Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 35,
+  "fields": {
+    "user": 9,
+    "jti": "4f52d8f8a92c42b68a028f26b5f3f63f",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDMxNTA4OCwiaWF0IjoxNzYzNzEwMjg4LCJqdGkiOiI0ZjUyZDhmOGE5MmM0MmI2OGEwMjhmMjZiNWYzZjYzZiIsInVzZXJfaWQiOjl9.ChrNAfR229fn_zSIAejbrBiB-TKXjYp8EFIQaY3BL7E",
+    "created_at": "2025-11-21T07:31:28.388Z",
+    "expires_at": "2025-11-28T07:31:28Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 36,
+  "fields": {
+    "user": 6,
+    "jti": "84186e61455c415f879f30a98ee02275",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDMxNTE5MiwiaWF0IjoxNzYzNzEwMzkyLCJqdGkiOiI4NDE4NmU2MTQ1NWM0MTVmODc5ZjMwYTk4ZWUwMjI3NSIsInVzZXJfaWQiOjZ9.W5s6t23_nveJCnDnKHeaHOj9MoB3ptHxcB8GcVCX1lI",
+    "created_at": "2025-11-21T07:33:12.642Z",
+    "expires_at": "2025-11-28T07:33:12Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 37,
+  "fields": {
+    "user": 9,
+    "jti": "e7d48878dfb841d09ccfd7351ef5cd09",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM1OTY0OSwiaWF0IjoxNzYzNzU0ODQ5LCJqdGkiOiJlN2Q0ODg3OGRmYjg0MWQwOWNjZmQ3MzUxZWY1Y2QwOSIsInVzZXJfaWQiOjl9.DeUcNGkaAF4kj7fJZBZBLaBucRfa4ModhOeICs4yr5c",
+    "created_at": "2025-11-21T19:54:09.700Z",
+    "expires_at": "2025-11-28T19:54:09Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 38,
+  "fields": {
+    "user": 6,
+    "jti": "eea63c3155f144fd9bb75e1ba3b7c3c8",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM1OTgyNiwiaWF0IjoxNzYzNzU1MDI2LCJqdGkiOiJlZWE2M2MzMTU1ZjE0NGZkOWJiNzVlMWJhM2I3YzNjOCIsInVzZXJfaWQiOjZ9.uxFJMz9ZRo09A35hp-M45gGoC9AUI0XW0ShXme9sqCw",
+    "created_at": "2025-11-21T19:57:06.058Z",
+    "expires_at": "2025-11-28T19:57:06Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 39,
+  "fields": {
+    "user": 6,
+    "jti": "97d649320c34430eaa29dd38cbaeaeb6",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MDE4MCwiaWF0IjoxNzYzNzU1MzgwLCJqdGkiOiI5N2Q2NDkzMjBjMzQ0MzBlYWEyOWRkMzhjYmFlYWViNiIsInVzZXJfaWQiOjZ9.71mKiJBc6mwQtIdHzXJlxuYgKOsYZNnOTpKFfMLUblI",
+    "created_at": "2025-11-21T20:03:00.827Z",
+    "expires_at": "2025-11-28T20:03:00Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 40,
+  "fields": {
+    "user": 6,
+    "jti": "cd271e9b8d3e49d3acfa376b559291b8",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MDQwMSwiaWF0IjoxNzYzNzU1NjAxLCJqdGkiOiJjZDI3MWU5YjhkM2U0OWQzYWNmYTM3NmI1NTkyOTFiOCIsInVzZXJfaWQiOjZ9.ONioJo_lqOnrKv8oVdUWlEdAQb149IRRW0Y7HpjlBVc",
+    "created_at": "2025-11-21T20:06:41.393Z",
+    "expires_at": "2025-11-28T20:06:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 41,
+  "fields": {
+    "user": 9,
+    "jti": "25485afc470b4b86938a224ebf52e8de",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MDc2NCwiaWF0IjoxNzYzNzU1OTY0LCJqdGkiOiIyNTQ4NWFmYzQ3MGI0Yjg2OTM4YTIyNGViZjUyZThkZSIsInVzZXJfaWQiOjl9.-S0-rWAumorWDuyhEO1z_52XTPbxrFSzaUnZdCD4O8M",
+    "created_at": "2025-11-21T20:12:44.954Z",
+    "expires_at": "2025-11-28T20:12:44Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 42,
+  "fields": {
+    "user": 5,
+    "jti": "77affaa5fad849029c22f0c1328f605d",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MTAzMywiaWF0IjoxNzYzNzU2MjMzLCJqdGkiOiI3N2FmZmFhNWZhZDg0OTAyOWMyMmYwYzEzMjhmNjA1ZCIsInVzZXJfaWQiOjV9.Rei4-Qt_G4sXdSM8_JAWYbnOWlTy8mZIYelgiJRagLI",
+    "created_at": "2025-11-21T20:17:13.289Z",
+    "expires_at": "2025-11-28T20:17:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 43,
+  "fields": {
+    "user": 7,
+    "jti": "b336e96255f54d489a3a529f0758c5f2",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MTExMCwiaWF0IjoxNzYzNzU2MzEwLCJqdGkiOiJiMzM2ZTk2MjU1ZjU0ZDQ4OWEzYTUyOWYwNzU4YzVmMiIsInVzZXJfaWQiOjd9.vID7MazFozk1BQCBrCJei-USVMSmssDKetnjItg_BEI",
+    "created_at": "2025-11-21T20:18:30.405Z",
+    "expires_at": "2025-11-28T20:18:30Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 44,
+  "fields": {
+    "user": 10,
+    "jti": "67b21f839a834b66b0e6aaaeed1a33d1",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MTI3OCwiaWF0IjoxNzYzNzU2NDc4LCJqdGkiOiI2N2IyMWY4MzlhODM0YjY2YjBlNmFhYWVlZDFhMzNkMSIsInVzZXJfaWQiOjEwfQ.wgdC8vW8G4ZxK3O-t3Da_UBOAOi7BIw6UoMHFBy5z_Q",
+    "created_at": "2025-11-21T20:21:18.084Z",
+    "expires_at": "2025-11-28T20:21:18Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 45,
+  "fields": {
+    "user": 8,
+    "jti": "1d9b4226b3ce4ff2961982efac09a122",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MTM2MSwiaWF0IjoxNzYzNzU2NTYxLCJqdGkiOiIxZDliNDIyNmIzY2U0ZmYyOTYxOTgyZWZhYzA5YTEyMiIsInVzZXJfaWQiOjh9.J_Xttxor3TAkln2smLjKinhTKT5e7HXLaPU_C0Na3y4",
+    "created_at": "2025-11-21T20:22:41.372Z",
+    "expires_at": "2025-11-28T20:22:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 46,
+  "fields": {
+    "user": 5,
+    "jti": "dff83f2f5d634cbfb4726485698fdfef",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MTQyNCwiaWF0IjoxNzYzNzU2NjI0LCJqdGkiOiJkZmY4M2YyZjVkNjM0Y2JmYjQ3MjY0ODU2OThmZGZlZiIsInVzZXJfaWQiOjV9.4kDU_l7Z47Aozb2JVcstAAW5TcUhDyD2fY0TKXsIZrE",
+    "created_at": "2025-11-21T20:23:44.882Z",
+    "expires_at": "2025-11-28T20:23:44Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 47,
+  "fields": {
+    "user": 10,
+    "jti": "46c957e1859449fb8a7214264b5f4cfe",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MTQ1NSwiaWF0IjoxNzYzNzU2NjU1LCJqdGkiOiI0NmM5NTdlMTg1OTQ0OWZiOGE3MjE0MjY0YjVmNGNmZSIsInVzZXJfaWQiOjEwfQ.1Xphf35POhUu1_3gsOB8EhgYQBpVXQDe87juPHrDKXQ",
+    "created_at": "2025-11-21T20:24:15.297Z",
+    "expires_at": "2025-11-28T20:24:15Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 48,
+  "fields": {
+    "user": 7,
+    "jti": "37b174116127498d905ccecb0afb998e",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MTU4NiwiaWF0IjoxNzYzNzU2Nzg2LCJqdGkiOiIzN2IxNzQxMTYxMjc0OThkOTA1Y2NlY2IwYWZiOTk4ZSIsInVzZXJfaWQiOjd9._cByIpz1sOADfOqO6QuczFjQwWTjLOxHxFX6dcM9B2A",
+    "created_at": "2025-11-21T20:26:26.701Z",
+    "expires_at": "2025-11-28T20:26:26Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 49,
+  "fields": {
+    "user": 12,
+    "jti": "6e4f3d5d682a411aa156f6e8b5010872",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MTYxNiwiaWF0IjoxNzYzNzU2ODE2LCJqdGkiOiI2ZTRmM2Q1ZDY4MmE0MTFhYTE1NmY2ZThiNTAxMDg3MiIsInVzZXJfaWQiOjEyfQ.scSFoR6y3Y2HxQa3DC8n4Os4tr6HsJy12_xirF-bLjI",
+    "created_at": "2025-11-21T20:26:56.299Z",
+    "expires_at": "2025-11-28T20:26:56Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 50,
+  "fields": {
+    "user": 12,
+    "jti": "79984d7254184008b18cf617af30c86d",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MjcxNywiaWF0IjoxNzYzNzU3OTE3LCJqdGkiOiI3OTk4NGQ3MjU0MTg0MDA4YjE4Y2Y2MTdhZjMwYzg2ZCIsInVzZXJfaWQiOjEyfQ.GwJN2kbdHSswEIKwyDpLE5H2my8dItQWVBPorz5kir4",
+    "created_at": "2025-11-21T20:45:17.648Z",
+    "expires_at": "2025-11-28T20:45:17Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 51,
+  "fields": {
+    "user": 7,
+    "jti": "0ac88ec0ff62401e82520d70202eafdd",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2MzAxNywiaWF0IjoxNzYzNzU4MjE3LCJqdGkiOiIwYWM4OGVjMGZmNjI0MDFlODI1MjBkNzAyMDJlYWZkZCIsInVzZXJfaWQiOjd9.pZnIr50Gy06j0UOA35FBCaB_xjxtkUDVeQ-DrmwkOqE",
+    "created_at": "2025-11-21T20:50:17.356Z",
+    "expires_at": "2025-11-28T20:50:17Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 52,
+  "fields": {
+    "user": 8,
+    "jti": "281aafb955f24b4fb6860a0fb5a060ec",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NDAxOCwiaWF0IjoxNzYzNzU5MjE4LCJqdGkiOiIyODFhYWZiOTU1ZjI0YjRmYjY4NjBhMGZiNWEwNjBlYyIsInVzZXJfaWQiOjh9.hX9wt9akadh76ZsMtg4qxxtGhahJpK9VFZ0xGmKN0Sk",
+    "created_at": "2025-11-21T21:06:58.582Z",
+    "expires_at": "2025-11-28T21:06:58Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 53,
+  "fields": {
+    "user": 11,
+    "jti": "b63f0c544a4f4bd1a784148d7c0b69ec",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NDY4OSwiaWF0IjoxNzYzNzU5ODg5LCJqdGkiOiJiNjNmMGM1NDRhNGY0YmQxYTc4NDE0OGQ3YzBiNjllYyIsInVzZXJfaWQiOjExfQ.DoNKrnu7vP8W9dExNXAU8CPGznQ9ATTJKweF5XXgKKc",
+    "created_at": "2025-11-21T21:18:09.492Z",
+    "expires_at": "2025-11-28T21:18:09Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 54,
+  "fields": {
+    "user": 9,
+    "jti": "a0444641973d4efbba47065e0303e8ed",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NDk2NiwiaWF0IjoxNzYzNzYwMTY2LCJqdGkiOiJhMDQ0NDY0MTk3M2Q0ZWZiYmE0NzA2NWUwMzAzZThlZCIsInVzZXJfaWQiOjl9.ej8CzzGJ5UcHpfrgeQAKE3P8nlbJO3cf60ZjaZCeYLw",
+    "created_at": "2025-11-21T21:22:46.958Z",
+    "expires_at": "2025-11-28T21:22:46Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 55,
+  "fields": {
+    "user": 10,
+    "jti": "327d183405f942b685ae826b8a91c5f1",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NjI1MiwiaWF0IjoxNzYzNzYxNDUyLCJqdGkiOiIzMjdkMTgzNDA1Zjk0MmI2ODVhZTgyNmI4YTkxYzVmMSIsInVzZXJfaWQiOjEwfQ.fF6DhajuBT3PZnT1_GbMOQ235SOTMixwxzEmCTMujzo",
+    "created_at": "2025-11-21T21:44:12.610Z",
+    "expires_at": "2025-11-28T21:44:12Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 56,
+  "fields": {
+    "user": 8,
+    "jti": "bd797ae29aa547c7a6dafa39ea38dcf5",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NjMyNCwiaWF0IjoxNzYzNzYxNTI0LCJqdGkiOiJiZDc5N2FlMjlhYTU0N2M3YTZkYWZhMzllYTM4ZGNmNSIsInVzZXJfaWQiOjh9.nVXqMjAZ83_IFRWCno1t2PHoH5z_1VSOreAjXj1KeC0",
+    "created_at": "2025-11-21T21:45:24.633Z",
+    "expires_at": "2025-11-28T21:45:24Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 57,
+  "fields": {
+    "user": 11,
+    "jti": "cf5dece6f007412a8088f3e9671a5580",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NjM0NiwiaWF0IjoxNzYzNzYxNTQ2LCJqdGkiOiJjZjVkZWNlNmYwMDc0MTJhODA4OGYzZTk2NzFhNTU4MCIsInVzZXJfaWQiOjExfQ.gmH32LsFVGCkeTazzJ775PMTphrzo8Q6zHodJ4-D3-s",
+    "created_at": "2025-11-21T21:45:46.910Z",
+    "expires_at": "2025-11-28T21:45:46Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 58,
+  "fields": {
+    "user": 8,
+    "jti": "2ad209fc49d94ca7b0f97626e2582ac9",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NjQyNSwiaWF0IjoxNzYzNzYxNjI1LCJqdGkiOiIyYWQyMDlmYzQ5ZDk0Y2E3YjBmOTc2MjZlMjU4MmFjOSIsInVzZXJfaWQiOjh9.r1N9kUr8kK3Gpb4Qh-L3C7GP-bE90ZhcfmuvdWeFSzU",
+    "created_at": "2025-11-21T21:47:05.883Z",
+    "expires_at": "2025-11-28T21:47:05Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 59,
+  "fields": {
+    "user": 6,
+    "jti": "b779981b727e4c1aaffb60459fc0f2fd",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NjY1OSwiaWF0IjoxNzYzNzYxODU5LCJqdGkiOiJiNzc5OTgxYjcyN2U0YzFhYWZmYjYwNDU5ZmMwZjJmZCIsInVzZXJfaWQiOjZ9.FHlG6DcY8KOv_Czm8AwRagWcJK5OO0cv_y8gPwVZMfY",
+    "created_at": "2025-11-21T21:50:59.997Z",
+    "expires_at": "2025-11-28T21:50:59Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 60,
+  "fields": {
+    "user": 9,
+    "jti": "7c9bbcbe72c748fa8e6c171dd0bee238",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NjY5MSwiaWF0IjoxNzYzNzYxODkxLCJqdGkiOiI3YzliYmNiZTcyYzc0OGZhOGU2YzE3MWRkMGJlZTIzOCIsInVzZXJfaWQiOjl9.sJ64pS57jG2wTs1Yrg_B9NnDZcTrFgspJRXFpxEv2CI",
+    "created_at": "2025-11-21T21:51:31.918Z",
+    "expires_at": "2025-11-28T21:51:31Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 61,
+  "fields": {
+    "user": 7,
+    "jti": "064590635e044455a37a24a0faf06259",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2Njc4NywiaWF0IjoxNzYzNzYxOTg3LCJqdGkiOiIwNjQ1OTA2MzVlMDQ0NDU1YTM3YTI0YTBmYWYwNjI1OSIsInVzZXJfaWQiOjd9.ceafmEDAJqrF4P4Fj_gCI_HfpD8P9VvN_oJZx_Fkup0",
+    "created_at": "2025-11-21T21:53:07.437Z",
+    "expires_at": "2025-11-28T21:53:07Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 62,
+  "fields": {
+    "user": 10,
+    "jti": "1c673374c02e43349dd2ff936862e1af",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2Njg0OCwiaWF0IjoxNzYzNzYyMDQ4LCJqdGkiOiIxYzY3MzM3NGMwMmU0MzM0OWRkMmZmOTM2ODYyZTFhZiIsInVzZXJfaWQiOjEwfQ.0wYmCyck4OObEndaXGKbxVZVrMGws3gu6mozpwJwWzo",
+    "created_at": "2025-11-21T21:54:08.671Z",
+    "expires_at": "2025-11-28T21:54:08Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 63,
+  "fields": {
+    "user": 9,
+    "jti": "d52d0cbc2b764a85a89e63c04f9ec3cd",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2Njg3MSwiaWF0IjoxNzYzNzYyMDcxLCJqdGkiOiJkNTJkMGNiYzJiNzY0YTg1YTg5ZTYzYzA0ZjllYzNjZCIsInVzZXJfaWQiOjl9._gJ7L68r7YoGsvh9Z4QipNzUXIX3xBY_2crU_XSxA4w",
+    "created_at": "2025-11-21T21:54:31.661Z",
+    "expires_at": "2025-11-28T21:54:31Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 64,
+  "fields": {
+    "user": 7,
+    "jti": "93862f23e09442d599d5449d67992850",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2NzkzMiwiaWF0IjoxNzYzNzYzMTMyLCJqdGkiOiI5Mzg2MmYyM2UwOTQ0MmQ1OTlkNTQ0OWQ2Nzk5Mjg1MCIsInVzZXJfaWQiOjd9.XQRe0de23hwPUQem3T5oOrANbUfUjF3Y43Yz2Ir1RqU",
+    "created_at": "2025-11-21T22:12:12.786Z",
+    "expires_at": "2025-11-28T22:12:12Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 65,
+  "fields": {
+    "user": 11,
+    "jti": "7cbd23792a6e4cf9946a8f6a655840ff",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDM2ODAyMiwiaWF0IjoxNzYzNzYzMjIyLCJqdGkiOiI3Y2JkMjM3OTJhNmU0Y2Y5OTQ2YThmNmE2NTU4NDBmZiIsInVzZXJfaWQiOjExfQ.DmUKccH2WTOZ8hQdX5VOMbPzrToxFMxsQbi2_YeWmU0",
+    "created_at": "2025-11-21T22:13:42.626Z",
+    "expires_at": "2025-11-28T22:13:42Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 66,
+  "fields": {
+    "user": 10,
+    "jti": "2cc24afd852c4e30b1fae3995ece93d5",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNTczOSwiaWF0IjoxNzYzODAwOTM5LCJqdGkiOiIyY2MyNGFmZDg1MmM0ZTMwYjFmYWUzOTk1ZWNlOTNkNSIsInVzZXJfaWQiOjEwfQ.6EPB7kP7GpzOnQHKdqNjvFyfBFZCjT6zxs1CaQvaVwM",
+    "created_at": "2025-11-22T08:42:19.132Z",
+    "expires_at": "2025-11-29T08:42:19Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 67,
+  "fields": {
+    "user": 7,
+    "jti": "378a9b4cf13344768f7ed0bec9abb678",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNTc1NSwiaWF0IjoxNzYzODAwOTU1LCJqdGkiOiIzNzhhOWI0Y2YxMzM0NDc2OGY3ZWQwYmVjOWFiYjY3OCIsInVzZXJfaWQiOjd9.oRXWb_WEuhv5htzE39NSp-ID-UFFd7F2MbZ-EVI38sE",
+    "created_at": "2025-11-22T08:42:35.345Z",
+    "expires_at": "2025-11-29T08:42:35Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 68,
+  "fields": {
+    "user": 8,
+    "jti": "2e855300eb8f445a972fa1d8f0fc9c9a",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNTc3MywiaWF0IjoxNzYzODAwOTczLCJqdGkiOiIyZTg1NTMwMGViOGY0NDVhOTcyZmExZDhmMGZjOWM5YSIsInVzZXJfaWQiOjh9.e86PTQhigqZsSCqqJhQtPgf1RI_ymrhwwFMjjUSHNAc",
+    "created_at": "2025-11-22T08:42:53.879Z",
+    "expires_at": "2025-11-29T08:42:53Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 69,
+  "fields": {
+    "user": 6,
+    "jti": "3b04dc550877474c942d812809096904",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNTk0NywiaWF0IjoxNzYzODAxMTQ3LCJqdGkiOiIzYjA0ZGM1NTA4Nzc0NzRjOTQyZDgxMjgwOTA5NjkwNCIsInVzZXJfaWQiOjZ9.Z8tIieEboWr7iCU8a7we73YiLXIS8UQVpkJOPBqbqWc",
+    "created_at": "2025-11-22T08:45:47.001Z",
+    "expires_at": "2025-11-29T08:45:47Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 70,
+  "fields": {
+    "user": 10,
+    "jti": "02682fbd27e1453484ab44a488d00aa4",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNjAxNiwiaWF0IjoxNzYzODAxMjE2LCJqdGkiOiIwMjY4MmZiZDI3ZTE0NTM0ODRhYjQ0YTQ4OGQwMGFhNCIsInVzZXJfaWQiOjEwfQ.A3RkqUQ0u0ZE64fOMit2VBa1s49YWR0C23vtSKUr80Y",
+    "created_at": "2025-11-22T08:46:56.164Z",
+    "expires_at": "2025-11-29T08:46:56Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 71,
+  "fields": {
+    "user": 10,
+    "jti": "8613ec19262c4eb0b27c167db3c63497",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNjA3OSwiaWF0IjoxNzYzODAxMjc5LCJqdGkiOiI4NjEzZWMxOTI2MmM0ZWIwYjI3YzE2N2RiM2M2MzQ5NyIsInVzZXJfaWQiOjEwfQ.81W2_aZmh5iiNI1dYKUsMeZ_eaB542Yxbr_UdCEoHLk",
+    "created_at": "2025-11-22T08:47:59.100Z",
+    "expires_at": "2025-11-29T08:47:59Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 72,
+  "fields": {
+    "user": 6,
+    "jti": "da88288581dc4776a96f91d5af617964",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNjE0MiwiaWF0IjoxNzYzODAxMzQyLCJqdGkiOiJkYTg4Mjg4NTgxZGM0Nzc2YTk2ZjkxZDVhZjYxNzk2NCIsInVzZXJfaWQiOjZ9.h9dihfVGMw_YTaKSBnzpTMgTrmGUd9QmCf_bDwDl86Q",
+    "created_at": "2025-11-22T08:49:02.425Z",
+    "expires_at": "2025-11-29T08:49:02Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 73,
+  "fields": {
+    "user": 10,
+    "jti": "e479e27006ff4e8799df53ef8d7e3b74",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNjIxNCwiaWF0IjoxNzYzODAxNDE0LCJqdGkiOiJlNDc5ZTI3MDA2ZmY0ZTg3OTlkZjUzZWY4ZDdlM2I3NCIsInVzZXJfaWQiOjEwfQ.J-I1Np9gmVGzPSxv5PwaAh0kkmQI_KRPKMSk2Wd4Q6w",
+    "created_at": "2025-11-22T08:50:14.314Z",
+    "expires_at": "2025-11-29T08:50:14Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 74,
+  "fields": {
+    "user": 6,
+    "jti": "617cac40cca84deab872e296022ee2c6",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNzI5MywiaWF0IjoxNzYzODAyNDkzLCJqdGkiOiI2MTdjYWM0MGNjYTg0ZGVhYjg3MmUyOTYwMjJlZTJjNiIsInVzZXJfaWQiOjZ9.LW30YBsOZ2yE7Ekft3i4e1Vc4W_1uSP-PWLu8gDhC7U",
+    "created_at": "2025-11-22T09:08:13.379Z",
+    "expires_at": "2025-11-29T09:08:13Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 75,
+  "fields": {
+    "user": 7,
+    "jti": "4d65508318914d1ab783b4e220ddaa53",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNzMxNCwiaWF0IjoxNzYzODAyNTE0LCJqdGkiOiI0ZDY1NTA4MzE4OTE0ZDFhYjc4M2I0ZTIyMGRkYWE1MyIsInVzZXJfaWQiOjd9.gW7oGwyQ2VwV9gB35dhZkk7KTf_rTAxZZmrp7_F1GPo",
+    "created_at": "2025-11-22T09:08:34.139Z",
+    "expires_at": "2025-11-29T09:08:34Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 76,
+  "fields": {
+    "user": 8,
+    "jti": "03262f9326a848b7b44f1abd11750820",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNzMyMywiaWF0IjoxNzYzODAyNTIzLCJqdGkiOiIwMzI2MmY5MzI2YTg0OGI3YjQ0ZjFhYmQxMTc1MDgyMCIsInVzZXJfaWQiOjh9.uTd-z_REqEX0gmAzTrEvtvH4QwrcziyUMQGeJkY50Nw",
+    "created_at": "2025-11-22T09:08:43.116Z",
+    "expires_at": "2025-11-29T09:08:43Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 77,
+  "fields": {
+    "user": 5,
+    "jti": "52181d0768374042bfa82df2b196b4dc",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNzMzMywiaWF0IjoxNzYzODAyNTMzLCJqdGkiOiI1MjE4MWQwNzY4Mzc0MDQyYmZhODJkZjJiMTk2YjRkYyIsInVzZXJfaWQiOjV9.MXZW27-KvC30eEqqrIYscgyzZ0jMBHLg5SLU4zDzxh8",
+    "created_at": "2025-11-22T09:08:53.865Z",
+    "expires_at": "2025-11-29T09:08:53Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 78,
+  "fields": {
+    "user": 6,
+    "jti": "0f744e19b5e9454e9eec2a18902fe741",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwNzkyMSwiaWF0IjoxNzYzODAzMTIxLCJqdGkiOiIwZjc0NGUxOWI1ZTk0NTRlOWVlYzJhMTg5MDJmZTc0MSIsInVzZXJfaWQiOjZ9.n01pVas3f_FOFRDWBhBTNp9FOdTrbiFkqCvSb2f0UbM",
+    "created_at": "2025-11-22T09:18:41.487Z",
+    "expires_at": "2025-11-29T09:18:41Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 79,
+  "fields": {
+    "user": 9,
+    "jti": "1309f63de4ac4c51b6d3a0da9e6ae891",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwODM1NSwiaWF0IjoxNzYzODAzNTU1LCJqdGkiOiIxMzA5ZjYzZGU0YWM0YzUxYjZkM2EwZGE5ZTZhZTg5MSIsInVzZXJfaWQiOjl9.Wta_BVPZrOqPZxvcURSlUFPm5iJxxXy0tfuhMH7zyZs",
+    "created_at": "2025-11-22T09:25:55.367Z",
+    "expires_at": "2025-11-29T09:25:55Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 80,
+  "fields": {
+    "user": 5,
+    "jti": "b0ec0c51a8ce4123913abcdda7ebbca1",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDQwOTg1OSwiaWF0IjoxNzYzODA1MDU5LCJqdGkiOiJiMGVjMGM1MWE4Y2U0MTIzOTEzYWJjZGRhN2ViYmNhMSIsInVzZXJfaWQiOjV9.jPRInIeBTnaWZ2EVi0ObF_XQK9toBnnBgafZF7ji8iM",
+    "created_at": "2025-11-22T09:50:59.563Z",
+    "expires_at": "2025-11-29T09:50:59Z"
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 5,
+  "fields": {
+    "is_superuser": true,
+    "username": "admin",
+    "email": "admin@schoolbus.com",
+    "full_name": "System Administrator",
+    "phone": null,
+    "role": "admin",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$VJVLRLnDyBikR195qb0vJ7$T/r2A6zEwaBTvguTLrpF+W3vQwTJJo+DpZHTptW9dw4=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": true,
+    "created_at": "2025-11-21T05:59:28.068Z",
+    "updated_at": "2025-11-21T05:59:28.515Z",
+    "last_login": "2025-11-22T09:50:59.557Z",
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 6,
+  "fields": {
+    "is_superuser": false,
+    "username": "driver1",
+    "email": "driver1@schoolbus.com",
+    "full_name": "Nguyễn Văn Tài",
+    "phone": "0901234567",
+    "role": "driver",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$3fxUapvqauHBhycsn1zncI$E3o+zbTBEVR6Eioghzac1vpMS7ppAOkG2YVi3HMhUjw=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:28.531Z",
+    "updated_at": "2025-11-21T05:59:29.048Z",
+    "last_login": "2025-11-22T09:18:41.477Z",
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 7,
+  "fields": {
+    "is_superuser": false,
+    "username": "driver2",
+    "email": "driver2@schoolbus.com",
+    "full_name": "Trần Minh Đức",
+    "phone": "0901234568",
+    "role": "driver",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$UH13l0SRQMHX55pWYjyh29$25wLLvAhNNVHWWp/GEUtSrFHvTnEV78Mnkvs0FDW9CQ=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:29.048Z",
+    "updated_at": "2025-11-21T05:59:29.490Z",
+    "last_login": "2025-11-22T09:08:34.132Z",
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 8,
+  "fields": {
+    "is_superuser": false,
+    "username": "driver3",
+    "email": "driver3@schoolbus.com",
+    "full_name": "Lê Quốc Hùng",
+    "phone": "0901234569",
+    "role": "driver",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$Bhck5FaRCIPTjWpZQ1EFig$hVtVU8QLqx+DuOqlUF/Bdiagl7PckKH/4k+SMBUWr40=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:29.496Z",
+    "updated_at": "2025-11-21T05:59:29.909Z",
+    "last_login": "2025-11-22T09:08:43.101Z",
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 9,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent1",
+    "email": "parent1@example.com",
+    "full_name": "Nguyễn Thị Lan",
+    "phone": "0912345678",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$CkgVPt06GQbE9ng1TnaM9b$jo43s5AI3b9mXcaW1BTtszwJ1LHXc/Ro54opVzQD7sw=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:29.909Z",
+    "updated_at": "2025-11-21T05:59:30.364Z",
+    "last_login": "2025-11-22T09:25:55.363Z",
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 10,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent2",
+    "email": "parent2@example.com",
+    "full_name": "Trần Văn Hải",
+    "phone": "0912345679",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$ivB2GYlSytnTojRFXUTcJC$fXhpvamE3zQXr6hkDgxQtDwhOFf0AMnB6NHfkyoaNJE=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:30.373Z",
+    "updated_at": "2025-11-21T05:59:30.800Z",
+    "last_login": "2025-11-22T08:50:14.303Z",
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 11,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent3",
+    "email": "parent3@example.com",
+    "full_name": "Lê Thị Mai",
+    "phone": "0912345680",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$igf57uCXwoNKK7lXjkjeow$UxQf4lC9gBg0SGt78usXXv2y3rlqiDx4eNA2On5G8vo=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:30.805Z",
+    "updated_at": "2025-11-21T05:59:31.227Z",
+    "last_login": "2025-11-21T22:13:42.618Z",
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 12,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent4",
+    "email": "parent4@example.com",
+    "full_name": "Phạm Văn Nam",
+    "phone": "0912345681",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$4kxOw3ETGQcRbRLAPYCk4z$8k1Fe193wp3wYvnFKnNQyThPtw28+409/UFFu6PcDvw=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:31.227Z",
+    "updated_at": "2025-11-21T05:59:31.649Z",
+    "last_login": "2025-11-21T20:45:17.647Z",
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 13,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent5",
+    "email": "parent5@example.com",
+    "full_name": "Hoàng Thị Thu",
+    "phone": "0912345682",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$aZwaAZ12IaOiaJazQBRRbG$dcuwKMRua46MA87sjOARRaJvwi9Ltmge+LauCuZ7dEo=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:31.665Z",
+    "updated_at": "2025-11-21T05:59:32.090Z",
+    "last_login": null,
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 14,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent6",
+    "email": "parent6@example.com",
+    "full_name": "Đặng Văn Sơn",
+    "phone": "0912345683",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$ZhlKrlbCkz98xMwMh7mN5j$HSBG0m7JMT0kxBLPm7CmkOgzGx6ByGHM0yJh8BL6TjI=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:32.090Z",
+    "updated_at": "2025-11-21T05:59:32.527Z",
+    "last_login": null,
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 15,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent7",
+    "email": "parent7@example.com",
+    "full_name": "Vũ Thị Hoa",
+    "phone": "0912345684",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$BVIIxi24QtzWVii4WYwGL8$R7oOs3pn8scgk4FvqCTwRUauJlzvrubeAXHpkXgZ1BI=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:32.527Z",
+    "updated_at": "2025-11-21T05:59:32.947Z",
+    "last_login": null,
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 16,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent8",
+    "email": "parent8@example.com",
+    "full_name": "Bùi Văn Toàn",
+    "phone": "0912345685",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$DuBxAl9a24cTR0UXmsMS4W$r8lR9Cs6ybcyQPjBfXWEi7ZJya6UAfvnuIkDiB8bsgg=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:32.963Z",
+    "updated_at": "2025-11-21T05:59:33.390Z",
+    "last_login": null,
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 17,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent9",
+    "email": "parent9@example.com",
+    "full_name": "Đỗ Thị Nga",
+    "phone": "0912345686",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$P4JqtP3oVcGivMHFoWHKNn$SuW3qSYx3EGSCSdzqcTpsUw+qEGJzwS+Kc7men22Tnk=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:33.390Z",
+    "updated_at": "2025-11-21T05:59:33.842Z",
+    "last_login": null,
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.user",
+  "pk": 18,
+  "fields": {
+    "is_superuser": false,
+    "username": "parent10",
+    "email": "parent10@example.com",
+    "full_name": "Lý Văn Kiên",
+    "phone": "0912345687",
+    "role": "parent",
+    "avatar": "",
+    "password": "pbkdf2_sha256$600000$Q8Acl2AzLacG2KgRKyYjFi$07UmjnrjrYYfG48+bCWNtPWZYmQfXgzJmgszh0Z/R5M=",
+    "is_active": true,
+    "is_verified": true,
+    "is_staff": false,
+    "created_at": "2025-11-21T05:59:33.842Z",
+    "updated_at": "2025-11-21T05:59:34.297Z",
+    "last_login": null,
+    "fcm_token": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authentication.driver",
+  "pk": 2,
+  "fields": {
+    "user": 6,
+    "license_number": "B2-12345678",
+    "license_expiry": "2026-11-21",
+    "vehicle": null,
+    "experience_years": 5,
+    "rating": "5.00",
+    "status": "available",
+    "created_at": "2025-11-21T05:59:28.531Z"
+  }
+},
+{
+  "model": "authentication.driver",
+  "pk": 3,
+  "fields": {
+    "user": 7,
+    "license_number": "B2-12345679",
+    "license_expiry": "2026-11-21",
+    "vehicle": null,
+    "experience_years": 3,
+    "rating": "5.00",
+    "status": "on_trip",
+    "created_at": "2025-11-21T05:59:29.048Z"
+  }
+},
+{
+  "model": "authentication.driver",
+  "pk": 4,
+  "fields": {
+    "user": 8,
+    "license_number": "B2-12345680",
+    "license_expiry": "2026-11-21",
+    "vehicle": null,
+    "experience_years": 5,
+    "rating": "5.00",
+    "status": "available",
+    "created_at": "2025-11-21T05:59:29.497Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 3,
+  "fields": {
+    "user": 9,
+    "address": "Số 10, Đường 1, Quận 1, TP.HCM",
+    "emergency_contact": "0923456789",
+    "created_at": "2025-11-21T05:59:29.909Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 4,
+  "fields": {
+    "user": 10,
+    "address": "Số 11, Đường 2, Quận 2, TP.HCM",
+    "emergency_contact": "0923456790",
+    "created_at": "2025-11-21T05:59:30.373Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 5,
+  "fields": {
+    "user": 11,
+    "address": "Số 12, Đường 3, Quận 3, TP.HCM",
+    "emergency_contact": "0923456791",
+    "created_at": "2025-11-21T05:59:30.806Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 6,
+  "fields": {
+    "user": 12,
+    "address": "Số 13, Đường 4, Quận 4, TP.HCM",
+    "emergency_contact": "0923456792",
+    "created_at": "2025-11-21T05:59:31.227Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 7,
+  "fields": {
+    "user": 13,
+    "address": "Số 14, Đường 5, Quận 5, TP.HCM",
+    "emergency_contact": "0923456793",
+    "created_at": "2025-11-21T05:59:31.665Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 8,
+  "fields": {
+    "user": 14,
+    "address": "Số 15, Đường 6, Quận 6, TP.HCM",
+    "emergency_contact": "0923456794",
+    "created_at": "2025-11-21T05:59:32.090Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 9,
+  "fields": {
+    "user": 15,
+    "address": "Số 16, Đường 7, Quận 7, TP.HCM",
+    "emergency_contact": "0923456795",
+    "created_at": "2025-11-21T05:59:32.527Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 10,
+  "fields": {
+    "user": 16,
+    "address": "Số 17, Đường 8, Quận 8, TP.HCM",
+    "emergency_contact": "0923456796",
+    "created_at": "2025-11-21T05:59:32.966Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 11,
+  "fields": {
+    "user": 17,
+    "address": "Số 18, Đường 9, Quận 9, TP.HCM",
+    "emergency_contact": "0923456797",
+    "created_at": "2025-11-21T05:59:33.390Z"
+  }
+},
+{
+  "model": "authentication.parent",
+  "pk": 12,
+  "fields": {
+    "user": 18,
+    "address": "Số 19, Đường 10, Quận 10, TP.HCM",
+    "emergency_contact": "0923456798",
+    "created_at": "2025-11-21T05:59:33.842Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 32,
+  "fields": {
+    "user": 9,
+    "session_token": "717f28aa-aa3f-4200-a3ff-105334d194b9",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T06:00:44.997Z",
+    "last_activity": "2025-11-21T06:00:44.997Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 33,
+  "fields": {
+    "user": 9,
+    "session_token": "795b192c-16d4-46a1-8df9-c66aae79d72b",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T06:09:56.996Z",
+    "last_activity": "2025-11-21T06:09:56.996Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 34,
+  "fields": {
+    "user": 6,
+    "session_token": "b3f598bf-0cea-4615-8aba-3421cb51bc91",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T06:55:44.848Z",
+    "last_activity": "2025-11-21T06:55:44.848Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 35,
+  "fields": {
+    "user": 9,
+    "session_token": "b21cfe61-5afe-4c18-bcd2-ee94ff844dea",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T07:31:28.388Z",
+    "last_activity": "2025-11-21T07:31:28.388Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 36,
+  "fields": {
+    "user": 6,
+    "session_token": "3ab0246b-c185-4066-9cb0-4f702f1863e2",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T07:33:12.640Z",
+    "last_activity": "2025-11-21T07:33:12.640Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 37,
+  "fields": {
+    "user": 9,
+    "session_token": "b19b4cbb-e883-4091-84f3-4806e6831629",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T19:54:09.685Z",
+    "last_activity": "2025-11-21T19:54:09.685Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 38,
+  "fields": {
+    "user": 6,
+    "session_token": "54cbfc1d-d442-4483-95a8-caa0f1201251",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T19:57:06.053Z",
+    "last_activity": "2025-11-21T19:57:06.053Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 39,
+  "fields": {
+    "user": 6,
+    "session_token": "45cd2fea-6cd3-40f6-b30b-b93530cec7bc",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:03:00.827Z",
+    "last_activity": "2025-11-21T20:03:00.827Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 40,
+  "fields": {
+    "user": 6,
+    "session_token": "1aefea49-03e0-451d-8964-98601dd86b6d",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:06:41.392Z",
+    "last_activity": "2025-11-21T20:06:41.392Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 41,
+  "fields": {
+    "user": 9,
+    "session_token": "377b156a-6ec0-4051-95a7-85ff31670562",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:12:44.947Z",
+    "last_activity": "2025-11-21T20:12:44.947Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 42,
+  "fields": {
+    "user": 5,
+    "session_token": "ec21c752-ae22-4ac1-af58-68ddbfa50a95",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:17:13.289Z",
+    "last_activity": "2025-11-21T20:17:13.289Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 43,
+  "fields": {
+    "user": 7,
+    "session_token": "b323869d-f5a0-4b75-834c-5ac2d22f8b87",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:18:30.401Z",
+    "last_activity": "2025-11-21T20:18:30.401Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 44,
+  "fields": {
+    "user": 10,
+    "session_token": "98c7c8b5-17d8-4c6b-a634-8062f9a6047e",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:21:18.082Z",
+    "last_activity": "2025-11-21T20:21:18.082Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 45,
+  "fields": {
+    "user": 8,
+    "session_token": "4b8b4ba4-b77d-4dd0-9d4f-42308b931083",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:22:41.372Z",
+    "last_activity": "2025-11-21T20:22:41.372Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 46,
+  "fields": {
+    "user": 5,
+    "session_token": "545d0fb3-4757-4726-9d20-0eca7fd463c4",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:23:44.880Z",
+    "last_activity": "2025-11-21T20:23:44.880Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 47,
+  "fields": {
+    "user": 10,
+    "session_token": "c5775076-d310-4984-b20e-36b53e32eaad",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:24:15.296Z",
+    "last_activity": "2025-11-21T20:24:15.296Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 48,
+  "fields": {
+    "user": 7,
+    "session_token": "5443ba85-79be-4a67-ac22-43c4c24b72f8",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:26:26.699Z",
+    "last_activity": "2025-11-21T20:26:26.699Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 49,
+  "fields": {
+    "user": 12,
+    "session_token": "eb8ad8c4-46b8-4559-8f57-822eca10f70b",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:26:56.297Z",
+    "last_activity": "2025-11-21T20:26:56.297Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 50,
+  "fields": {
+    "user": 12,
+    "session_token": "16919bc6-a3a3-4ff2-8127-29f1d53076c3",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:45:17.648Z",
+    "last_activity": "2025-11-21T20:45:17.648Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 51,
+  "fields": {
+    "user": 7,
+    "session_token": "54bdba73-e609-40ce-a65f-816ec1a224d4",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T20:50:17.356Z",
+    "last_activity": "2025-11-21T20:50:17.356Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 52,
+  "fields": {
+    "user": 8,
+    "session_token": "7499e2fd-c08c-4e36-8713-d2d80bd16025",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:06:58.577Z",
+    "last_activity": "2025-11-21T21:06:58.577Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 53,
+  "fields": {
+    "user": 11,
+    "session_token": "78e2f8a4-fc8e-4e68-84d8-2f17ba529252",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:18:09.492Z",
+    "last_activity": "2025-11-21T21:18:09.492Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 54,
+  "fields": {
+    "user": 9,
+    "session_token": "58651efc-0c34-4ef7-a3fa-65ba52e8a429",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:22:46.955Z",
+    "last_activity": "2025-11-21T21:22:46.955Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 55,
+  "fields": {
+    "user": 10,
+    "session_token": "66d0bb0b-b945-4712-86f1-d82e94b6fa2f",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:44:12.605Z",
+    "last_activity": "2025-11-21T21:44:12.605Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 56,
+  "fields": {
+    "user": 8,
+    "session_token": "0b579505-2390-4fce-bb0d-24f75f6eaaa4",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:45:24.630Z",
+    "last_activity": "2025-11-21T21:45:24.630Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 57,
+  "fields": {
+    "user": 11,
+    "session_token": "ea2efcdc-6e07-4b89-943b-d1417f6467b5",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:45:46.909Z",
+    "last_activity": "2025-11-21T21:45:46.909Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 58,
+  "fields": {
+    "user": 8,
+    "session_token": "055ed1f2-e1ee-4bcb-bd58-4d53748851fa",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:47:05.880Z",
+    "last_activity": "2025-11-21T21:47:05.880Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 59,
+  "fields": {
+    "user": 6,
+    "session_token": "d3239e78-ae7c-4932-9311-8c5977399c62",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:50:59.991Z",
+    "last_activity": "2025-11-21T21:50:59.991Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 60,
+  "fields": {
+    "user": 9,
+    "session_token": "cf9360a6-b5d6-4350-a61e-eb78b2ef2589",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:51:31.917Z",
+    "last_activity": "2025-11-21T21:51:31.917Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 61,
+  "fields": {
+    "user": 7,
+    "session_token": "40dce0bf-9b37-4467-adbb-676a4a7a64c8",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:53:07.434Z",
+    "last_activity": "2025-11-21T21:53:07.434Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 62,
+  "fields": {
+    "user": 10,
+    "session_token": "4290b13d-f13a-4b62-8866-3c5cd1073279",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:54:08.671Z",
+    "last_activity": "2025-11-21T21:54:08.671Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 63,
+  "fields": {
+    "user": 9,
+    "session_token": "206dff3e-7849-4df2-8ec4-e2c828e9332a",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T21:54:31.652Z",
+    "last_activity": "2025-11-21T21:54:31.652Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 64,
+  "fields": {
+    "user": 7,
+    "session_token": "ff7984b1-aa73-44ed-a393-db6c9ab445d1",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T22:12:12.786Z",
+    "last_activity": "2025-11-21T22:12:12.786Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 65,
+  "fields": {
+    "user": 11,
+    "session_token": "e997dc01-0e94-4514-9599-f0f5416316da",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-21T22:13:42.626Z",
+    "last_activity": "2025-11-21T22:13:42.626Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 66,
+  "fields": {
+    "user": 10,
+    "session_token": "afcdd372-820e-476e-985e-1d76f4411e82",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T08:42:19.118Z",
+    "last_activity": "2025-11-22T08:42:19.118Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 67,
+  "fields": {
+    "user": 7,
+    "session_token": "47b9e9ae-9250-4f18-8007-29edd20e0ff2",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T08:42:35.343Z",
+    "last_activity": "2025-11-22T08:42:35.343Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 68,
+  "fields": {
+    "user": 8,
+    "session_token": "467733fe-db4f-48bf-8ab5-b11fcbb6b655",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T08:42:53.879Z",
+    "last_activity": "2025-11-22T08:42:53.879Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 69,
+  "fields": {
+    "user": 6,
+    "session_token": "bd9220d4-c4bf-4b47-8380-932eac73acee",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T08:45:46.997Z",
+    "last_activity": "2025-11-22T08:45:46.997Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 70,
+  "fields": {
+    "user": 10,
+    "session_token": "d39782c7-52f9-4600-ac0b-e459a5e32ff2",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T08:46:56.162Z",
+    "last_activity": "2025-11-22T08:46:56.162Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 71,
+  "fields": {
+    "user": 10,
+    "session_token": "ecbe5ca9-3f77-4220-9e63-8d260d43116f",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T08:47:59.099Z",
+    "last_activity": "2025-11-22T08:47:59.099Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 72,
+  "fields": {
+    "user": 6,
+    "session_token": "da5ce737-fe02-4607-8b57-99ee49c172ca",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T08:49:02.425Z",
+    "last_activity": "2025-11-22T08:49:02.425Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 73,
+  "fields": {
+    "user": 10,
+    "session_token": "be77c42d-9f8e-4c72-8024-eb67a8668f97",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T08:50:14.312Z",
+    "last_activity": "2025-11-22T08:50:14.312Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 74,
+  "fields": {
+    "user": 6,
+    "session_token": "69b52ba1-4ab0-486e-88ec-741236b02bdf",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T09:08:13.379Z",
+    "last_activity": "2025-11-22T09:08:13.379Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 75,
+  "fields": {
+    "user": 7,
+    "session_token": "444d6503-9422-4e20-94d1-129f1ee702fb",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T09:08:34.139Z",
+    "last_activity": "2025-11-22T09:08:34.139Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 76,
+  "fields": {
+    "user": 8,
+    "session_token": "ab7940a4-32d4-48c5-8dd4-f02fb83863ee",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T09:08:43.116Z",
+    "last_activity": "2025-11-22T09:08:43.116Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 77,
+  "fields": {
+    "user": 5,
+    "session_token": "3295abcc-16db-45b1-b575-66f4f3cfd702",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T09:08:53.859Z",
+    "last_activity": "2025-11-22T09:08:53.859Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 78,
+  "fields": {
+    "user": 6,
+    "session_token": "cbfc2468-55ce-42d1-8cfe-e8c02d3a2b96",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T09:18:41.487Z",
+    "last_activity": "2025-11-22T09:18:41.487Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 79,
+  "fields": {
+    "user": 9,
+    "session_token": "9bc3f7c9-bdcc-4fd5-b515-555bb2cfb086",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T09:25:55.367Z",
+    "last_activity": "2025-11-22T09:25:55.367Z"
+  }
+},
+{
+  "model": "authentication.usersession",
+  "pk": 80,
+  "fields": {
+    "user": 5,
+    "session_token": "e37de717-0d8c-4385-ba97-33527bb9c4cf",
+    "device_info": "",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0",
+    "is_active": true,
+    "created_at": "2025-11-22T09:50:59.561Z",
+    "last_activity": "2025-11-22T09:50:59.561Z"
+  }
+},
+{
+  "model": "students.class",
+  "pk": 4,
+  "fields": {
+    "name": "1A",
+    "grade_level": 1,
+    "room_number": "P194",
+    "teacher_name": "Cô Lan Anh",
+    "academic_year": "2024-2025",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.313Z",
+    "updated_at": "2025-11-21T05:59:34.313Z"
+  }
+},
+{
+  "model": "students.class",
+  "pk": 5,
+  "fields": {
+    "name": "1B",
+    "grade_level": 1,
+    "room_number": "P170",
+    "teacher_name": "Cô Thu Hà",
+    "academic_year": "2024-2025",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.317Z",
+    "updated_at": "2025-11-21T05:59:34.317Z"
+  }
+},
+{
+  "model": "students.class",
+  "pk": 6,
+  "fields": {
+    "name": "2A",
+    "grade_level": 2,
+    "room_number": "P154",
+    "teacher_name": "Cô Minh Ngọc",
+    "academic_year": "2024-2025",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.317Z",
+    "updated_at": "2025-11-21T05:59:34.317Z"
+  }
+},
+{
+  "model": "students.class",
+  "pk": 7,
+  "fields": {
+    "name": "3A",
+    "grade_level": 3,
+    "room_number": "P162",
+    "teacher_name": "Thầy Văn Hùng",
+    "academic_year": "2024-2025",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.317Z",
+    "updated_at": "2025-11-21T05:59:34.317Z"
+  }
+},
+{
+  "model": "students.class",
+  "pk": 8,
+  "fields": {
+    "name": "4A",
+    "grade_level": 4,
+    "room_number": "P172",
+    "teacher_name": "Cô Phương Thảo",
+    "academic_year": "2024-2025",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.317Z",
+    "updated_at": "2025-11-21T05:59:34.317Z"
+  }
+},
+{
+  "model": "students.area",
+  "pk": 3,
+  "fields": {
+    "name": "Quận 1",
+    "description": "Khu vực Quận 1 - Trung tâm",
+    "boundary": null,
+    "created_at": "2025-11-21T05:59:34.325Z",
+    "updated_at": "2025-11-21T05:59:34.325Z"
+  }
+},
+{
+  "model": "students.area",
+  "pk": 4,
+  "fields": {
+    "name": "Quận 3",
+    "description": "Khu vực Quận 3",
+    "boundary": null,
+    "created_at": "2025-11-21T05:59:34.338Z",
+    "updated_at": "2025-11-21T05:59:34.338Z"
+  }
+},
+{
+  "model": "students.area",
+  "pk": 5,
+  "fields": {
+    "name": "Quận 10",
+    "description": "Khu vực Quận 10",
+    "boundary": null,
+    "created_at": "2025-11-21T05:59:34.340Z",
+    "updated_at": "2025-11-21T05:59:34.340Z"
+  }
+},
+{
+  "model": "students.area",
+  "pk": 6,
+  "fields": {
+    "name": "Bình Thạnh",
+    "description": "Khu vực Bình Thạnh",
+    "boundary": null,
+    "created_at": "2025-11-21T05:59:34.340Z",
+    "updated_at": "2025-11-21T05:59:34.340Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 2,
+  "fields": {
+    "student_code": "HS2024480000",
+    "full_name": "Vũ Văn Nam",
+    "date_of_birth": "2016-02-02",
+    "gender": "female",
+    "class_obj": 7,
+    "area": 4,
+    "parent": 3,
+    "address": "Số 10, Đường 1, Quận 1, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.7463749717956 10.854154087705293)",
+    "dropoff_location": "SRID=4326;POINT (106.75637497179561 10.864154087705293)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "B",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.345Z",
+    "updated_at": "2025-11-21T05:59:34.345Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 3,
+  "fields": {
+    "student_code": "HS2024960001",
+    "full_name": "Huỳnh Văn Linh",
+    "date_of_birth": "2020-09-20",
+    "gender": "female",
+    "class_obj": 5,
+    "area": 4,
+    "parent": 3,
+    "address": "Số 10, Đường 1, Quận 1, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.63943921575043 10.742362523221496)",
+    "dropoff_location": "SRID=4326;POINT (106.64943921575043 10.752362523221496)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "O",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.359Z",
+    "updated_at": "2025-11-21T05:59:34.359Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 4,
+  "fields": {
+    "student_code": "HS2024970010",
+    "full_name": "Đặng Văn Nam",
+    "date_of_birth": "2019-12-22",
+    "gender": "male",
+    "class_obj": 4,
+    "area": 3,
+    "parent": 4,
+    "address": "Số 11, Đường 2, Quận 2, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.6935500299648 10.861944544806898)",
+    "dropoff_location": "SRID=4326;POINT (106.7035500299648 10.871944544806897)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "AB",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.365Z",
+    "updated_at": "2025-11-21T05:59:34.365Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 5,
+  "fields": {
+    "student_code": "HS2024920020",
+    "full_name": "Võ Văn Nam",
+    "date_of_birth": "2016-06-14",
+    "gender": "male",
+    "class_obj": 8,
+    "area": 3,
+    "parent": 5,
+    "address": "Số 12, Đường 3, Quận 3, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.61432314697153 10.751289337584533)",
+    "dropoff_location": "SRID=4326;POINT (106.62432314697153 10.761289337584532)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "O",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.365Z",
+    "updated_at": "2025-11-21T05:59:34.365Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 6,
+  "fields": {
+    "student_code": "HS2024690021",
+    "full_name": "Trần Văn Linh",
+    "date_of_birth": "2016-01-13",
+    "gender": "female",
+    "class_obj": 7,
+    "area": 4,
+    "parent": 5,
+    "address": "Số 12, Đường 3, Quận 3, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.7991817542272 10.828201895806954)",
+    "dropoff_location": "SRID=4326;POINT (106.80918175422721 10.838201895806954)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "AB",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.365Z",
+    "updated_at": "2025-11-21T05:59:34.365Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 7,
+  "fields": {
+    "student_code": "HS2024620030",
+    "full_name": "Võ Văn Dũng",
+    "date_of_birth": "2020-11-27",
+    "gender": "female",
+    "class_obj": 7,
+    "area": 5,
+    "parent": 6,
+    "address": "Số 13, Đường 4, Quận 4, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.64581600299009 10.722713923809353)",
+    "dropoff_location": "SRID=4326;POINT (106.6558160029901 10.732713923809353)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "B",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.365Z",
+    "updated_at": "2025-11-21T05:59:34.365Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 8,
+  "fields": {
+    "student_code": "HS2024170031",
+    "full_name": "Hoàng Văn Mai",
+    "date_of_birth": "2018-10-06",
+    "gender": "male",
+    "class_obj": 5,
+    "area": 6,
+    "parent": 6,
+    "address": "Số 13, Đường 4, Quận 4, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.74976234521606 10.826080667839104)",
+    "dropoff_location": "SRID=4326;POINT (106.75976234521606 10.836080667839104)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "AB",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.383Z",
+    "updated_at": "2025-11-21T05:59:34.383Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 9,
+  "fields": {
+    "student_code": "HS2024230040",
+    "full_name": "Vũ Văn An",
+    "date_of_birth": "2020-10-23",
+    "gender": "female",
+    "class_obj": 6,
+    "area": 3,
+    "parent": 7,
+    "address": "Số 14, Đường 5, Quận 5, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.66775384324531 10.781096295983607)",
+    "dropoff_location": "SRID=4326;POINT (106.67775384324531 10.791096295983607)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "O",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.383Z",
+    "updated_at": "2025-11-21T05:59:34.383Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 10,
+  "fields": {
+    "student_code": "HS2024290050",
+    "full_name": "Phan Văn An",
+    "date_of_birth": "2018-11-10",
+    "gender": "female",
+    "class_obj": 7,
+    "area": 6,
+    "parent": 8,
+    "address": "Số 15, Đường 6, Quận 6, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.752556261565 10.767802147304646)",
+    "dropoff_location": "SRID=4326;POINT (106.76255626156501 10.777802147304646)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "B",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.392Z",
+    "updated_at": "2025-11-21T05:59:34.392Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 11,
+  "fields": {
+    "student_code": "HS2024580051",
+    "full_name": "Võ Văn Cường",
+    "date_of_birth": "2018-04-22",
+    "gender": "male",
+    "class_obj": 7,
+    "area": 4,
+    "parent": 8,
+    "address": "Số 15, Đường 6, Quận 6, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.71781241146499 10.751581633724717)",
+    "dropoff_location": "SRID=4326;POINT (106.727812411465 10.761581633724717)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "AB",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.400Z",
+    "updated_at": "2025-11-21T05:59:34.400Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 12,
+  "fields": {
+    "student_code": "HS2024600060",
+    "full_name": "Hoàng Văn An",
+    "date_of_birth": "2017-08-27",
+    "gender": "female",
+    "class_obj": 5,
+    "area": 6,
+    "parent": 9,
+    "address": "Số 16, Đường 7, Quận 7, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.77605728239968 10.73598211341168)",
+    "dropoff_location": "SRID=4326;POINT (106.78605728239968 10.74598211341168)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "O",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.405Z",
+    "updated_at": "2025-11-21T05:59:34.405Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 13,
+  "fields": {
+    "student_code": "HS2024880070",
+    "full_name": "Hoàng Văn Mai",
+    "date_of_birth": "2019-10-02",
+    "gender": "male",
+    "class_obj": 7,
+    "area": 6,
+    "parent": 10,
+    "address": "Số 17, Đường 8, Quận 8, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.748782572374 10.895305044219254)",
+    "dropoff_location": "SRID=4326;POINT (106.758782572374 10.905305044219254)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "B",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.409Z",
+    "updated_at": "2025-11-21T05:59:34.409Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 14,
+  "fields": {
+    "student_code": "HS2024400080",
+    "full_name": "Đặng Văn Dũng",
+    "date_of_birth": "2016-03-02",
+    "gender": "female",
+    "class_obj": 8,
+    "area": 4,
+    "parent": 11,
+    "address": "Số 18, Đường 9, Quận 9, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.76959042139201 10.84164940443055)",
+    "dropoff_location": "SRID=4326;POINT (106.77959042139202 10.85164940443055)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "A",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.415Z",
+    "updated_at": "2025-11-21T05:59:34.415Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 15,
+  "fields": {
+    "student_code": "HS2024300081",
+    "full_name": "Vũ Văn Bình",
+    "date_of_birth": "2019-07-20",
+    "gender": "female",
+    "class_obj": 8,
+    "area": 4,
+    "parent": 11,
+    "address": "Số 18, Đường 9, Quận 9, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.61167832803075 10.819083670860067)",
+    "dropoff_location": "SRID=4326;POINT (106.62167832803075 10.829083670860067)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "B",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.420Z",
+    "updated_at": "2025-11-21T05:59:34.420Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 16,
+  "fields": {
+    "student_code": "HS2024360090",
+    "full_name": "Nguyễn Văn Linh",
+    "date_of_birth": "2018-04-21",
+    "gender": "female",
+    "class_obj": 5,
+    "area": 3,
+    "parent": 12,
+    "address": "Số 19, Đường 10, Quận 10, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.77826689870487 10.863432084772256)",
+    "dropoff_location": "SRID=4326;POINT (106.78826689870488 10.873432084772256)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "B",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.424Z",
+    "updated_at": "2025-11-21T05:59:34.424Z"
+  }
+},
+{
+  "model": "students.student",
+  "pk": 17,
+  "fields": {
+    "student_code": "HS2024740091",
+    "full_name": "Phan Văn Hà",
+    "date_of_birth": "2017-01-17",
+    "gender": "male",
+    "class_obj": 6,
+    "area": 5,
+    "parent": 12,
+    "address": "Số 19, Đường 10, Quận 10, TP.HCM",
+    "pickup_location": "SRID=4326;POINT (106.69483434327418 10.806790451545666)",
+    "dropoff_location": "SRID=4326;POINT (106.70483434327419 10.816790451545666)",
+    "photo": "",
+    "special_needs": null,
+    "medical_conditions": null,
+    "blood_type": "AB",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.429Z",
+    "updated_at": "2025-11-21T05:59:34.429Z"
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 1,
+  "fields": {
+    "student": 2,
+    "name": "Nguyễn Thị Lan",
+    "relationship": "Phụ huynh",
+    "phone": "0912345678",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 2,
+  "fields": {
+    "student": 3,
+    "name": "Nguyễn Thị Lan",
+    "relationship": "Phụ huynh",
+    "phone": "0912345678",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 3,
+  "fields": {
+    "student": 4,
+    "name": "Trần Văn Hải",
+    "relationship": "Phụ huynh",
+    "phone": "0912345679",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 4,
+  "fields": {
+    "student": 5,
+    "name": "Lê Thị Mai",
+    "relationship": "Phụ huynh",
+    "phone": "0912345680",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 5,
+  "fields": {
+    "student": 6,
+    "name": "Lê Thị Mai",
+    "relationship": "Phụ huynh",
+    "phone": "0912345680",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 6,
+  "fields": {
+    "student": 7,
+    "name": "Phạm Văn Nam",
+    "relationship": "Phụ huynh",
+    "phone": "0912345681",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 7,
+  "fields": {
+    "student": 8,
+    "name": "Phạm Văn Nam",
+    "relationship": "Phụ huynh",
+    "phone": "0912345681",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 8,
+  "fields": {
+    "student": 9,
+    "name": "Hoàng Thị Thu",
+    "relationship": "Phụ huynh",
+    "phone": "0912345682",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 9,
+  "fields": {
+    "student": 10,
+    "name": "Đặng Văn Sơn",
+    "relationship": "Phụ huynh",
+    "phone": "0912345683",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 10,
+  "fields": {
+    "student": 11,
+    "name": "Đặng Văn Sơn",
+    "relationship": "Phụ huynh",
+    "phone": "0912345683",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 11,
+  "fields": {
+    "student": 12,
+    "name": "Vũ Thị Hoa",
+    "relationship": "Phụ huynh",
+    "phone": "0912345684",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 12,
+  "fields": {
+    "student": 13,
+    "name": "Bùi Văn Toàn",
+    "relationship": "Phụ huynh",
+    "phone": "0912345685",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 13,
+  "fields": {
+    "student": 14,
+    "name": "Đỗ Thị Nga",
+    "relationship": "Phụ huynh",
+    "phone": "0912345686",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 14,
+  "fields": {
+    "student": 15,
+    "name": "Đỗ Thị Nga",
+    "relationship": "Phụ huynh",
+    "phone": "0912345686",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 15,
+  "fields": {
+    "student": 16,
+    "name": "Lý Văn Kiên",
+    "relationship": "Phụ huynh",
+    "phone": "0912345687",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "students.emergencycontact",
+  "pk": 16,
+  "fields": {
+    "student": 17,
+    "name": "Lý Văn Kiên",
+    "relationship": "Phụ huynh",
+    "phone": "0912345687",
+    "email": null,
+    "address": null,
+    "is_primary": true
+  }
+},
+{
+  "model": "routes.vehicle",
+  "pk": 3,
+  "fields": {
+    "plate_number": "51A-123.45",
+    "vehicle_type": "Bus 29 chỗ",
+    "capacity": 29,
+    "model": "Hyundai County",
+    "year": 2020,
+    "color": "Vàng",
+    "insurance_expiry": "2026-05-20",
+    "registration_expiry": "2026-11-21",
+    "last_maintenance": null,
+    "next_maintenance": null,
+    "gps_device_id": null,
+    "status": "active",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.433Z",
+    "updated_at": "2025-11-21T05:59:34.433Z"
+  }
+},
+{
+  "model": "routes.vehicle",
+  "pk": 4,
+  "fields": {
+    "plate_number": "51B-678.90",
+    "vehicle_type": "Bus 29 chỗ",
+    "capacity": 29,
+    "model": "Hyundai County",
+    "year": 2022,
+    "color": "Vàng",
+    "insurance_expiry": "2026-05-20",
+    "registration_expiry": "2026-11-21",
+    "last_maintenance": null,
+    "next_maintenance": null,
+    "gps_device_id": null,
+    "status": "active",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.436Z",
+    "updated_at": "2025-11-21T05:59:34.436Z"
+  }
+},
+{
+  "model": "routes.vehicle",
+  "pk": 5,
+  "fields": {
+    "plate_number": "51C-111.22",
+    "vehicle_type": "Van 16 chỗ",
+    "capacity": 16,
+    "model": "Ford Transit",
+    "year": 2021,
+    "color": "Vàng",
+    "insurance_expiry": "2026-05-20",
+    "registration_expiry": "2026-11-21",
+    "last_maintenance": null,
+    "next_maintenance": null,
+    "gps_device_id": null,
+    "status": "active",
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.438Z",
+    "updated_at": "2025-11-21T05:59:34.438Z"
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 2,
+  "fields": {
+    "route_code": "R01-P",
+    "route_name": "Tuyến 1 - Quận 1 (pickup)",
+    "description": null,
+    "route_type": "pickup",
+    "area": 3,
+    "vehicle": 3,
+    "driver": 2,
+    "path": null,
+    "estimated_duration": 54,
+    "total_distance": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.441Z",
+    "updated_at": "2025-11-21T05:59:34.441Z"
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 3,
+  "fields": {
+    "route_code": "R01-D",
+    "route_name": "Tuyến 1 - Quận 1 (dropoff)",
+    "description": null,
+    "route_type": "dropoff",
+    "area": 3,
+    "vehicle": 3,
+    "driver": 2,
+    "path": null,
+    "estimated_duration": 39,
+    "total_distance": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.447Z",
+    "updated_at": "2025-11-21T05:59:34.447Z"
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 4,
+  "fields": {
+    "route_code": "R02-P",
+    "route_name": "Tuyến 2 - Quận 3 (pickup)",
+    "description": null,
+    "route_type": "pickup",
+    "area": 4,
+    "vehicle": 4,
+    "driver": 3,
+    "path": null,
+    "estimated_duration": 53,
+    "total_distance": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.450Z",
+    "updated_at": "2025-11-21T05:59:34.450Z"
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 5,
+  "fields": {
+    "route_code": "R02-D",
+    "route_name": "Tuyến 2 - Quận 3 (dropoff)",
+    "description": null,
+    "route_type": "dropoff",
+    "area": 4,
+    "vehicle": 4,
+    "driver": 3,
+    "path": null,
+    "estimated_duration": 34,
+    "total_distance": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.452Z",
+    "updated_at": "2025-11-21T05:59:34.452Z"
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 6,
+  "fields": {
+    "route_code": "R03-P",
+    "route_name": "Tuyến 3 - Quận 10 (pickup)",
+    "description": null,
+    "route_type": "pickup",
+    "area": 5,
+    "vehicle": 5,
+    "driver": 4,
+    "path": null,
+    "estimated_duration": 30,
+    "total_distance": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.454Z",
+    "updated_at": "2025-11-21T05:59:34.454Z"
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 7,
+  "fields": {
+    "route_code": "R03-D",
+    "route_name": "Tuyến 3 - Quận 10 (dropoff)",
+    "description": null,
+    "route_type": "dropoff",
+    "area": 5,
+    "vehicle": 5,
+    "driver": 4,
+    "path": null,
+    "estimated_duration": 59,
+    "total_distance": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.457Z",
+    "updated_at": "2025-11-21T05:59:34.457Z"
+  }
+},
+{
+  "model": "routes.route",
+  "pk": 8,
+  "fields": {
+    "route_code": "P08-P",
+    "route_name": "Quận 7",
+    "description": "",
+    "route_type": "pickup",
+    "area": null,
+    "vehicle": null,
+    "driver": null,
+    "path": null,
+    "estimated_duration": null,
+    "total_distance": null,
+    "is_active": true,
+    "created_at": "2025-11-22T09:33:30.756Z",
+    "updated_at": "2025-11-22T09:33:30.756Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 3,
+  "fields": {
+    "route": 2,
+    "stop_order": 1,
+    "stop_name": "Điểm dừng 1 - Quận 1",
+    "location": "SRID=4326;POINT (106.7 10.8)",
+    "address": "Số 100, Đường 1, Quận 1",
+    "estimated_arrival": "07:00:00",
+    "estimated_departure": "07:05:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.457Z",
+    "updated_at": "2025-11-21T05:59:34.457Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 4,
+  "fields": {
+    "route": 2,
+    "stop_order": 2,
+    "stop_name": "Điểm dừng 2 - Quận 1",
+    "location": "SRID=4326;POINT (106.71000000000001 10.81)",
+    "address": "Số 110, Đường 2, Quận 1",
+    "estimated_arrival": "07:10:00",
+    "estimated_departure": "07:15:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.465Z",
+    "updated_at": "2025-11-21T05:59:34.465Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 5,
+  "fields": {
+    "route": 2,
+    "stop_order": 3,
+    "stop_name": "Điểm dừng 3 - Quận 1",
+    "location": "SRID=4326;POINT (106.72 10.82)",
+    "address": "Số 120, Đường 3, Quận 1",
+    "estimated_arrival": "07:20:00",
+    "estimated_departure": "07:25:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.468Z",
+    "updated_at": "2025-11-21T05:59:34.468Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 6,
+  "fields": {
+    "route": 3,
+    "stop_order": 1,
+    "stop_name": "Điểm dừng 1 - Quận 1",
+    "location": "SRID=4326;POINT (106.7 10.8)",
+    "address": "Số 100, Đường 1, Quận 1",
+    "estimated_arrival": "16:00:00",
+    "estimated_departure": "16:05:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.470Z",
+    "updated_at": "2025-11-21T05:59:34.470Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 7,
+  "fields": {
+    "route": 3,
+    "stop_order": 2,
+    "stop_name": "Điểm dừng 2 - Quận 1",
+    "location": "SRID=4326;POINT (106.71000000000001 10.81)",
+    "address": "Số 110, Đường 2, Quận 1",
+    "estimated_arrival": "16:10:00",
+    "estimated_departure": "16:15:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.471Z",
+    "updated_at": "2025-11-21T05:59:34.471Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 8,
+  "fields": {
+    "route": 3,
+    "stop_order": 3,
+    "stop_name": "Điểm dừng 3 - Quận 1",
+    "location": "SRID=4326;POINT (106.72 10.82)",
+    "address": "Số 120, Đường 3, Quận 1",
+    "estimated_arrival": "16:20:00",
+    "estimated_departure": "16:25:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.471Z",
+    "updated_at": "2025-11-21T05:59:34.471Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 9,
+  "fields": {
+    "route": 3,
+    "stop_order": 4,
+    "stop_name": "Điểm dừng 4 - Quận 1",
+    "location": "SRID=4326;POINT (106.73 10.83)",
+    "address": "Số 130, Đường 4, Quận 1",
+    "estimated_arrival": "16:30:00",
+    "estimated_departure": "16:35:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.471Z",
+    "updated_at": "2025-11-21T05:59:34.471Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 10,
+  "fields": {
+    "route": 4,
+    "stop_order": 1,
+    "stop_name": "Điểm dừng 1 - Quận 3",
+    "location": "SRID=4326;POINT (106.7 10.8)",
+    "address": "Số 100, Đường 1, Quận 3",
+    "estimated_arrival": "07:00:00",
+    "estimated_departure": "07:05:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.481Z",
+    "updated_at": "2025-11-21T05:59:34.481Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 11,
+  "fields": {
+    "route": 4,
+    "stop_order": 2,
+    "stop_name": "Điểm dừng 2 - Quận 3",
+    "location": "SRID=4326;POINT (106.71000000000001 10.81)",
+    "address": "Số 110, Đường 2, Quận 3",
+    "estimated_arrival": "07:10:00",
+    "estimated_departure": "07:15:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.485Z",
+    "updated_at": "2025-11-21T05:59:34.485Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 12,
+  "fields": {
+    "route": 4,
+    "stop_order": 3,
+    "stop_name": "Điểm dừng 3 - Quận 3",
+    "location": "SRID=4326;POINT (106.72 10.82)",
+    "address": "Số 120, Đường 3, Quận 3",
+    "estimated_arrival": "07:20:00",
+    "estimated_departure": "07:25:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.488Z",
+    "updated_at": "2025-11-21T05:59:34.488Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 13,
+  "fields": {
+    "route": 4,
+    "stop_order": 4,
+    "stop_name": "Điểm dừng 4 - Quận 3",
+    "location": "SRID=4326;POINT (106.73 10.83)",
+    "address": "Số 130, Đường 4, Quận 3",
+    "estimated_arrival": "07:30:00",
+    "estimated_departure": "07:35:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.490Z",
+    "updated_at": "2025-11-21T05:59:34.490Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 14,
+  "fields": {
+    "route": 5,
+    "stop_order": 1,
+    "stop_name": "Điểm dừng 1 - Quận 3",
+    "location": "SRID=4326;POINT (106.7 10.8)",
+    "address": "Số 100, Đường 1, Quận 3",
+    "estimated_arrival": "16:00:00",
+    "estimated_departure": "16:05:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.490Z",
+    "updated_at": "2025-11-21T05:59:34.490Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 15,
+  "fields": {
+    "route": 5,
+    "stop_order": 2,
+    "stop_name": "Điểm dừng 2 - Quận 3",
+    "location": "SRID=4326;POINT (106.71000000000001 10.81)",
+    "address": "Số 110, Đường 2, Quận 3",
+    "estimated_arrival": "16:10:00",
+    "estimated_departure": "16:15:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.490Z",
+    "updated_at": "2025-11-21T05:59:34.490Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 16,
+  "fields": {
+    "route": 5,
+    "stop_order": 3,
+    "stop_name": "Điểm dừng 3 - Quận 3",
+    "location": "SRID=4326;POINT (106.72 10.82)",
+    "address": "Số 120, Đường 3, Quận 3",
+    "estimated_arrival": "16:20:00",
+    "estimated_departure": "16:25:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.498Z",
+    "updated_at": "2025-11-21T05:59:34.498Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 17,
+  "fields": {
+    "route": 5,
+    "stop_order": 4,
+    "stop_name": "Điểm dừng 4 - Quận 3",
+    "location": "SRID=4326;POINT (106.73 10.83)",
+    "address": "Số 130, Đường 4, Quận 3",
+    "estimated_arrival": "16:30:00",
+    "estimated_departure": "16:35:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.501Z",
+    "updated_at": "2025-11-21T05:59:34.501Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 18,
+  "fields": {
+    "route": 5,
+    "stop_order": 5,
+    "stop_name": "Điểm dừng 5 - Quận 3",
+    "location": "SRID=4326;POINT (106.74000000000001 10.84)",
+    "address": "Số 140, Đường 5, Quận 3",
+    "estimated_arrival": "16:40:00",
+    "estimated_departure": "16:45:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.502Z",
+    "updated_at": "2025-11-21T05:59:34.502Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 19,
+  "fields": {
+    "route": 5,
+    "stop_order": 6,
+    "stop_name": "Điểm dừng 6 - Quận 3",
+    "location": "SRID=4326;POINT (106.75 10.850000000000001)",
+    "address": "Số 150, Đường 6, Quận 3",
+    "estimated_arrival": "16:50:00",
+    "estimated_departure": "16:55:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.505Z",
+    "updated_at": "2025-11-21T05:59:34.505Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 20,
+  "fields": {
+    "route": 6,
+    "stop_order": 1,
+    "stop_name": "Điểm dừng 1 - Quận 10",
+    "location": "SRID=4326;POINT (106.7 10.8)",
+    "address": "Số 100, Đường 1, Quận 10",
+    "estimated_arrival": "07:00:00",
+    "estimated_departure": "07:05:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.505Z",
+    "updated_at": "2025-11-21T05:59:34.505Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 21,
+  "fields": {
+    "route": 6,
+    "stop_order": 2,
+    "stop_name": "Điểm dừng 2 - Quận 10",
+    "location": "SRID=4326;POINT (106.71000000000001 10.81)",
+    "address": "Số 110, Đường 2, Quận 10",
+    "estimated_arrival": "07:10:00",
+    "estimated_departure": "07:15:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.505Z",
+    "updated_at": "2025-11-21T05:59:34.505Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 22,
+  "fields": {
+    "route": 6,
+    "stop_order": 3,
+    "stop_name": "Điểm dừng 3 - Quận 10",
+    "location": "SRID=4326;POINT (106.72 10.82)",
+    "address": "Số 120, Đường 3, Quận 10",
+    "estimated_arrival": "07:20:00",
+    "estimated_departure": "07:25:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.515Z",
+    "updated_at": "2025-11-21T05:59:34.515Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 23,
+  "fields": {
+    "route": 6,
+    "stop_order": 4,
+    "stop_name": "Điểm dừng 4 - Quận 10",
+    "location": "SRID=4326;POINT (106.73 10.83)",
+    "address": "Số 130, Đường 4, Quận 10",
+    "estimated_arrival": "07:30:00",
+    "estimated_departure": "07:35:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.517Z",
+    "updated_at": "2025-11-21T05:59:34.517Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 24,
+  "fields": {
+    "route": 6,
+    "stop_order": 5,
+    "stop_name": "Điểm dừng 5 - Quận 10",
+    "location": "SRID=4326;POINT (106.74000000000001 10.84)",
+    "address": "Số 140, Đường 5, Quận 10",
+    "estimated_arrival": "07:40:00",
+    "estimated_departure": "07:45:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.517Z",
+    "updated_at": "2025-11-21T05:59:34.517Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 25,
+  "fields": {
+    "route": 6,
+    "stop_order": 6,
+    "stop_name": "Điểm dừng 6 - Quận 10",
+    "location": "SRID=4326;POINT (106.75 10.850000000000001)",
+    "address": "Số 150, Đường 6, Quận 10",
+    "estimated_arrival": "07:50:00",
+    "estimated_departure": "07:55:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.517Z",
+    "updated_at": "2025-11-21T05:59:34.517Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 26,
+  "fields": {
+    "route": 7,
+    "stop_order": 1,
+    "stop_name": "Điểm dừng 1 - Quận 10",
+    "location": "SRID=4326;POINT (106.7 10.8)",
+    "address": "Số 100, Đường 1, Quận 10",
+    "estimated_arrival": "16:00:00",
+    "estimated_departure": "16:05:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.517Z",
+    "updated_at": "2025-11-21T05:59:34.517Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 27,
+  "fields": {
+    "route": 7,
+    "stop_order": 2,
+    "stop_name": "Điểm dừng 2 - Quận 10",
+    "location": "SRID=4326;POINT (106.71000000000001 10.81)",
+    "address": "Số 110, Đường 2, Quận 10",
+    "estimated_arrival": "16:10:00",
+    "estimated_departure": "16:15:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.517Z",
+    "updated_at": "2025-11-21T05:59:34.517Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 28,
+  "fields": {
+    "route": 7,
+    "stop_order": 3,
+    "stop_name": "Điểm dừng 3 - Quận 10",
+    "location": "SRID=4326;POINT (106.72 10.82)",
+    "address": "Số 120, Đường 3, Quận 10",
+    "estimated_arrival": "16:20:00",
+    "estimated_departure": "16:25:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.530Z",
+    "updated_at": "2025-11-21T05:59:34.530Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 29,
+  "fields": {
+    "route": 7,
+    "stop_order": 4,
+    "stop_name": "Điểm dừng 4 - Quận 10",
+    "location": "SRID=4326;POINT (106.73 10.83)",
+    "address": "Số 130, Đường 4, Quận 10",
+    "estimated_arrival": "16:30:00",
+    "estimated_departure": "16:35:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.533Z",
+    "updated_at": "2025-11-21T05:59:34.533Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 30,
+  "fields": {
+    "route": 7,
+    "stop_order": 5,
+    "stop_name": "Điểm dừng 5 - Quận 10",
+    "location": "SRID=4326;POINT (106.74000000000001 10.84)",
+    "address": "Số 140, Đường 5, Quận 10",
+    "estimated_arrival": "16:40:00",
+    "estimated_departure": "16:45:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.536Z",
+    "updated_at": "2025-11-21T05:59:34.536Z"
+  }
+},
+{
+  "model": "routes.routestop",
+  "pk": 31,
+  "fields": {
+    "route": 7,
+    "stop_order": 6,
+    "stop_name": "Điểm dừng 6 - Quận 10",
+    "location": "SRID=4326;POINT (106.75 10.850000000000001)",
+    "address": "Số 150, Đường 6, Quận 10",
+    "estimated_arrival": "16:50:00",
+    "estimated_departure": "16:55:00",
+    "stop_duration": 5,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.538Z",
+    "updated_at": "2025-11-21T05:59:34.538Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 1,
+  "fields": {
+    "student": 2,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T05:59:34.544Z",
+    "updated_at": "2025-11-21T05:59:34.544Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 2,
+  "fields": {
+    "student": 3,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T05:59:34.551Z",
+    "updated_at": "2025-11-21T05:59:34.551Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 3,
+  "fields": {
+    "student": 4,
+    "route": 2,
+    "stop": 3,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T05:59:34.556Z",
+    "updated_at": "2025-11-21T05:59:34.556Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 4,
+  "fields": {
+    "student": 5,
+    "route": 2,
+    "stop": 3,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T05:59:34.560Z",
+    "updated_at": "2025-11-21T05:59:34.560Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 5,
+  "fields": {
+    "student": 6,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T05:59:34.564Z",
+    "updated_at": "2025-11-21T05:59:34.564Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 6,
+  "fields": {
+    "student": 7,
+    "route": 6,
+    "stop": 20,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.564Z",
+    "updated_at": "2025-11-21T05:59:34.564Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 7,
+  "fields": {
+    "student": 9,
+    "route": 2,
+    "stop": 3,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.564Z",
+    "updated_at": "2025-11-21T05:59:34.564Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 8,
+  "fields": {
+    "student": 11,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.564Z",
+    "updated_at": "2025-11-21T05:59:34.564Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 9,
+  "fields": {
+    "student": 14,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.580Z",
+    "updated_at": "2025-11-21T05:59:34.580Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 10,
+  "fields": {
+    "student": 15,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.580Z",
+    "updated_at": "2025-11-21T05:59:34.580Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 11,
+  "fields": {
+    "student": 16,
+    "route": 2,
+    "stop": 3,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.580Z",
+    "updated_at": "2025-11-21T05:59:34.580Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 12,
+  "fields": {
+    "student": 17,
+    "route": 6,
+    "stop": 20,
+    "assignment_type": "pickup",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T05:59:34.580Z",
+    "updated_at": "2025-11-21T05:59:34.580Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 13,
+  "fields": {
+    "student": 4,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T21:44:38.393Z",
+    "updated_at": "2025-11-21T21:44:38.393Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 14,
+  "fields": {
+    "student": 6,
+    "route": 6,
+    "stop": 20,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T21:46:21.779Z",
+    "updated_at": "2025-11-21T21:46:21.779Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 15,
+  "fields": {
+    "student": 5,
+    "route": 6,
+    "stop": 21,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T21:46:50.781Z",
+    "updated_at": "2025-11-21T21:46:50.781Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 16,
+  "fields": {
+    "student": 2,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T21:52:28.961Z",
+    "updated_at": "2025-11-21T21:52:28.961Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 17,
+  "fields": {
+    "student": 3,
+    "route": 5,
+    "stop": 14,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T21:52:53.045Z",
+    "updated_at": "2025-11-21T21:52:53.045Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 18,
+  "fields": {
+    "student": 3,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T21:54:55.756Z",
+    "updated_at": "2025-11-21T21:54:55.756Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 19,
+  "fields": {
+    "student": 3,
+    "route": 6,
+    "stop": 20,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T22:01:05.149Z",
+    "updated_at": "2025-11-21T22:01:05.149Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 20,
+  "fields": {
+    "student": 3,
+    "route": 6,
+    "stop": 20,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": false,
+    "created_at": "2025-11-21T22:01:36.103Z",
+    "updated_at": "2025-11-21T22:01:36.103Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 21,
+  "fields": {
+    "student": 3,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T22:13:16.523Z",
+    "updated_at": "2025-11-21T22:13:16.523Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 22,
+  "fields": {
+    "student": 6,
+    "route": 4,
+    "stop": 10,
+    "assignment_type": "both",
+    "start_date": "2025-11-21",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-21T22:14:10.500Z",
+    "updated_at": "2025-11-21T22:14:10.500Z"
+  }
+},
+{
+  "model": "routes.studentroute",
+  "pk": 23,
+  "fields": {
+    "student": 4,
+    "route": 3,
+    "stop": 6,
+    "assignment_type": "both",
+    "start_date": "2025-11-22",
+    "end_date": null,
+    "is_active": true,
+    "created_at": "2025-11-22T08:47:08.254Z",
+    "updated_at": "2025-11-22T08:47:08.254Z"
+  }
+},
+{
+  "model": "tracking.trip",
+  "pk": 1,
+  "fields": {
+    "route": 2,
+    "driver": 2,
+    "vehicle": 3,
+    "trip_date": "2025-11-21",
+    "trip_type": "morning_pickup",
+    "scheduled_start_time": "2025-11-21T00:00:00Z",
+    "actual_start_time": "2025-11-21T20:10:32.510Z",
+    "scheduled_end_time": "2025-11-21T01:00:00Z",
+    "actual_end_time": "2025-11-21T20:11:24.548Z",
+    "status": "completed",
+    "total_students": 4,
+    "checked_in_students": 0,
+    "checked_out_students": 0,
+    "notes": null,
+    "created_at": "2025-11-21T05:59:34.595Z",
+    "updated_at": "2025-11-21T05:59:34.595Z"
+  }
+},
+{
+  "model": "tracking.trip",
+  "pk": 2,
+  "fields": {
+    "route": 3,
+    "driver": 2,
+    "vehicle": 3,
+    "trip_date": "2025-11-21",
+    "trip_type": "afternoon_dropoff",
+    "scheduled_start_time": "2025-11-21T09:00:00Z",
+    "actual_start_time": "2025-11-21T20:10:49.755Z",
+    "scheduled_end_time": "2025-11-21T10:00:00Z",
+    "actual_end_time": "2025-11-21T20:10:54.175Z",
+    "status": "completed",
+    "total_students": 0,
+    "checked_in_students": 0,
+    "checked_out_students": 0,
+    "notes": null,
+    "created_at": "2025-11-21T05:59:34.605Z",
+    "updated_at": "2025-11-21T05:59:34.605Z"
+  }
+},
+{
+  "model": "tracking.trip",
+  "pk": 3,
+  "fields": {
+    "route": 4,
+    "driver": 3,
+    "vehicle": 4,
+    "trip_date": "2025-11-21",
+    "trip_type": "morning_pickup",
+    "scheduled_start_time": "2025-11-21T00:00:00Z",
+    "actual_start_time": "2025-11-21T21:53:36.331Z",
+    "scheduled_end_time": "2025-11-21T01:00:00Z",
+    "actual_end_time": null,
+    "status": "in_progress",
+    "total_students": 6,
+    "checked_in_students": 0,
+    "checked_out_students": 0,
+    "notes": null,
+    "created_at": "2025-11-21T05:59:34.609Z",
+    "updated_at": "2025-11-21T05:59:34.609Z"
+  }
+},
+{
+  "model": "tracking.trip",
+  "pk": 4,
+  "fields": {
+    "route": 5,
+    "driver": 3,
+    "vehicle": 4,
+    "trip_date": "2025-11-21",
+    "trip_type": "afternoon_dropoff",
+    "scheduled_start_time": "2025-11-21T09:00:00Z",
+    "actual_start_time": "2025-11-21T21:53:17.206Z",
+    "scheduled_end_time": "2025-11-21T10:00:00Z",
+    "actual_end_time": null,
+    "status": "in_progress",
+    "total_students": 0,
+    "checked_in_students": 0,
+    "checked_out_students": 0,
+    "notes": null,
+    "created_at": "2025-11-21T05:59:34.612Z",
+    "updated_at": "2025-11-21T05:59:34.613Z"
+  }
+},
+{
+  "model": "tracking.trip",
+  "pk": 5,
+  "fields": {
+    "route": 6,
+    "driver": 4,
+    "vehicle": 5,
+    "trip_date": "2025-11-21",
+    "trip_type": "morning_pickup",
+    "scheduled_start_time": "2025-11-21T00:00:00Z",
+    "actual_start_time": null,
+    "scheduled_end_time": "2025-11-21T01:00:00Z",
+    "actual_end_time": null,
+    "status": "scheduled",
+    "total_students": 2,
+    "checked_in_students": 0,
+    "checked_out_students": 0,
+    "notes": null,
+    "created_at": "2025-11-21T05:59:34.617Z",
+    "updated_at": "2025-11-21T05:59:34.617Z"
+  }
+},
+{
+  "model": "tracking.trip",
+  "pk": 6,
+  "fields": {
+    "route": 7,
+    "driver": 4,
+    "vehicle": 5,
+    "trip_date": "2025-11-21",
+    "trip_type": "afternoon_dropoff",
+    "scheduled_start_time": "2025-11-21T09:00:00Z",
+    "actual_start_time": null,
+    "scheduled_end_time": "2025-11-21T10:00:00Z",
+    "actual_end_time": null,
+    "status": "scheduled",
+    "total_students": 0,
+    "checked_in_students": 0,
+    "checked_out_students": 0,
+    "notes": null,
+    "created_at": "2025-11-21T05:59:34.621Z",
+    "updated_at": "2025-11-21T05:59:34.621Z"
+  }
+},
+{
+  "model": "tracking.trip",
+  "pk": 7,
+  "fields": {
+    "route": 3,
+    "driver": 2,
+    "vehicle": 3,
+    "trip_date": "2025-11-22",
+    "trip_type": "pickup",
+    "scheduled_start_time": "2025-11-22T08:55:10.598Z",
+    "actual_start_time": "2025-11-22T08:47:29.408Z",
+    "scheduled_end_time": "2025-11-22T09:45:10.598Z",
+    "actual_end_time": "2025-11-22T09:18:45.507Z",
+    "status": "completed",
+    "total_students": 0,
+    "checked_in_students": 0,
+    "checked_out_students": 0,
+    "notes": null,
+    "created_at": "2025-11-22T08:45:10.607Z",
+    "updated_at": "2025-11-22T08:45:10.607Z"
+  }
+},
+{
+  "model": "tracking.locationlog",
+  "pk": 1,
+  "fields": {
+    "trip": 7,
+    "driver": 2,
+    "location": "SRID=4326;POINT (106.72409709245187 10.754218396714597)",
+    "speed": "0.00",
+    "timestamp": "2025-11-22T09:08:24.129Z"
+  }
+},
+{
+  "model": "tracking.locationlog",
+  "pk": 2,
+  "fields": {
+    "trip": 7,
+    "driver": 2,
+    "location": "SRID=4326;POINT (106.72411423817196 10.75413344598382)",
+    "speed": "0.00",
+    "timestamp": "2025-11-22T09:18:46.696Z"
+  }
+},
+{
+  "model": "backup.backuplog",
+  "pk": 1,
+  "fields": {
+    "backup_type": "manual",
+    "backup_path": "/backups/db_backup_v1.sql",
+    "file_name": null,
+    "file_size_mb": "15.50",
+    "status": "success",
+    "started_at": "2025-11-22T10:24:55.654Z",
+    "completed_at": null,
+    "duration_seconds": 0,
+    "tables_backed_up": [],
+    "error_message": null,
+    "performed_by": 5,
+    "created_at": "2025-11-22T10:24:55.654Z"
+  }
+}
+]

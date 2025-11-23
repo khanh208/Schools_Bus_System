@@ -65,6 +65,7 @@ class Command(BaseCommand):
     
     def clear_data(self):
         """Clear existing data"""
+        # Xóa các dữ liệu liên quan trước
         Trip.objects.all().delete()
         StudentRoute.objects.all().delete()
         RouteStop.objects.all().delete()
@@ -73,9 +74,19 @@ class Command(BaseCommand):
         Student.objects.all().delete()
         Class.objects.all().delete()
         Area.objects.all().delete()
+        
+        # Xóa Profile
         Parent.objects.all().delete()
         Driver.objects.all().delete()
+        
+        # --- PHẦN QUAN TRỌNG CẦN THÊM ---
+        # Xóa luôn các User tương ứng để khi tạo lại sẽ trigger signal tạo profile mới
+        User.objects.filter(username='admin').delete()
+        User.objects.filter(username__startswith='driver').delete()
+        User.objects.filter(username__startswith='parent').delete()
         User.objects.filter(username__startswith='test_').delete()
+        
+        self.stdout.write(self.style.SUCCESS('✓ Cleared all data and related users'))
     
     def create_admin(self):
         """Create admin user"""

@@ -1,147 +1,65 @@
+# utils/permissions.py
 from rest_framework import permissions
 
-
 class IsAdmin(permissions.BasePermission):
-    """
-    Permission class to check if user is an admin
-    """
+    """Chỉ cho phép Admin truy cập"""
     def has_permission(self, request, view):
-        return request.user and request.user.is_authenticated and request.user.role == 'admin'
-
+        return request.user and request.user.is_authenticated and getattr(request.user, 'role', '') == 'admin'
 
 class IsDriver(permissions.BasePermission):
-    """
-    Permission class to check if user is a driver
-    """
+    """Chỉ cho phép Tài xế truy cập"""
     def has_permission(self, request, view):
-        return request.user and request.user.is_authenticated and request.user.role == 'driver'
-
+        return request.user and request.user.is_authenticated and getattr(request.user, 'role', '') == 'driver'
 
 class IsParent(permissions.BasePermission):
-    """
-    Permission class to check if user is a parent
-    """
+    """Chỉ cho phép Phụ huynh truy cập"""
     def has_permission(self, request, view):
-        return request.user and request.user.is_authenticated and request.user.role == 'parent'
+        return request.user and request.user.is_authenticated and getattr(request.user, 'role', '') == 'parent'
 
+class CanManageRoute(permissions.BasePermission):
+    """Quyền quản lý tuyến đường (Admin)"""
+    def has_permission(self, request, view):
+        if request.method in permissions.SAFE_METHODS:
+            return request.user and request.user.is_authenticated
+        return request.user and request.user.is_authenticated and getattr(request.user, 'role', '') == 'admin'
+
+class CanViewTrip(permissions.BasePermission):
+    """Quyền xem chuyến đi"""
+    def has_object_permission(self, request, view, obj):
+        user = request.user
+        if getattr(user, 'role', '') == 'admin': return True
+        if getattr(user, 'role', '') == 'driver': return obj.driver.user == user
+        if getattr(user, 'role', '') == 'parent': return True 
+        return False
+
+class CanTakeAttendance(permissions.BasePermission):
+    """Quyền điểm danh (Tài xế)"""
+    def has_permission(self, request, view):
+        return request.user and request.user.is_authenticated and getattr(request.user, 'role', '') in ['driver', 'admin']
+
+class IsParentOfStudent(permissions.BasePermission):
+    """Chỉ phụ huynh của học sinh mới được xem"""
+    def has_object_permission(self, request, view, obj):
+        if getattr(request.user, 'role', '') == 'admin': return True
+        if getattr(request.user, 'role', '') == 'parent':
+            return obj.parent.user == request.user
+        return False
 
 class IsOwnerOrAdmin(permissions.BasePermission):
     """
-    Permission class to check if user is owner of object or admin
+    Chỉ cho phép chủ sở hữu (người tạo/upload) hoặc Admin được thao tác.
     """
     def has_object_permission(self, request, view, obj):
-        if request.user.role == 'admin':
+        # Admin luôn được phép
+        if getattr(request.user, 'role', '') == 'admin':
             return True
-        
-        # Check if object has user attribute
+            
+        # Kiểm tra quyền sở hữu dựa trên các trường phổ biến
         if hasattr(obj, 'user'):
             return obj.user == request.user
-        
-        # Check if object has parent attribute
-        if hasattr(obj, 'parent'):
-            return obj.parent.user == request.user
-        
-        # Check if object has driver attribute
-        if hasattr(obj, 'driver'):
-            return obj.driver.user == request.user
-        
+        if hasattr(obj, 'created_by'):
+            return obj.created_by == request.user
+        if hasattr(obj, 'uploaded_by'):
+            return obj.uploaded_by == request.user
+            
         return False
-
-
-class IsDriverOfTrip(permissions.BasePermission):
-    """
-    Permission class to check if user is the driver of the trip
-    """
-    def has_object_permission(self, request, view, obj):
-        if request.user.role == 'admin':
-            return True
-        
-        if hasattr(obj, 'driver'):
-            return obj.driver.user == request.user
-        
-        if hasattr(obj, 'trip') and hasattr(obj.trip, 'driver'):
-            return obj.trip.driver.user == request.user
-        
-        return False
-
-
-class IsParentOfStudent(permissions.BasePermission):
-    """
-    Permission class to check if user is parent of the student
-    """
-    def has_object_permission(self, request, view, obj):
-        if request.user.role == 'admin':
-            return True
-        
-        if hasattr(obj, 'parent'):
-            return obj.parent.user == request.user
-        
-        if hasattr(obj, 'student') and hasattr(obj.student, 'parent'):
-            return obj.student.parent.user == request.user
-        
-        return False
-
-
-class CanViewTrip(permissions.BasePermission):
-    """
-    Permission for viewing trips - Admin, Driver, or Parent of students on the trip
-    """
-    def has_object_permission(self, request, view, obj):
-        user = request.user
-        
-        # Admin can view all
-        if user.role == 'admin':
-            return True
-        
-        # Driver can view their own trips
-        if user.role == 'driver' and hasattr(user, 'driver_profile'):
-            return obj.driver == user.driver_profile
-        
-        # Parent can view trips where their children are assigned
-        if user.role == 'parent' and hasattr(user, 'parent_profile'):
-            from apps.routes.models import StudentRoute
-            student_ids = user.parent_profile.students.filter(is_active=True).values_list('id', flat=True)
-            route_assignments = StudentRoute.objects.filter(
-                student_id__in=student_ids,
-                route=obj.route,
-                is_active=True
-            )
-            return route_assignments.exists()
-        
-        return False
-
-
-class CanManageRoute(permissions.BasePermission):
-    """
-    Permission for managing routes - Admin only
-    """
-    def has_permission(self, request, view):
-        if view.action in ['list', 'retrieve']:
-            return request.user.is_authenticated
-        return request.user.role == 'admin'
-
-
-class CanTakeAttendance(permissions.BasePermission):
-    """
-    Permission for taking attendance - Admin or assigned driver
-    """
-    def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.role in ['admin', 'driver']
-    
-    def has_object_permission(self, request, view, obj):
-        if request.user.role == 'admin':
-            return True
-        
-        if request.user.role == 'driver' and hasattr(request.user, 'driver_profile'):
-            if hasattr(obj, 'trip'):
-                return obj.trip.driver == request.user.driver_profile
-        
-        return False
-
-
-class ReadOnly(permissions.BasePermission):
-    """
-    Read-only permission for any authenticated user
-    """
-    def has_permission(self, request, view):
-        return request.user.is_authenticated and request.method in permissions.SAFE_METHODS

@@ -67,3 +67,4 @@ echo Press any key to open browser...
 pause
 
 start http://localhost:8000
+npm run dev

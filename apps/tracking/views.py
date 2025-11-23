@@ -43,11 +43,11 @@ class TripViewSet(viewsets.ModelViewSet):
         user = self.request.user
 
         # Driver chỉ thấy chuyến của mình
-        if user.role == 'driver' and hasattr(user, 'driver_profile'):
+        if getattr(user, 'role', '') == 'driver' and hasattr(user, 'driver_profile'):
             queryset = queryset.filter(driver=user.driver_profile)
 
         # Phụ huynh thấy chuyến tương ứng tuyến của con
-        elif user.role == 'parent' and hasattr(user, 'parent_profile'):
+        elif getattr(user, 'role', '') == 'parent' and hasattr(user, 'parent_profile'):
             from apps.routes.models import StudentRoute
             student_ids = user.parent_profile.students.filter(
                 is_active=True
@@ -332,16 +332,12 @@ class StopArrivalViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND,
             )
 
-        location = Point(float(lng), float(lat)) if (lat and lng) else None
-
         arrival, created = StopArrival.objects.update_or_create(
             trip=trip,
             stop=stop,
             defaults={
                 'actual_arrival': timezone.now(),
-                # Nếu model StopArrival của bạn không có field location
-                # thì bỏ dòng này đi hoặc thêm field location vào model.
-                # 'location': location,
+                # 'location': Point(float(lng), float(lat)) if lat and lng else None, # Uncomment nếu model có field location
             },
         )
 

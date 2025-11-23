@@ -1,3 +1,10 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import ReportViewSet
 
-urlpatterns = []
+router = DefaultRouter()
+router.register('daily', ReportViewSet, basename='daily-report')
+
+urlpatterns = [
+    path('', include(router.urls)),
+]

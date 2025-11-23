@@ -266,7 +266,7 @@ class TokenSerializer(serializers.Serializer):
 
 class ProfileSerializer(serializers.Serializer):
     """Unified profile serializer"""
-    user = UserSerializer(read_only=True)
+    user = UserSerializer(source='*', read_only=True)  # <--- Thêm source='*'
     profile = serializers.SerializerMethodField()
     
     def get_profile(self, obj):
