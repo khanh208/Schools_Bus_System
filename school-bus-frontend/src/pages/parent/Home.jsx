@@ -5,8 +5,11 @@ import { FaUserGraduate, FaBus, FaMapMarkerAlt, FaExclamationCircle } from 'reac
 
 const getSocketUrl = () => {
     const apiUrl = import.meta.env.VITE_API_URL;
+    // Ensure we strip 'http' and '/api' correctly
     const baseUrl = apiUrl.replace('http', 'ws').replace('/api', '');
     const token = localStorage.getItem('access_token');
+    
+    // IMPORTANT: The slash before ? is crucial for Django URL routing
     return token ? `${baseUrl}/ws/notifications/?token=${token}` : null;
 };
 

@@ -8531,3 +8531,9 @@ WARNING 2025-11-24 01:32:50,639 log Not Found: /api/auth/parents/children/
 WARNING 2025-11-24 01:32:50,829 log Not Found: /api/auth/parents/children/
 WARNING 2025-11-24 01:43:43,321 log Not Found: /api/auth/parents/children/
 WARNING 2025-11-24 01:43:43,554 log Not Found: /api/auth/parents/children/
+INFO 2025-11-24 03:13:09,614 cli Starting server at tcp:port=8000:interface=127.0.0.1
+INFO 2025-11-24 03:13:09,615 server HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-11-24 03:13:09,615 server Configuring endpoint tcp:port=8000:interface=127.0.0.1
+INFO 2025-11-24 03:13:09,617 server Listening on TCP address 127.0.0.1:8000
+WARNING 2025-11-24 03:14:31,003 log Bad Request: /api/auth/parents/children/
+WARNING 2025-11-24 03:14:31,144 log Bad Request: /api/auth/parents/children/
