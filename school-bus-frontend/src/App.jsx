@@ -10,7 +10,8 @@ import Drivers from './pages/admin/Drivers';
 import Parents from './pages/admin/Parents';
 import LiveMap from './pages/admin/LiveMap';
 import Trips from './pages/admin/Trips';
-
+import Attendance from './pages/admin/Attendance';
+import Assignments from './pages/admin/Assignments';
 
 // Pages (Admin)
 import Dashboard from './pages/admin/Dashboard';
@@ -19,11 +20,14 @@ import Students from './pages/admin/Students';
 import RoutesPage from './pages/admin/Routes';
 import Vehicles from './pages/admin/Vehicles';
 import RouteDetail from './pages/admin/RouteDetail';
+import History from './pages/driver/History';
 // Pages (Driver)
 import DriverHome from './pages/driver/Home';
 import TripTracking from './pages/driver/TripTracking';
 import Reports from './pages/admin/Reports';
 import Backup from './pages/admin/Backup';
+import Areas from './pages/admin/Areas';
+import Classes from './pages/admin/Classes';
 
 // Pages (Parent)
 import ParentHome from './pages/parent/Home';
@@ -58,13 +62,16 @@ function App() {
                             <Route path="students" element={<Students />} />
                             <Route path="routes" element={<RoutesPage />} />
                             <Route path="vehicles" element={<Vehicles />} />
+                            <Route path="attendance" element={<Attendance />} />
+                            <Route path="areas" element={<Areas />} />
+                             <Route path="classes" element={<Classes />} />
                             
                             <Route path="drivers" element={<Drivers />} />
                             <Route path="parents" element={<Parents />} />
                             <Route path="tracking" element={<LiveMap />} />
                             <Route path="reports" element={<Reports />} />
                             <Route path="backup" element={<Backup />} />    
-                            <Route path="routes" element={<RoutesPage />} />
+                            <Route path="assignments" element={<Assignments />} />
                             <Route path="routes/:id" element={<RouteDetail />} />
                         </Route>
                     </Route>
@@ -75,7 +82,7 @@ function App() {
                             <Route index element={<Navigate to="home" replace />} />
                             <Route path="home" element={<DriverHome />} />
                             <Route path="trip/:tripId" element={<TripTracking />} />
-                            <Route path="history" element={<h1 className="p-4">Lịch sử (Coming soon)</h1>} />
+                            <Route path="history" element={<History />} />
                         </Route>
                     </Route>
 

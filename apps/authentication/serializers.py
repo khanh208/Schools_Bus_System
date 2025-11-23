@@ -265,8 +265,18 @@ class TokenSerializer(serializers.Serializer):
 
 
 class ProfileSerializer(serializers.Serializer):
-    """Unified profile serializer"""
-    user = UserSerializer(source='*', read_only=True)  # <--- Thêm source='*'
+    """Unified profile serializer - FIXED"""
+    # Trả về thông tin user ở level gốc
+    id = serializers.IntegerField(read_only=True)
+    username = serializers.CharField(read_only=True)
+    email = serializers.EmailField(read_only=True)
+    full_name = serializers.CharField(read_only=True)
+    phone = serializers.CharField(read_only=True)
+    role = serializers.CharField(read_only=True)
+    avatar = serializers.ImageField(read_only=True)
+    is_active = serializers.BooleanField(read_only=True)
+    
+    # Profile data (Driver/Parent)
     profile = serializers.SerializerMethodField()
     
     def get_profile(self, obj):

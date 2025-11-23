@@ -307,12 +307,12 @@ class StudentRouteViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         """
-        Automatically deactivate existing active assignments for this student 
-        before creating a new one to ensure only one active route exists.
+        Tự động hủy các phân công đang hoạt động của học sinh này
+        trước khi tạo phân công mới.
         """
         student = serializer.validated_data['student']
         
-        # Deactivate all currently active assignments for this student
+        # Hủy (Deactivate) tất cả tuyến cũ đang active
         StudentRoute.objects.filter(
             student=student, 
             is_active=True

@@ -2,9 +2,21 @@ import { useState } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { 
-    FaHome, FaUsers, FaUserTie, FaUserFriends, FaBus, 
-    FaRoute, FaMapMarkedAlt, FaSignOutAlt, FaBars,
-    FaCalendarCheck, FaChartBar, FaDatabase 
+    FaHome, 
+    FaUsers, 
+    FaUserTie, 
+    FaUserFriends, 
+    FaBus, 
+    FaRoute, 
+    FaMapMarkedAlt, 
+    FaSignOutAlt, 
+    FaBars,
+    FaCalendarCheck,    // <-- Đã thêm icon này (Chuyến đi)
+    FaChartBar, 
+    FaDatabase, 
+    FaClipboardList,
+    FaChalkboardTeacher,
+    FaExchangeAlt
 } from 'react-icons/fa';
 
 const AdminLayout = () => {
@@ -15,16 +27,20 @@ const AdminLayout = () => {
 
     const menuItems = [
         { path: '/admin/dashboard', name: 'Dashboard', icon: <FaHome /> },
+        { path: '/admin/trips', name: 'Chuyến đi', icon: <FaCalendarCheck /> },
+        { path: '/admin/attendance', name: 'Nhật ký Điểm danh', icon: <FaClipboardList /> },
         { path: '/admin/users', name: 'Người dùng', icon: <FaUsers /> },
+        { path: '/admin/assignments', name: 'Phân công', icon: <FaExchangeAlt /> },
         { path: '/admin/drivers', name: 'Tài xế', icon: <FaUserTie /> },
         { path: '/admin/parents', name: 'Phụ huynh', icon: <FaUserFriends /> },
         { path: '/admin/students', name: 'Học sinh', icon: <FaUsers /> },
+        { path: '/admin/classes', name: 'Lớp học', icon: <FaChalkboardTeacher /> },
+        { path: '/admin/areas', name: 'Khu vực', icon: <FaMapMarkedAlt /> },
         { path: '/admin/vehicles', name: 'Xe Bus', icon: <FaBus /> },
         { path: '/admin/routes', name: 'Tuyến đường', icon: <FaRoute /> },
         { path: '/admin/tracking', name: 'Giám sát', icon: <FaMapMarkedAlt /> },
         { path: '/admin/reports', name: 'Báo cáo', icon: <FaChartBar /> },
         { path: '/admin/backup', name: 'Sao lưu', icon: <FaDatabase /> },   
-        { path: '/admin/trips', name: 'Chuyến đi', icon: <FaCalendarCheck /> },
     ];
 
     return (
@@ -38,7 +54,7 @@ const AdminLayout = () => {
                     </button>
                 </div>
                 
-                <nav className="flex-1 overflow-y-auto py-4">
+                <nav className="flex-1 overflow-y-auto py-4 custom-scrollbar">
                     <ul className="space-y-1">
                         {menuItems.map((item) => (
                             <li key={item.path}>
@@ -48,8 +64,8 @@ const AdminLayout = () => {
                                         location.pathname === item.path ? 'bg-slate-700 border-l-4 border-blue-500' : ''
                                     }`}
                                 >
-                                    <span className="text-xl">{item.icon}</span>
-                                    <span className={`ml-3 ${!isSidebarOpen && 'hidden'}`}>{item.name}</span>
+                                    <span className="text-xl min-w-[24px]">{item.icon}</span>
+                                    <span className={`ml-3 whitespace-nowrap ${!isSidebarOpen && 'hidden'}`}>{item.name}</span>
                                 </Link>
                             </li>
                         ))}
@@ -61,7 +77,7 @@ const AdminLayout = () => {
                         onClick={logout}
                         className="flex items-center w-full px-4 py-2 text-red-400 hover:bg-slate-700 rounded transition-colors"
                     >
-                        <FaSignOutAlt />
+                        <FaSignOutAlt className="text-xl min-w-[24px]" />
                         <span className={`ml-3 ${!isSidebarOpen && 'hidden'}`}>Đăng xuất</span>
                     </button>
                 </div>

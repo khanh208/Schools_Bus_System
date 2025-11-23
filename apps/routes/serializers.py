@@ -207,14 +207,16 @@ class StudentRouteSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'created_at']
     
     def validate(self, attrs):
-        # Validate that stop belongs to route
+        # Chỉ kiểm tra điểm dừng có thuộc tuyến không
         if attrs.get('stop') and attrs.get('route'):
             if attrs['stop'].route != attrs['route']:
                 raise serializers.ValidationError({
-                    "stop": "Selected stop does not belong to the selected route."
+                    "stop": "Điểm dừng này không thuộc tuyến xe đã chọn."
                 })
         
-        # Removed overlapping check to allow easy testing/re-assignment
+        # --- ĐÃ XÓA ĐOẠN KIỂM TRA TRÙNG LẶP (OVERLAPPING) ---
+        # Để cho phép ViewSet tự động hủy tuyến cũ và ghi đè tuyến mới
+        
         return attrs
 
 class RouteOptimizationSerializer(serializers.Serializer):

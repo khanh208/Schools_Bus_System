@@ -28,8 +28,13 @@ class TripListSerializer(serializers.ModelSerializer):
         ]
 
     def get_attendance_rate(self, obj):
+        # SỬA LỖI: Kiểm tra kỹ để tránh chia cho 0
         if obj.total_students and obj.total_students > 0:
-            return round(obj.checked_in_students * 100.0 / obj.total_students, 1)
+            try:
+                rate = (obj.checked_in_students / obj.total_students) * 100.0
+                return round(rate, 1)
+            except ZeroDivisionError:
+                return 0.0
         return 0.0
 
 
@@ -93,7 +98,6 @@ class TripDetailSerializer(serializers.ModelSerializer):
         }
 
     def get_duration(self, obj):
-        # dùng property duration trong model nếu có, không thì tự tính
         if hasattr(obj, 'duration') and obj.duration is not None:
             return obj.duration
         if obj.actual_start_time and obj.actual_end_time:
@@ -101,7 +105,6 @@ class TripDetailSerializer(serializers.ModelSerializer):
         return None
 
     def get_delay(self, obj):
-        # dùng property delay trong model nếu có, không thì tự tính
         if hasattr(obj, 'delay') and obj.delay is not None:
             return obj.delay
         if obj.actual_start_time and obj.scheduled_start_time:
@@ -112,18 +115,19 @@ class TripDetailSerializer(serializers.ModelSerializer):
         delay = self.get_delay(obj)
         if delay is None:
             return False
-        # > 5 phút coi là trễ
         return delay > 5
 
     def get_attendance_rate(self, obj):
+        # SỬA LỖI: Tương tự như trên
         if obj.total_students and obj.total_students > 0:
-            return round(obj.checked_in_students * 100.0 / obj.total_students, 1)
+            try:
+                rate = (obj.checked_in_students / obj.total_students) * 100.0
+                return round(rate, 1)
+            except ZeroDivisionError:
+                return 0.0
         return 0.0
 
     def get_current_location(self, obj):
-        """
-        Lấy điểm GPS gần nhất từ LocationLog
-        """
         latest_log = obj.location_logs.order_by('-timestamp').first()
         if not latest_log or not latest_log.location:
             return None
@@ -153,7 +157,6 @@ class TripCreateSerializer(serializers.ModelSerializer):
         trip_date = attrs.get('trip_date')
         vehicle = attrs.get('vehicle')
 
-        # Check driver occupied
         if driver and trip_date:
             qs = Trip.objects.filter(
                 driver=driver,
@@ -167,7 +170,6 @@ class TripCreateSerializer(serializers.ModelSerializer):
                     'driver': 'Tài xế đã có chuyến trong ngày này.',
                 })
 
-        # Check vehicle occupied
         if vehicle and trip_date:
             qs = Trip.objects.filter(
                 vehicle=vehicle,
@@ -184,7 +186,6 @@ class TripCreateSerializer(serializers.ModelSerializer):
         return attrs
 
     def create(self, validated_data):
-        # Đếm số học sinh gán vào tuyến
         route = validated_data['route']
         from apps.routes.models import StudentRoute
 

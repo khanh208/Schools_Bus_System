@@ -68,3 +68,4 @@ pause
 
 start http://localhost:8000
 npm run dev
+daphne -p 8000 config.asgi:application

@@ -64,7 +64,7 @@ class StudentDocumentSerializer(serializers.ModelSerializer):
 
 
 class StudentListSerializer(serializers.ModelSerializer):
-    """Lightweight serializer for listing students"""
+    """Serializer nhẹ để list danh sách học sinh (Đã bổ sung ID)"""
     class_name = serializers.CharField(source='class_obj.name', read_only=True)
     area_name = serializers.CharField(source='area.name', read_only=True)
     parent_name = serializers.CharField(source='parent.user.full_name', read_only=True)
@@ -75,12 +75,14 @@ class StudentListSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'student_code', 'full_name', 'date_of_birth', 'age',
             'gender', 'class_name', 'area_name', 'parent_name',
-            'photo', 'is_active'
+            'photo', 'is_active',
+            # --- QUAN TRỌNG: Bổ sung các trường ID này để form Edit hiển thị đúng ---
+            'class_obj', 'area', 'parent' 
         ]
 
 
 class StudentDetailSerializer(serializers.ModelSerializer):
-    """Detailed serializer for student with all info"""
+    """Serializer chi tiết cho học sinh"""
     class_info = ClassSerializer(source='class_obj', read_only=True)
     area_info = AreaSerializer(source='area', read_only=True)
     parent_name = serializers.CharField(source='parent.user.full_name', read_only=True)
@@ -127,11 +129,11 @@ class StudentDetailSerializer(serializers.ModelSerializer):
 
 
 class StudentCreateUpdateSerializer(serializers.ModelSerializer):
-    """Serializer for creating/updating students"""
-    pickup_lat = serializers.FloatField(write_only=True)
-    pickup_lng = serializers.FloatField(write_only=True)
-    dropoff_lat = serializers.FloatField(write_only=True)
-    dropoff_lng = serializers.FloatField(write_only=True)
+    """Serializer để tạo/cập nhật học sinh"""
+    pickup_lat = serializers.FloatField(write_only=True, required=False)
+    pickup_lng = serializers.FloatField(write_only=True, required=False)
+    dropoff_lat = serializers.FloatField(write_only=True, required=False)
+    dropoff_lng = serializers.FloatField(write_only=True, required=False)
     
     class Meta:
         model = Student
@@ -144,16 +146,16 @@ class StudentCreateUpdateSerializer(serializers.ModelSerializer):
         ]
     
     def validate_student_code(self, value):
-        # Check if student code already exists (for creation)
         if not self.instance and Student.objects.filter(student_code=value).exists():
             raise serializers.ValidationError("Student code already exists.")
         return value
     
     def create(self, validated_data):
-        pickup_lat = validated_data.pop('pickup_lat')
-        pickup_lng = validated_data.pop('pickup_lng')
-        dropoff_lat = validated_data.pop('dropoff_lat')
-        dropoff_lng = validated_data.pop('dropoff_lng')
+        # Xử lý tọa độ nếu có
+        pickup_lat = validated_data.pop('pickup_lat', 10.762622)
+        pickup_lng = validated_data.pop('pickup_lng', 106.660172)
+        dropoff_lat = validated_data.pop('dropoff_lat', 10.762622)
+        dropoff_lng = validated_data.pop('dropoff_lng', 106.660172)
         
         validated_data['pickup_location'] = Point(pickup_lng, pickup_lat)
         validated_data['dropoff_location'] = Point(dropoff_lng, dropoff_lat)

@@ -199,7 +199,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [("127.0.0.1", 6379)],
+            "hosts": [(env('REDIS_HOST', default='127.0.0.1'), int(env('REDIS_PORT', default=6379)))],
         },
     },
 }
@@ -275,3 +275,4 @@ os.makedirs(BASE_DIR / 'logs', exist_ok=True)
 os.makedirs(BASE_DIR / 'media', exist_ok=True)
 os.makedirs(BASE_DIR / 'staticfiles', exist_ok=True)
 os.makedirs(BASE_DIR / 'static' / 'admin' / 'css', exist_ok=True)
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
