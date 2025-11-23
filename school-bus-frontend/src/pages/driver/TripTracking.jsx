@@ -1,10 +1,12 @@
+// school-bus-frontend/src/pages/driver/TripTracking.jsx
+
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import api from '../../services/api';
 import { FaPlay, FaStop, FaCheckCircle, FaUserCheck } from 'react-icons/fa';
 import L from 'leaflet';
-import AttendanceModal from '../../components/driver/AttendanceModal'; // Import Modal Điểm Danh
+import AttendanceModal from '../../components/driver/AttendanceModal';
 
 // Cấu hình Icon Leaflet
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -20,9 +22,32 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const getSocketUrl = (tripId) => {
     const apiUrl = import.meta.env.VITE_API_URL;
-    const baseUrl = apiUrl.replace('http', 'ws').replace('/api', '');
+    
+    if (!apiUrl) {
+        console.error("❌ VITE_API_URL not defined");
+        return null;
+    }
+    
+    // Chuyển đổi http/https -> ws/wss
+    let baseUrl;
+    if (apiUrl.startsWith('https://')) {
+        baseUrl = apiUrl.replace('https://', 'wss://');
+    } else if (apiUrl.startsWith('http://')) {
+        baseUrl = apiUrl.replace('http://', 'ws://');
+    } else {
+        baseUrl = 'ws://localhost:8000';
+    }
+    
+    // Loại bỏ /api nếu có
+    baseUrl = baseUrl.replace(/\/api\/?$/, '');
+    
     const token = localStorage.getItem('access_token');
-    return token ? `${baseUrl}/ws/trips/${tripId}/?token=${token}` : null;
+    if (!token) {
+        console.error("❌ No access token found");
+        return null;
+    }
+    
+    return `${baseUrl}/ws/trips/${tripId}/?token=${encodeURIComponent(token)}`;
 };
 
 const TripTracking = () => {
@@ -32,67 +57,122 @@ const TripTracking = () => {
     const [currentLocation, setCurrentLocation] = useState(null);
     const [isTracking, setIsTracking] = useState(false);
     const [isConnected, setIsConnected] = useState(false);
-    const [showAttendance, setShowAttendance] = useState(false); // State cho Modal Điểm danh
+    const [showAttendance, setShowAttendance] = useState(false);
     
     const watchIdRef = useRef(null);
     const ws = useRef(null);
     const socketUrl = useMemo(() => getSocketUrl(tripId), [tripId]);
 
-    // 1. Kết nối WebSocket
-    useEffect(() => {
-        if (!socketUrl) return;
-        let timeoutId = null;
+    // 1. WebSocket Connection
+    // school-bus-frontend/src/pages/driver/TripTracking.jsx
 
-        const connect = () => {
-            if (ws.current) ws.current.close();
+useEffect(() => {
+    if (!socketUrl) {
+        console.error("❌ Cannot create WebSocket: URL is null");
+        return;
+    }
 
+    let reconnectAttempts = 0;
+    const MAX_RECONNECT_ATTEMPTS = 5;
+    let reconnectTimer = null;
+    let isComponentMounted = true; // ✅ THÊM FLAG
+
+    const connect = () => {
+        if (!isComponentMounted) return; // ✅ Dừng nếu component unmounted
+        
+        if (ws.current) {
+            ws.current.close();
+            ws.current = null;
+        }
+
+        console.log(`🔌 Connecting to: ${socketUrl.split('?')[0]}...`);
+        
+        try {
             ws.current = new WebSocket(socketUrl);
+        } catch (error) {
+            console.error("❌ WebSocket creation failed:", error);
+            scheduleReconnect();
+            return;
+        }
 
-            ws.current.onopen = () => {
-                console.log('✅ Driver: WS Connected');
-                setIsConnected(true);
-            };
-
-            ws.current.onmessage = (event) => {
-                try {
-                    const msg = JSON.parse(event.data);
-                    if (msg.type === 'initial_data') {
-                        setTrip(prev => ({...prev, ...msg.data}));
-                        if (msg.data.status === 'in_progress') setIsTracking(true);
-                    }
-                } catch (e) { console.error(e); }
-            };
-
-            ws.current.onclose = () => {
-                console.log('🔌 Driver: WS Closed');
-                setIsConnected(false);
-                timeoutId = setTimeout(connect, 3000);
-            };
-            
-            ws.current.onerror = (err) => {
-                console.error("WS Error", err);
+        ws.current.onopen = () => {
+            if (!isComponentMounted) { // ✅ Kiểm tra trước khi update state
                 ws.current.close();
-            };
+                return;
+            }
+            console.log('✅ WebSocket Connected');
+            setIsConnected(true);
+            reconnectAttempts = 0;
         };
 
-        connect();
-
-        return () => {
-            if (timeoutId) clearTimeout(timeoutId);
-            if (ws.current) ws.current.close();
+        ws.current.onmessage = (event) => {
+            if (!isComponentMounted) return; // ✅ Bỏ qua nếu unmounted
+            
+            try {
+                const msg = JSON.parse(event.data);
+                console.log("📩 WS Message:", msg.type);
+                
+                if (msg.type === 'initial_data') {
+                    setTrip(prev => ({...prev, ...msg.data}));
+                    if (msg.data.status === 'in_progress') setIsTracking(true);
+                }
+            } catch (e) {
+                console.error("Parse error:", e);
+            }
         };
-    }, [socketUrl]);
 
-    // Hàm gửi dữ liệu
+        ws.current.onerror = (error) => {
+            // Chỉ log nếu không phải do unmount
+            if (isComponentMounted) {
+                console.error("❌ WebSocket Error:", error);
+            }
+        };
+
+        ws.current.onclose = (event) => {
+            console.log(`🔌 WebSocket Closed (Code: ${event.code})`);
+            setIsConnected(false);
+            
+            // Chỉ reconnect nếu component vẫn còn mount và không phải close bình thường
+            if (isComponentMounted && event.code !== 1000) {
+                scheduleReconnect();
+            }
+        };
+    };
+
+    const scheduleReconnect = () => {
+        if (!isComponentMounted || reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+            if (reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+                console.error("❌ Max reconnect attempts reached");
+            }
+            return;
+        }
+        
+        reconnectAttempts++;
+        const delay = Math.min(1000 * (2 ** reconnectAttempts), 10000);
+        console.log(`🔄 Reconnecting in ${delay}ms (Attempt ${reconnectAttempts}/${MAX_RECONNECT_ATTEMPTS})`);
+        
+        reconnectTimer = setTimeout(connect, delay);
+    };
+
+    connect();
+
+    return () => {
+        isComponentMounted = false; // ✅ Đánh dấu unmounted
+        if (reconnectTimer) clearTimeout(reconnectTimer);
+        if (ws.current) {
+            ws.current.close(1000, "Component unmounted");
+            ws.current = null;
+        }
+    };
+}, [socketUrl]);
+
     const sendLocationUpdate = (payload) => {
         if (ws.current && ws.current.readyState === WebSocket.OPEN) {
             ws.current.send(JSON.stringify(payload));
-        } else {
-            // console.warn("⚠️ WebSocket not ready, cannot send location");
         }
     };
 
-    // 2. Lấy thông tin chuyến đi (API)
+    // 2. Lấy thông tin chuyến (API)
     useEffect(() => {
         const fetchTrip = async () => {
             try {
@@ -121,10 +201,9 @@ const TripTracking = () => {
                             type: 'location_update',
                             lat: latitude,
                             lng: longitude,
-                            speed: speed,
-                            heading: heading,
-                            accuracy: accuracy,
-                            battery_level: 100 
+                            speed: speed || 0,
+                            heading: heading || 0,
+                            accuracy: accuracy || 0
                         };
                         sendLocationUpdate(payload);
                     },
@@ -142,18 +221,21 @@ const TripTracking = () => {
         }
 
         return () => {
-            if (watchIdRef.current !== null) navigator.geolocation.clearWatch(watchIdRef.current);
+            if (watchIdRef.current !== null) {
+                navigator.geolocation.clearWatch(watchIdRef.current);
+            }
         };
     }, [isTracking]);
 
-    // Xử lý nút bấm
     const handleStartTrip = async () => {
         if (window.confirm('Bắt đầu chuyến đi?')) {
             try {
                 await api.post(`/tracking/trips/${tripId}/start/`);
                 setTrip(prev => ({ ...prev, status: 'in_progress' }));
                 setIsTracking(true);
-            } catch (e) { alert("Lỗi bắt đầu chuyến"); }
+            } catch (e) {
+                alert("Lỗi bắt đầu chuyến");
+            }
         }
     };
 
@@ -164,7 +246,9 @@ const TripTracking = () => {
                 setTrip(prev => ({ ...prev, status: 'completed' }));
                 setIsTracking(false);
                 navigate('/driver/home');
-            } catch (e) { alert("Lỗi kết thúc chuyến"); }
+            } catch (e) {
+                alert("Lỗi kết thúc chuyến");
+            }
         }
     };
 
@@ -180,7 +264,11 @@ const TripTracking = () => {
                     style={{ height: "100%" }}
                 >
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                    {currentLocation && <Marker position={currentLocation}><Popup>Vị trí hiện tại</Popup></Marker>}
+                    {currentLocation && (
+                        <Marker position={currentLocation}>
+                            <Popup>Vị trí hiện tại</Popup>
+                        </Marker>
+                    )}
                 </MapContainer>
             </div>
 
@@ -197,7 +285,6 @@ const TripTracking = () => {
                         </div>
                     </div>
                     
-                    {/* --- NÚT ĐIỂM DANH (MỚI) --- */}
                     <div className="flex gap-2">
                         <button 
                             onClick={() => setShowAttendance(true)}
@@ -209,15 +296,20 @@ const TripTracking = () => {
                     </div>
                 </div>
 
-                {/* Main Button */}
                 {trip.status === 'scheduled' && (
-                    <button onClick={handleStartTrip} className="w-full py-3.5 bg-green-600 text-white rounded-xl font-bold shadow-lg hover:bg-green-700 active:scale-95 transition-all flex items-center justify-center gap-2">
+                    <button 
+                        onClick={handleStartTrip} 
+                        className="w-full py-3.5 bg-green-600 text-white rounded-xl font-bold shadow-lg hover:bg-green-700 active:scale-95 transition-all flex items-center justify-center gap-2"
+                    >
                         <FaPlay /> BẮT ĐẦU CHUYẾN ĐI
                     </button>
                 )}
                 
                 {trip.status === 'in_progress' && (
-                    <button onClick={handleCompleteTrip} className="w-full py-3.5 bg-red-600 text-white rounded-xl font-bold shadow-lg hover:bg-red-700 active:scale-95 transition-all flex items-center justify-center gap-2">
+                    <button 
+                        onClick={handleCompleteTrip} 
+                        className="w-full py-3.5 bg-red-600 text-white rounded-xl font-bold shadow-lg hover:bg-red-700 active:scale-95 transition-all flex items-center justify-center gap-2"
+                    >
                         <FaStop /> KẾT THÚC CHUYẾN ĐI
                     </button>
                 )}
@@ -229,7 +321,7 @@ const TripTracking = () => {
                 )}
             </div>
 
-            {/* --- MODAL ĐIỂM DANH --- */}
+            {/* Modal Điểm danh */}
             {showAttendance && (
                 <AttendanceModal 
                     trip={trip} 
@@ -240,4 +332,5 @@ const TripTracking = () => {
     );
 };
 
+// ✅ QUAN TRỌNG: Phải có dòng này
 export default TripTracking;

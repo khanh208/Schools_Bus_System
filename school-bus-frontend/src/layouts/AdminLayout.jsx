@@ -3,7 +3,8 @@ import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { 
     FaHome, FaUsers, FaUserTie, FaUserFriends, FaBus, 
-    FaRoute, FaMapMarkedAlt, FaSignOutAlt, FaBars, FaChartBar, FaDatabase 
+    FaRoute, FaMapMarkedAlt, FaSignOutAlt, FaBars,
+    FaCalendarCheck, FaChartBar, FaDatabase 
 } from 'react-icons/fa';
 
 const AdminLayout = () => {

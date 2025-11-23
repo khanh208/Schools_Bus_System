@@ -1,179 +1,316 @@
-import { useEffect, useState, useRef, useMemo } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+// school-bus-frontend/src/components/driver/AttendanceModal.jsx
+
+import { useEffect, useState } from 'react';
 import api from '../../services/api';
-import { FaPlay, FaStop, FaCheckCircle, FaUserCheck } from 'react-icons/fa';
-import L from 'leaflet';
-import AttendanceModal from '../../components/driver/AttendanceModal'; // <--- IMPORT MỚI
+import { FaTimes, FaCheck, FaSignOutAlt, FaUserSlash, FaUserGraduate, FaSpinner } from 'react-icons/fa';
 
-// --- CẤU HÌNH ICON LEAFLET (Giữ nguyên) ---
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-let DefaultIcon = L.icon({
-    iconUrl: icon,
-    shadowUrl: iconShadow,
-    iconSize: [25, 41],
-    iconAnchor: [12, 41]
-});
-L.Marker.prototype.options.icon = DefaultIcon;
+const AttendanceModal = ({ trip, onClose }) => {
+    const [students, setStudents] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [attendanceData, setAttendanceData] = useState({});
+    const [processingStudentId, setProcessingStudentId] = useState(null);
 
-const getSocketUrl = (tripId) => {
-    const apiUrl = import.meta.env.VITE_API_URL;
-    const baseUrl = apiUrl.replace('http', 'ws').replace('/api', '');
-    const token = localStorage.getItem('access_token');
-    return token ? `${baseUrl}/ws/trips/${tripId}/?token=${token}` : null;
-};
-
-const TripTracking = () => {
-    const { tripId } = useParams();
-    const navigate = useNavigate();
-    const [trip, setTrip] = useState(null);
-    const [currentLocation, setCurrentLocation] = useState(null);
-    const [isTracking, setIsTracking] = useState(false);
-    const [isConnected, setIsConnected] = useState(false);
-    const [showAttendance, setShowAttendance] = useState(false); // <--- STATE MỚI
-    
-    const watchIdRef = useRef(null);
-    const ws = useRef(null);
-    const socketUrl = useMemo(() => getSocketUrl(tripId), [tripId]);
-
-    // 1. WebSocket (Giữ nguyên logic cũ)
+    // 1. Lấy danh sách học sinh của tuyến
     useEffect(() => {
-        if (!socketUrl) return;
-        let timeoutId = null;
-        const connect = () => {
-            if (ws.current) ws.current.close();
-            ws.current = new WebSocket(socketUrl);
-            ws.current.onopen = () => { setIsConnected(true); };
-            ws.current.onclose = () => { 
-                setIsConnected(false); 
-                timeoutId = setTimeout(connect, 3000); 
-            };
-            ws.current.onerror = () => ws.current.close();
-        };
-        connect();
-        return () => {
-            if (timeoutId) clearTimeout(timeoutId);
-            if (ws.current) ws.current.close();
-        };
-    }, [socketUrl]);
-
-    const sendLocationUpdate = (payload) => {
-        if (ws.current && ws.current.readyState === WebSocket.OPEN) {
-            ws.current.send(JSON.stringify(payload));
-        }
-    };
-
-    // 2. Lấy thông tin chuyến (Giữ nguyên)
-    useEffect(() => {
-        const fetchTrip = async () => {
+        const fetchStudents = async () => {
             try {
-                const res = await api.get(`/tracking/trips/${tripId}/`);
-                setTrip(res.data);
-                if (res.data.status === 'in_progress') setIsTracking(true);
-            } catch (error) { navigate('/driver/home'); }
-        };
-        fetchTrip();
-    }, [tripId, navigate]);
+                // Lấy ID tuyến từ trip
+                const routeId = typeof trip.route === 'object' ? trip.route.id : trip.route;
+                
+                if (!routeId) {
+                    console.error("❌ Không tìm thấy route ID");
+                    setLoading(false);
+                    return;
+                }
 
-    // 3. GPS (Giữ nguyên)
-    useEffect(() => {
-        if (isTracking) {
-            if ('geolocation' in navigator) {
-                watchIdRef.current = navigator.geolocation.watchPosition(
-                    (position) => {
-                        const { latitude, longitude, speed, heading, accuracy } = position.coords;
-                        setCurrentLocation([latitude, longitude]);
-                        const payload = { type: 'location_update', lat: latitude, lng: longitude, speed, heading, accuracy };
-                        sendLocationUpdate(payload);
-                    },
-                    (error) => console.error("GPS Error"),
-                    { enableHighAccuracy: true, timeout: 5000 }
-                );
+                console.log("🔍 Fetching students for route:", routeId);
+
+                // Gọi API lấy học sinh
+                const response = await api.get(`/routes/routes/${routeId}/students/`);
+                
+                console.log("✅ Students data:", response.data);
+
+                // Sắp xếp theo thứ tự điểm dừng
+                const sortedStudents = response.data.sort((a, b) => {
+                    const orderA = a.stop?.stop_order || 999;
+                    const orderB = b.stop?.stop_order || 999;
+                    return orderA - orderB;
+                });
+
+                setStudents(sortedStudents);
+
+                // Tải trạng thái điểm danh hiện có (nếu có)
+                await fetchExistingAttendance(trip.id);
+
+            } catch (error) {
+                console.error("❌ Lỗi tải danh sách học sinh:", error);
+                alert("Không thể tải danh sách học sinh. Vui lòng thử lại.");
+            } finally {
+                setLoading(false);
             }
-        } else {
-            if (watchIdRef.current !== null) navigator.geolocation.clearWatch(watchIdRef.current);
-        }
-        return () => { if (watchIdRef.current !== null) navigator.geolocation.clearWatch(watchIdRef.current); };
-    }, [isTracking]);
+        };
 
-    const handleStartTrip = async () => {
-        if (window.confirm('Bắt đầu chuyến đi?')) {
-            await api.post(`/tracking/trips/${tripId}/start/`);
-            setTrip(prev => ({ ...prev, status: 'in_progress' }));
-            setIsTracking(true);
+        if (trip) {
+            fetchStudents();
+        }
+    }, [trip]);
+
+    // 2. Lấy trạng thái điểm danh đã có
+    const fetchExistingAttendance = async (tripId) => {
+        try {
+            const response = await api.get(`/attendance/records/?trip=${tripId}`);
+            
+            // Map dữ liệu thành object để dễ tra cứu
+            const attendanceMap = {};
+            response.data.forEach(record => {
+                attendanceMap[record.student] = {
+                    type: record.attendance_type,
+                    status: record.status,
+                    id: record.id
+                };
+            });
+
+            setAttendanceData(attendanceMap);
+            console.log("✅ Loaded existing attendance:", attendanceMap);
+        } catch (error) {
+            console.warn("⚠️ Không tải được dữ liệu điểm danh cũ:", error);
         }
     };
 
-    const handleCompleteTrip = async () => {
-        if (window.confirm('Xác nhận hoàn thành?')) {
-            await api.post(`/tracking/trips/${tripId}/complete/`);
-            setTrip(prev => ({ ...prev, status: 'completed' }));
-            setIsTracking(false);
-            navigate('/driver/home');
+    // 3. Xử lý điểm danh
+    const handleAttendance = async (student, type, status) => {
+        const studentId = student.student;
+        
+        // Prevent double-click
+        if (processingStudentId === studentId) {
+            return;
+        }
+
+        setProcessingStudentId(studentId);
+
+        try {
+            console.log("📝 Điểm danh:", {
+                student: student.student_name,
+                type,
+                status
+            });
+
+            // Payload gửi lên API
+            const payload = {
+                trip: trip.id,
+                student: studentId,
+                stop: student.stop,
+                attendance_type: type,
+                status: status,
+                notes: ''
+            };
+
+            console.log("📤 Sending:", payload);
+
+            // Gọi API điểm danh
+            const response = await api.post('/attendance/records/check_in/', payload);
+
+            console.log("✅ Điểm danh thành công:", response.data);
+
+            // Cập nhật UI ngay lập tức
+            setAttendanceData(prev => ({
+                ...prev,
+                [studentId]: { 
+                    type, 
+                    status, 
+                    id: response.data.id 
+                }
+            }));
+
+            // Hiển thị thông báo ngắn
+            showToast(`✓ ${student.student_name} đã được điểm danh`);
+
+        } catch (error) {
+            console.error("❌ Lỗi điểm danh:", error);
+            
+            const errorMsg = error.response?.data?.student?.[0] 
+                || error.response?.data?.detail 
+                || error.response?.data?.error
+                || "Lỗi không xác định";
+
+            alert(`Điểm danh thất bại: ${errorMsg}`);
+        } finally {
+            setProcessingStudentId(null);
         }
     };
 
-    if (!trip) return <div className="p-5 text-center">Đang tải...</div>;
+    // Helper: Toast notification
+    const showToast = (message) => {
+        const toast = document.createElement('div');
+        toast.textContent = message;
+        toast.className = 'fixed top-20 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-[9999] animate-[fadeIn_0.3s]';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.remove();
+        }, 2000);
+    };
+
+    // 4. Render trạng thái điểm danh
+    const getStatusInfo = (studentId) => {
+        const status = attendanceData[studentId];
+        if (!status) return null;
+
+        if (status.status === 'absent') {
+            return {
+                label: 'Vắng',
+                className: 'bg-red-100 text-red-700 border-red-200'
+            };
+        } else if (status.type === 'check_in') {
+            return {
+                label: 'Đã lên xe',
+                className: 'bg-green-100 text-green-700 border-green-200'
+            };
+        } else if (status.type === 'check_out') {
+            return {
+                label: 'Đã xuống xe',
+                className: 'bg-gray-100 text-gray-700 border-gray-200'
+            };
+        }
+        return null;
+    };
 
     return (
-        <div className="flex flex-col h-full relative">
-            <div className="flex-1 relative z-0">
-                <MapContainer center={currentLocation || [10.762, 106.660]} zoom={15} style={{ height: "100%" }}>
-                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                    {currentLocation && <Marker position={currentLocation}><Popup>Bạn ở đây</Popup></Marker>}
-                </MapContainer>
-            </div>
-
-            <div className="bg-white rounded-t-2xl shadow p-5 z-10 absolute bottom-0 left-0 right-0 pb-20 sm:pb-5">
-                <div className="flex justify-between items-center mb-4">
+        <div className="fixed inset-0 bg-black/80 z-[1300] flex items-end sm:items-center justify-center animate-[fadeIn_0.2s]">
+            <div className="bg-white w-full max-w-lg rounded-t-2xl sm:rounded-2xl h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+                
+                {/* Header */}
+                <div className="p-4 border-b flex justify-between items-center bg-blue-600 text-white shadow-md">
                     <div>
-                        <h2 className="font-bold text-lg text-gray-800">{trip.route_name}</h2>
-                        <div className="flex items-center gap-2">
-                            <span className={`text-xs px-2 py-0.5 rounded-full ${isConnected ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                                {isConnected ? 'Online' : 'Offline'}
-                            </span>
-                        </div>
+                        <h3 className="font-bold text-lg flex items-center gap-2">
+                            <FaUserGraduate /> Điểm danh Học sinh
+                        </h3>
+                        <p className="text-xs text-blue-100 opacity-90">
+                            Chuyến: {trip.route_name || 'Đang tải...'}
+                        </p>
                     </div>
-                    <div className="flex gap-2">
-                        {/* NÚT ĐIỂM DANH ĐÃ ĐƯỢC KÍCH HOẠT */}
-                        <button 
-                            onClick={() => setShowAttendance(true)} // <--- SỰ KIỆN MỞ MODAL
-                            className="p-3 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-200 shadow-sm transition-colors"
-                        >
-                            <FaUserCheck size={20} />
-                        </button>
-                    </div>
+                    <button 
+                        onClick={onClose} 
+                        className="p-2 hover:bg-blue-700 rounded-full transition-colors"
+                    >
+                        <FaTimes size={20} />
+                    </button>
                 </div>
 
-                {trip.status === 'scheduled' && (
-                    <button onClick={handleStartTrip} className="w-full py-3 bg-green-600 text-white rounded-xl font-bold shadow-lg">
-                        BẮT ĐẦU CHUYẾN ĐI
-                    </button>
-                )}
-                
-                {trip.status === 'in_progress' && (
-                    <button onClick={handleCompleteTrip} className="w-full py-3 bg-red-600 text-white rounded-xl font-bold shadow-lg">
-                        KẾT THÚC CHUYẾN ĐI
-                    </button>
-                )}
+                {/* Student List */}
+                <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+                    {loading ? (
+                        <div className="flex flex-col items-center justify-center h-40 text-gray-500">
+                            <FaSpinner className="animate-spin text-4xl mb-2 text-blue-600" />
+                            <p>Đang tải danh sách...</p>
+                        </div>
+                    ) : students.length === 0 ? (
+                        <div className="text-center py-10 px-4">
+                            <p className="text-gray-500 mb-2">Chưa có học sinh nào đăng ký tuyến này.</p>
+                            <p className="text-xs text-gray-400">Vui lòng kiểm tra lại cấu hình Tuyến đường.</p>
+                        </div>
+                    ) : (
+                        students.map((student) => {
+                            const studentId = student.student;
+                            const statusInfo = getStatusInfo(studentId);
+                            const isProcessing = processingStudentId === studentId;
 
-                {trip.status === 'completed' && (
-                    <div className="w-full py-3 bg-gray-500 text-white rounded-xl font-bold text-center">
-                        ĐÃ HOÀN THÀNH
+                            return (
+                                <div 
+                                    key={student.id} 
+                                    className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+                                >
+                                    <div className="flex justify-between items-start mb-3">
+                                        <div>
+                                            <h4 className="font-bold text-gray-800 text-lg">
+                                                {student.student_name}
+                                            </h4>
+                                            <div className="flex items-center gap-2 mt-1">
+                                                <span className="text-xs bg-gray-100 px-2 py-1 rounded text-gray-600 font-mono">
+                                                    {student.student_code}
+                                                </span>
+                                            </div>
+                                            <p className="text-xs text-blue-600 mt-1 font-medium">
+                                                📍 {student.stop_name || 'Điểm dừng chưa xác định'}
+                                            </p>
+                                        </div>
+                                        
+                                        {/* Status Badge */}
+                                        {statusInfo && (
+                                            <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-sm border ${statusInfo.className}`}>
+                                                {statusInfo.label}
+                                            </span>
+                                        )}
+                                    </div>
+
+                                    {/* Action Buttons */}
+                                    <div className="grid grid-cols-3 gap-3 mt-2">
+                                        <button 
+                                            onClick={() => handleAttendance(student, 'check_in', 'present')}
+                                            disabled={isProcessing}
+                                            className={`flex flex-col items-center justify-center p-2 rounded-lg border transition-all active:scale-95 ${
+                                                statusInfo?.label === 'Đã lên xe'
+                                                ? 'bg-green-600 text-white border-green-600 shadow-md' 
+                                                : 'bg-white text-green-600 border-green-200 hover:bg-green-50'
+                                            } disabled:opacity-50 disabled:cursor-not-allowed`}
+                                        >
+                                            {isProcessing ? (
+                                                <FaSpinner className="animate-spin mb-1" size={16} />
+                                            ) : (
+                                                <FaCheck size={16} className="mb-1" />
+                                            )}
+                                            <span className="text-xs font-bold">Lên xe</span>
+                                        </button>
+
+                                        <button 
+                                            onClick={() => handleAttendance(student, 'check_out', 'present')}
+                                            disabled={isProcessing}
+                                            className={`flex flex-col items-center justify-center p-2 rounded-lg border transition-all active:scale-95 ${
+                                                statusInfo?.label === 'Đã xuống xe'
+                                                ? 'bg-gray-600 text-white border-gray-600 shadow-md'
+                                                : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                                            } disabled:opacity-50 disabled:cursor-not-allowed`}
+                                        >
+                                            {isProcessing ? (
+                                                <FaSpinner className="animate-spin mb-1" size={16} />
+                                            ) : (
+                                                <FaSignOutAlt size={16} className="mb-1" />
+                                            )}
+                                            <span className="text-xs font-bold">Xuống xe</span>
+                                        </button>
+
+                                        <button 
+                                            onClick={() => handleAttendance(student, 'check_in', 'absent')}
+                                            disabled={isProcessing}
+                                            className={`flex flex-col items-center justify-center p-2 rounded-lg border transition-all active:scale-95 ${
+                                                statusInfo?.label === 'Vắng'
+                                                ? 'bg-red-500 text-white border-red-500 shadow-md'
+                                                : 'bg-white text-red-500 border-red-200 hover:bg-red-50'
+                                            } disabled:opacity-50 disabled:cursor-not-allowed`}
+                                        >
+                                            {isProcessing ? (
+                                                <FaSpinner className="animate-spin mb-1" size={16} />
+                                            ) : (
+                                                <FaUserSlash size={16} className="mb-1" />
+                                            )}
+                                            <span className="text-xs font-bold">Vắng</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            );
+                        })
+                    )}
+                </div>
+
+                {/* Footer Summary */}
+                <div className="p-4 border-t bg-white">
+                    <div className="flex justify-between text-sm text-gray-600">
+                        <span>Tổng: {students.length} HS</span>
+                        <span>Đã điểm danh: {Object.keys(attendanceData).length}</span>
                     </div>
-                )}
+                </div>
             </div>
-
-            {/* HIỂN THỊ MODAL ĐIỂM DANH */}
-            {showAttendance && (
-                <AttendanceModal 
-                    trip={trip} 
-                    onClose={() => setShowAttendance(false)} 
-                />
-            )}
         </div>
     );
 };
 
-export default TripTracking;
+export default AttendanceModal;
