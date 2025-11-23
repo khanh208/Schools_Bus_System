@@ -327,30 +327,26 @@ class DriverViewSet(viewsets.ModelViewSet):  # <--- Đổi từ ReadOnlyModelVie
         return Response(DriverPerformanceReportSerializer(reports, many=True).data)
 
 
-class ParentViewSet(viewsets.ReadOnlyModelViewSet):
-    """ViewSet for viewing parents"""
+class ParentViewSet(viewsets.ModelViewSet):  # <--- Đổi thành ModelViewSet
+    """ViewSet for viewing and editing parents"""
     queryset = Parent.objects.all()
     serializer_class = ParentSerializer
     permission_classes = [permissions.IsAuthenticated]
     search_fields = ['user__full_name', 'user__email', 'user__phone']
     
-    # --- SỬA ĐOẠN NÀY ---
-    # Đổi detail=True thành detail=False để URL là /parents/children/ thay vì /parents/{pk}/children/
-    @action(detail=False, methods=['get']) 
+    def get_permissions(self):
+        # Chỉ Admin mới được quyền Thêm/Sửa/Xóa phụ huynh
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            return [permissions.IsAuthenticated(), IsAdmin()]
+        return [permissions.IsAuthenticated()]
+    
+    @action(detail=True, methods=['get'])
     def children(self, request, pk=None):
         """Get parent's children"""
-        # Lấy profile phụ huynh từ user đang đăng nhập
-        try:
-            parent = request.user.parent_profile
-        except Parent.DoesNotExist:
-            return Response({"error": "User is not a parent"}, status=400)
-            
+        parent = self.get_object()
         children = parent.students.filter(is_active=True)
-        
         from apps.students.serializers import StudentListSerializer
-        
         return Response(StudentListSerializer(children, many=True).data)
-
 
 class FCMTokenView(APIView):
     """API endpoint for managing FCM tokens"""

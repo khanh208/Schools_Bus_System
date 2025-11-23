@@ -1,390 +1,337 @@
-"""
-Services for route optimization and management
-"""
-
+# apps/routes/services.py - IMPROVED VERSION
 from django.contrib.gis.geos import Point, LineString
 from django.contrib.gis.measure import D
 from django.contrib.gis.db.models.functions import Distance
 from django.utils import timezone
+from django.db.models import Q, Count, Avg
 from datetime import timedelta
 import math
 
 
 class RouteOptimizationService:
-    """Service for optimizing route stops"""
+    """✅ Cải thiện thuật toán tối ưu tuyến đường"""
     
     @staticmethod
-    def calculate_distance(point1, point2):
+    def haversine_distance(point1, point2):
         """
-        Calculate distance between two points in kilometers
+        Tính khoảng cách Haversine chính xác hơn
+        
         Args:
-            point1: Point object or tuple (lng, lat)
-            point2: Point object or tuple (lng, lat)
+            point1: Point(lng, lat) hoặc tuple (lng, lat)
+            point2: Point(lng, lat) hoặc tuple (lng, lat)
+        
         Returns:
-            float: Distance in kilometers
+            float: Khoảng cách (km)
         """
-        if isinstance(point1, tuple):
+        if isinstance(point1, (list, tuple)):
             point1 = Point(point1[0], point1[1])
-        if isinstance(point2, tuple):
+        if isinstance(point2, (list, tuple)):
             point2 = Point(point2[0], point2[1])
         
-        # Using Haversine formula (more accurate for long distances)
-        lat1, lon1 = point1.y, point1.x
-        lat2, lon2 = point2.y, point2.x
+        lat1, lon1 = math.radians(point1.y), math.radians(point1.x)
+        lat2, lon2 = math.radians(point2.y), math.radians(point2.x)
         
-        # Convert to radians
-        lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
-        
-        # Haversine formula
         dlat = lat2 - lat1
         dlon = lon2 - lon1
+        
         a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
         c = 2 * math.asin(math.sqrt(a))
-        r = 6371  # Radius of Earth in kilometers
         
-        return c * r
+        return 6371 * c  # Bán kính Trái Đất
     
     @staticmethod
-    def optimize_stops_order(route, start_point=None):
+    def optimize_route_stops(route, school_location=None):
         """
-        Optimize the order of stops using nearest neighbor algorithm
+        ✅ Tối ưu thứ tự điểm dừng bằng Nearest Neighbor + 2-opt
+        
         Args:
             route: Route object
-            start_point: Starting point (school location)
+            school_location: Point - Vị trí trường học
+        
         Returns:
-            list: Optimized list of stops
+            list: Danh sách điểm dừng đã tối ưu
         """
         from apps.routes.models import RouteStop
         
         stops = list(route.stops.filter(is_active=True))
-        if not stops:
-            return []
+        if len(stops) < 2:
+            return stops
         
-        # If no start point provided, use first stop
-        if start_point is None:
-            start_point = stops[0].location
+        # 1. NEAREST NEIGHBOR ALGORITHM
+        if not school_location:
+            school_location = stops[0].location
         
         optimized = []
         remaining = stops.copy()
-        current_point = start_point
-        
-        # Nearest neighbor algorithm
-        while remaining:
-            nearest_stop = min(
-                remaining,
-                key=lambda s: RouteOptimizationService.calculate_distance(
-                    current_point, s.location
-                )
-            )
-            optimized.append(nearest_stop)
-            remaining.remove(nearest_stop)
-            current_point = nearest_stop.location
-        
-        # Update stop orders
-        for idx, stop in enumerate(optimized, start=1):
-            stop.stop_order = idx
-            stop.save(update_fields=['stop_order'])
-        
-        return optimized
-    
-    @staticmethod
-    def calculate_route_duration(route):
-        """
-        Calculate estimated duration for a route
-        Args:
-            route: Route object
-        Returns:
-            int: Duration in minutes
-        """
-        stops = route.stops.filter(is_active=True).order_by('stop_order')
-        
-        if stops.count() < 2:
-            return 0
-        
-        total_duration = 0
-        avg_speed = 30  # km/h average speed in city
-        
-        # Calculate travel time between stops
-        for i in range(len(stops) - 1):
-            distance = RouteOptimizationService.calculate_distance(
-                stops[i].location,
-                stops[i + 1].location
-            )
-            travel_time = (distance / avg_speed) * 60  # Convert to minutes
-            stop_time = stops[i].stop_duration or 2  # Default 2 minutes per stop
-            
-            total_duration += travel_time + stop_time
-        
-        return int(total_duration)
-    
-    @staticmethod
-    def find_optimal_route(start_point, end_point, waypoints):
-        """
-        Find optimal route through waypoints
-        Args:
-            start_point: Starting Point
-            end_point: Ending Point
-            waypoints: List of Point objects
-        Returns:
-            list: Ordered list of points
-        """
-        if not waypoints:
-            return [start_point, end_point]
-        
-        # Simple nearest neighbor from start to end
-        ordered_points = [start_point]
-        remaining = waypoints.copy()
-        current = start_point
+        current = school_location
         
         while remaining:
             nearest = min(
                 remaining,
-                key=lambda p: RouteOptimizationService.calculate_distance(current, p)
+                key=lambda s: RouteOptimizationService.haversine_distance(current, s.location)
             )
-            ordered_points.append(nearest)
+            optimized.append(nearest)
             remaining.remove(nearest)
-            current = nearest
+            current = nearest.location
         
-        ordered_points.append(end_point)
-        return ordered_points
+        # 2. 2-OPT IMPROVEMENT (Giảm đường đi chéo)
+        improved = True
+        while improved:
+            improved = False
+            for i in range(1, len(optimized) - 2):
+                for j in range(i + 1, len(optimized)):
+                    if j - i == 1:
+                        continue
+                    
+                    # Tính khoảng cách hiện tại
+                    current_dist = (
+                        RouteOptimizationService.haversine_distance(
+                            optimized[i-1].location if i > 0 else school_location,
+                            optimized[i].location
+                        ) +
+                        RouteOptimizationService.haversine_distance(
+                            optimized[j-1].location,
+                            optimized[j].location if j < len(optimized) else school_location
+                        )
+                    )
+                    
+                    # Tính khoảng cách sau khi swap
+                    new_dist = (
+                        RouteOptimizationService.haversine_distance(
+                            optimized[i-1].location if i > 0 else school_location,
+                            optimized[j-1].location
+                        ) +
+                        RouteOptimizationService.haversine_distance(
+                            optimized[i].location,
+                            optimized[j].location if j < len(optimized) else school_location
+                        )
+                    )
+                    
+                    if new_dist < current_dist:
+                        # Reverse segment
+                        optimized[i:j] = reversed(optimized[i:j])
+                        improved = True
+        
+        # 3. CẬP NHẬT THỨ TỰ VÀO DATABASE
+        for idx, stop in enumerate(optimized, start=1):
+            stop.stop_order = idx
+            stop.save(update_fields=['stop_order'])
+        
+        # 4. CẬP NHẬT TỔNG QUÃNG ĐƯỜNG
+        total_distance = sum(
+            RouteOptimizationService.haversine_distance(
+                optimized[i-1].location if i > 0 else school_location,
+                stop.location
+            )
+            for i, stop in enumerate(optimized)
+        )
+        
+        route.total_distance = round(total_distance, 2)
+        route.save(update_fields=['total_distance'])
+        
+        return optimized
     
     @staticmethod
-    def check_route_capacity(route):
+    def calculate_route_metrics(route):
         """
-        Check if vehicle has enough capacity for assigned students
-        Args:
-            route: Route object
-        Returns:
-            dict: Capacity check results
-        """
-        from apps.routes.models import StudentRoute
+        ✅ Tính toán các chỉ số của tuyến đường
         
-        vehicle = route.vehicle
-        if not vehicle:
+        Returns:
+            dict: Các chỉ số (duration, distance, efficiency)
+        """
+        stops = route.stops.filter(is_active=True).order_by('stop_order')
+        
+        if stops.count() < 2:
             return {
-                'valid': False,
-                'message': 'No vehicle assigned',
-                'capacity': 0,
-                'assigned': 0
+                'total_distance': 0,
+                'estimated_duration': 0,
+                'average_speed': 25,
+                'stops_count': stops.count()
             }
         
-        assigned_students = StudentRoute.objects.filter(
+        # Tính tổng quãng đường
+        total_distance = 0
+        for i in range(len(stops) - 1):
+            total_distance += RouteOptimizationService.haversine_distance(
+                stops[i].location,
+                stops[i + 1].location
+            )
+        
+        # Tính thời gian dự kiến
+        avg_speed = 25  # km/h trong thành phố
+        travel_time = (total_distance / avg_speed) * 60  # phút
+        
+        # Thời gian dừng
+        stop_time = sum(s.stop_duration or 2 for s in stops)
+        
+        total_duration = int(travel_time + stop_time)
+        
+        return {
+            'total_distance': round(total_distance, 2),
+            'estimated_duration': total_duration,
+            'average_speed': avg_speed,
+            'stops_count': len(stops),
+            'travel_time': int(travel_time),
+            'stop_time': stop_time
+        }
+    
+    @staticmethod
+    def check_route_feasibility(route):
+        """
+        ✅ Kiểm tra tính khả thi của tuyến đường
+        
+        Returns:
+            dict: Kết quả kiểm tra
+        """
+        issues = []
+        warnings = []
+        
+        # 1. Kiểm tra capacity
+        from apps.routes.models import StudentRoute
+        
+        student_count = StudentRoute.objects.filter(
             route=route,
             is_active=True
         ).count()
         
+        if route.vehicle:
+            if student_count > route.vehicle.capacity:
+                issues.append(f"Vượt sức chứa: {student_count}/{route.vehicle.capacity}")
+            elif student_count > route.vehicle.capacity * 0.9:
+                warnings.append(f"Gần đầy: {student_count}/{route.vehicle.capacity}")
+        
+        # 2. Kiểm tra thời gian
+        metrics = RouteOptimizationService.calculate_route_metrics(route)
+        if metrics['estimated_duration'] > 90:
+            warnings.append(f"Tuyến quá dài: {metrics['estimated_duration']} phút")
+        
+        # 3. Kiểm tra tài xế và xe
+        if not route.driver:
+            issues.append("Chưa gán tài xế")
+        
+        if not route.vehicle:
+            issues.append("Chưa gán xe")
+        elif not route.vehicle.can_operate():
+            issues.append("Xe không thể hoạt động")
+        
+        # 4. Kiểm tra điểm dừng
+        stops = route.stops.filter(is_active=True)
+        if stops.count() == 0:
+            issues.append("Chưa có điểm dừng")
+        elif stops.count() > 20:
+            warnings.append(f"Quá nhiều điểm dừng: {stops.count()}")
+        
         return {
-            'valid': assigned_students <= vehicle.capacity,
-            'capacity': vehicle.capacity,
-            'assigned': assigned_students,
-            'available': vehicle.capacity - assigned_students,
-            'message': 'OK' if assigned_students <= vehicle.capacity else 'Over capacity'
+            'is_feasible': len(issues) == 0,
+            'issues': issues,
+            'warnings': warnings,
+            'metrics': metrics,
+            'utilization': round((student_count / route.vehicle.capacity * 100), 1) if route.vehicle else 0
         }
 
 
 class ETAService:
-    """Service for calculating Estimated Time of Arrival"""
+    """✅ Cải thiện dự đoán ETA"""
     
     @staticmethod
-    def calculate_eta(trip, stop):
+    def calculate_eta(trip, stop, traffic_factor=1.0):
         """
-        Calculate ETA for a specific stop
+        Tính ETA với nhiều yếu tố
+        
         Args:
             trip: Trip object
             stop: RouteStop object
-        Returns:
-            datetime: Estimated arrival time
-        """
-        from apps.tracking.models import LocationLog
+            traffic_factor: Hệ số giao thông (1.0 = bình thường, 1.5 = tắc)
         
-        # Get latest location
+        Returns:
+            datetime: Thời gian đến dự kiến
+        """
+        from apps.tracking.models import LocationLog, StopArrival
+        
+        # Lấy vị trí hiện tại
         latest_log = trip.location_logs.order_by('-timestamp').first()
         
         if not latest_log:
-            # No location data, return scheduled time
+            # Chưa có dữ liệu GPS, dùng scheduled time
             return timezone.datetime.combine(
                 trip.trip_date,
                 stop.estimated_arrival or timezone.now().time()
             )
         
-        # Calculate distance to stop
-        distance = RouteOptimizationService.calculate_distance(
+        # Tính khoảng cách còn lại
+        distance_remaining = RouteOptimizationService.haversine_distance(
             latest_log.location,
             stop.location
         )
         
-        # Get current speed or use average
-        current_speed = float(latest_log.speed) if latest_log.speed else 25.0  # km/h
+        # Tính tốc độ trung bình từ lịch sử
+        recent_logs = trip.location_logs.order_by('-timestamp')[:10]
+        avg_speed = sum(float(log.speed or 0) for log in recent_logs) / len(recent_logs)
         
-        # Adjust speed based on traffic (simple model)
-        hour = timezone.now().hour
-        if 7 <= hour <= 9 or 16 <= hour <= 18:  # Rush hours
-            current_speed *= 0.7  # Reduce speed by 30%
+        if avg_speed < 5:  # Xe đang dừng
+            avg_speed = 20  # Giả định tốc độ sau khi khởi động
         
-        # Calculate time
-        if current_speed > 0:
-            time_hours = distance / current_speed
-            time_minutes = time_hours * 60
-        else:
-            time_minutes = distance * 3  # Rough estimate: 3 min per km
+        # Áp dụng traffic factor
+        effective_speed = avg_speed / traffic_factor
         
-        # Add buffer for stops
+        # Tính thời gian di chuyển
+        travel_time_hours = distance_remaining / effective_speed if effective_speed > 0 else 0
+        travel_time_minutes = travel_time_hours * 60
+        
+        # Thêm thời gian dừng tại các điểm trước đó
+        completed_stops = StopArrival.objects.filter(
+            trip=trip,
+            actual_arrival__isnull=False
+        ).values_list('stop_id', flat=True)
+        
         remaining_stops = trip.route.stops.filter(
             stop_order__lt=stop.stop_order,
             is_active=True
-        ).count()
-        time_minutes += remaining_stops * 2  # 2 minutes per stop
+        ).exclude(id__in=completed_stops)
         
-        # Calculate ETA
-        eta = timezone.now() + timedelta(minutes=time_minutes)
+        stop_time = sum(s.stop_duration or 2 for s in remaining_stops)
         
-        # Save ETA record
+        # Tổng thời gian
+        total_minutes = travel_time_minutes + stop_time
+        
+        # Tính ETA
+        eta = timezone.now() + timedelta(minutes=total_minutes)
+        
+        # Lưu vào database
         from apps.tracking.models import ETARecord
         ETARecord.objects.create(
             trip=trip,
             stop=stop,
             estimated_arrival=eta,
-            distance_remaining=distance,
-            estimated_time_minutes=int(time_minutes)
+            distance_remaining=distance_remaining,
+            estimated_time_minutes=int(total_minutes)
         )
         
         return eta
     
     @staticmethod
-    def calculate_all_etas(trip):
+    def get_traffic_factor():
         """
-        Calculate ETA for all remaining stops
-        Args:
-            trip: Trip object
+        ✅ Tính hệ số giao thông dựa trên giờ
+        
         Returns:
-            dict: Dictionary of stop_id: eta
+            float: Traffic factor (1.0 - 2.0)
         """
-        from apps.tracking.models import StopArrival
+        now = timezone.localtime()
+        hour = now.hour
         
-        # Get completed stops
-        completed_stop_ids = StopArrival.objects.filter(
-            trip=trip,
-            actual_arrival__isnull=False
-        ).values_list('stop_id', flat=True)
+        # Giờ cao điểm sáng (7-9h)
+        if 7 <= hour < 9:
+            return 1.5
         
-        # Get remaining stops
-        remaining_stops = trip.route.stops.filter(
-            is_active=True
-        ).exclude(id__in=completed_stop_ids).order_by('stop_order')
+        # Giờ cao điểm chiều (16-18h)
+        elif 16 <= hour < 18:
+            return 1.7
         
-        etas = {}
-        for stop in remaining_stops:
-            eta = ETAService.calculate_eta(trip, stop)
-            etas[stop.id] = {
-                'stop_id': stop.id,
-                'stop_name': stop.stop_name,
-                'eta': eta,
-                'minutes_away': (eta - timezone.now()).total_seconds() / 60
-            }
+        # Giờ thấp điểm
+        elif 10 <= hour < 15:
+            return 0.9
         
-        return etas
-
-
-class RouteRecommendationService:
-    """Service for recommending routes to parents"""
-    
-    @staticmethod
-    def find_nearby_routes(location, max_distance_km=2.0):
-        """
-        Find routes with stops near a location
-        Args:
-            location: Point object or tuple (lng, lat)
-            max_distance_km: Maximum distance in kilometers
-        Returns:
-            list: List of (route, stop, distance) tuples
-        """
-        from apps.routes.models import RouteStop, Route
-        
-        if isinstance(location, tuple):
-            location = Point(location[0], location[1])
-        
-        # Find nearby stops
-        nearby_stops = RouteStop.objects.filter(
-            is_active=True,
-            location__distance_lte=(location, D(km=max_distance_km))
-        ).select_related('route').annotate(
-            distance=Distance('location', location)
-        ).order_by('distance')
-        
-        results = []
-        seen_routes = set()
-        
-        for stop in nearby_stops:
-            if stop.route_id not in seen_routes:
-                route = stop.route
-                if route.is_active and route.is_fully_assigned:
-                    results.append({
-                        'route': route,
-                        'nearest_stop': stop,
-                        'distance_km': round(stop.distance.km, 2)
-                    })
-                    seen_routes.add(route.id)
-        
-        return results
-    
-    @staticmethod
-    def recommend_best_route(pickup_location, dropoff_location, preferences=None):
-        """
-        Recommend the best route based on locations and preferences
-        Args:
-            pickup_location: Point object
-            dropoff_location: Point object
-            preferences: dict with user preferences
-        Returns:
-            dict: Recommended route info
-        """
-        if preferences is None:
-            preferences = {}
-        
-        max_distance = preferences.get('max_distance_km', 2.0)
-        
-        # Find routes near pickup location
-        pickup_routes = RouteRecommendationService.find_nearby_routes(
-            pickup_location,
-            max_distance
-        )
-        
-        if not pickup_routes:
-            return None
-        
-        # Score routes based on multiple factors
-        scored_routes = []
-        for route_info in pickup_routes:
-            route = route_info['route']
-            score = 0
-            
-            # Factor 1: Distance to pickup (40%)
-            pickup_distance = route_info['distance_km']
-            score += (1 - min(pickup_distance / max_distance, 1)) * 40
-            
-            # Factor 2: Available capacity (30%)
-            capacity_check = RouteOptimizationService.check_route_capacity(route)
-            if capacity_check['valid'] and capacity_check['available'] > 0:
-                score += (capacity_check['available'] / capacity_check['capacity']) * 30
-            
-            # Factor 3: Route duration (20%)
-            if route.estimated_duration:
-                # Prefer shorter routes
-                score += max(0, (60 - route.estimated_duration) / 60 * 20)
-            
-            # Factor 4: Driver rating (10%)
-            if route.driver:
-                score += (float(route.driver.rating) / 5.0) * 10
-            
-            scored_routes.append({
-                'route': route,
-                'stop': route_info['nearest_stop'],
-                'distance': pickup_distance,
-                'score': score,
-                'capacity_info': capacity_check
-            })
-        
-        # Sort by score
-        scored_routes.sort(key=lambda x: x['score'], reverse=True)
-        
-        return scored_routes[0] if scored_routes else None
+        # Bình thường
+        else:
+            return 1.0
